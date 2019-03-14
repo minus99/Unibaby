@@ -1,0 +1,67 @@
+.scroll-top-btn{
+    background:$very-dark-gray;
+    @include space(padding, all, 16px $xs);
+    i{
+        &:before{
+            font-size: $small-18;
+            color: $white;
+        }
+    }
+}
+
+.site-footer{
+    //background: url(/images/frontend/footer-background.svg) center center no-repeat;
+    background-size: cover;
+    display: none;
+    &-logo{
+        @include space(padding, left, $large);
+    }
+    &-copyright{
+        text-align: center;
+        color: $very-dark-g;
+        font-size: $small-13;
+        @include space(padding, top, $xxlarge);
+        @include space(padding, bottom, $xxlarge);
+    }
+    &-support{
+        font-family: $bold;
+        font-size: $small-18;
+        text-align: center;
+        i, span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        span{ font-family: $bold; font-size: $small-18; margin-bottom: 18px; }
+        i{
+            text-align: center;
+            margin-right: 5px;
+        }
+        i,i:before{
+            font-size: 70px;
+            color: $dark-slate-blue;
+        }
+        img {
+            margin-top: 60px;
+            width: 100%;
+            max-width: 160px;
+        }
+    }
+    &-menu {
+        > ul  {
+            width: 100% !important;
+            text-align: center;
+            margin: 0 auto !important;
+        }
+    }
+    .grid-row-a{
+        @include space(margin, bottom, 45px);
+    }
+    .grid-row-c,
+    .grid-row-e{
+        @include column-double;
+        text-align: left;
+    }
+    .grid-row-e {
+        width: 100%;
+    }
+}

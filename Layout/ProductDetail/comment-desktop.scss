@@ -1,0 +1,69 @@
+.yorumListe_main{
+    @include space(padding, all, 35px);
+    background: $color-39;
+    border-radius: 5px;
+    margin-top: 45px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    padding: 18px; 
+    width: 90%;
+    @include space(margin, all, 75px auto 0 auto);
+    /*#lnkIlkYorum{
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        @include setTransform(translateY(-50%));
+        @include space(margin, top, $reset);
+        @include transition(all .2s ease);
+        &:hover{
+            color: $color-8;
+        }
+    }*/
+    span[id$='lbfMDLHEADER_YORUMLAR'] {
+        > span {
+            font-size: 36px;
+            line-height: 36px;
+        }
+    }
+}
+.ulYorumFiltre{
+    .fm-m{
+        display: inline-block;
+        vertical-align: middle;
+        @include space(margin,right, 30px);
+    }
+}
+
+.urunDetay .inner-row-3 .yorumListe_main{ 
+    display: block;
+}
+
+div.btnYorumGonder,
+div.dvYorumPuan{
+    text-align: inherit;
+}
+
+/*a.btnYorumGonder{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    @include setTransform(translateY(-50%));
+    @include space(margin, top, $reset);
+    &:hover{
+        color: $color-8;
+    }
+}*/
+
+.yorumRating{
+    @include space(margin, top, $reset);
+}
+.yorumRating, .current-rating{
+    
+    background: url(/images/frontend/star-small.png) repeat-x; 
+    width: 110px;
+    height: 22px;
+    ul li a{
+        height: 22px;
+    }
+} 

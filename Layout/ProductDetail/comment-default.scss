@@ -1,0 +1,400 @@
+.yorumListe_main{
+    background: $color-39;
+    border-radius: 0px;
+    margin-top: 75px;
+    //margin-left: 20px;
+    //margin-right: 20px;
+    position: relative;
+    padding: 18px; 
+    width: 100%;
+    @include space(margin, all, 75px auto 0 auto);
+    .dvKullaniciAdi,
+    .dvYorum,
+    .btnYorumGonder,
+    .dvYorumPuan,
+    .olumluYorumBaslik,
+    .tableYorumListe_yorumAdres,
+    .tableYorumListe_yorumDogruBul,
+    .tableYorumListe_yorumYas,
+    .tableYorumListe_yorumEvetHayir,
+    .tableYorumListe_yorumUyelikTar,
+    .tableTitleYorumListe,
+    .yorumListeTumuBaslik,
+    .tableYorumListe_yorumOnay,
+    .olumsuzYorumBaslik,
+    .comment-dsc,
+    .yorumOrtalamaPuan .ratingOzet,
+    .dvYorumBaslik,
+    .yorumFiltre{display: none;}
+    span[id$='lbfMDLHEADER_YORUMLAR'] {
+        display: block !important;
+        color: $color-5;
+        > span {
+            font-size: 30px;
+            line-height: 30px;
+        }
+    }
+    &.opened {
+        .dvYorum, .dvYorumPuan, .btnYorumGonder, .dvYorumBaslik {
+            display: block;
+        }
+        .yorumListeTumu {
+            display: none;
+        }
+        .yorumYap {
+            .btnYorumYap {
+                i {
+                    &:before {
+                        content: '\e918';
+                    }
+                }
+            }
+        }
+    }
+    input, textarea {
+        width: 100% !important;
+        border-radius: 5px !important;
+        box-shadow: 1px 2px 4px 0 rgba(246, 123, 180, 0.15) !important;
+        border: 0 !important;
+        position: relative;
+    }
+}
+
+.dvYorum {
+    display: block;
+    color: $color-5;
+    font-size: $small-18;
+    @include space(margin, bottom, $xMedium);
+    span {
+        display: block;
+        @include space(margin, bottom, $small);
+    }
+}
+
+.dvYorumBaslik {
+    display: block;
+    color: $color-5;
+    font-size: $small-18;
+    @include space(margin, bottom, $xMedium);
+    span {
+        display: block;
+        @include space(margin, bottom, $small);
+    }
+}
+
+
+
+.yorumOzet {
+    text-align: center;
+    .yapilanYorum, .yorumOrtalamaPuan {
+        display: inline-block;
+        color: $color-5;
+        font-size: $small-18;
+    }
+    .yorumOrtalamaPuan {
+        margin-left: $xs;
+        span[id$='lblYORUMLAR_ORTALAMAPUAN'] {
+            float: left;
+            margin-right: 5px;
+        }
+    }
+}
+
+.yorumEkle {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.kullaniciBilgi {
+    @include flex;
+    font-size: $small-15;
+}
+
+.tableYorumListe_yorumTarih {
+    order: 2;
+    @include space(margin, all, 3px 0 0 $xMedium);
+}
+
+.spnYorumTarih {
+    color: $color-36;
+    border-right: 1px solid $color-38;
+    @include space(padding, right,  $small);
+    @include space(margin, right,  $small);
+}
+
+.tableYorumListe_yorumAdSoyad {
+    order: 3;
+    @include space(margin, top, 3px);
+    font-family: $medium;
+}
+
+.yorumYap {
+    .btnYorumYap {
+        background: $white;
+        color: $color-5;
+        font-size: $small-18;
+        border-radius: 10px;
+        @include space(padding, all, 6px $xMedium)
+        @include space(margin, all, $large $reset 33px $reset )
+        i {
+            color: $cool-blue;
+            float: right;
+            margin: 2px 0 0 10px;
+        }
+        &:hover {
+            background: $color-5;
+            color: $white;
+            i {
+                color: $white;
+            }
+        }
+    }
+}
+
+.yorumBilgi {
+    font-size: $small-16;
+    @include space(margin, all, $large 0);
+    color: #5c6267;
+    line-height: 1.56;
+    .tableYorumListe_yorumBaslik {
+        font-family: $medium;
+    }
+}
+
+.tableYorumListe_uyeRating {
+    @include Position (absolute, top 65px left 85px);
+    > span {
+        @include space(margin, left, $small); 
+        font-size: $small-12;
+        color: $color-36;
+    }
+}
+
+span[id$="lbfYORUM_YOK"] {
+    color: $color-5 !important;
+}
+
+.yorumListeTumu, .yorumListeTumu form {
+    @include flex;
+    flex-direction: column;
+    > div {order: 1;}
+    > span {
+        order: 2;
+        font-size: $small-16;
+        color: $color-36;
+        font-family: $bold;
+        text-align: center;
+        span {
+            background: $white;
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            display: inline-block;
+            @include space(margin, all, $reset 3px);
+            @include space(padding, top, $xs);  
+            box-shadow: 1px 2px 4px 0 rgba(246, 123, 180, 0.15); 
+        }
+        a {
+            width: 30px;
+            color: $color-5;
+        }
+    }
+}
+
+.yorumRating,
+.yorumRating ul li.filtreSelected a,
+.current-rating{
+    background:url(/images/frontend/star-big.png) repeat-x;
+}
+
+.tableYorumListe_yorumProfilFoto {
+    width: 50px;
+    height: 50px;
+    background: $color-28;
+    border-radius: 100%;
+    order: 1;
+    font-size: $small-16;
+    color: $color-36;
+    font-family: $bold;
+    text-align: center;
+    @include space(padding, top, $xMedium); 
+    img {
+        display: none;
+    }
+}
+
+.yorum_main {
+    background: $white;
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px 0 rgba(246, 123, 180, 0.15);
+    @include space(padding, all, 35px 23px);
+    @include space(margin, bottom, 20px);
+    @include Position(relative, null);
+}
+
+.yorumRating {
+    width: 170px;
+    height: 33px;
+    position: relative;
+    background-position: top left;
+    display: inline-block;
+    vertical-align: middle;
+    a:hover, a:active, .current-rating{
+        background-position: left bottom;
+    }
+    ul {
+        li{
+            a{
+                display: inline-block;
+                text-indent: -999em;
+                height: 33px;
+                outline: none;
+                overflow: hidden;
+                position: absolute;
+                left: 0;
+            }
+            a.puan1{width:20%;z-index: 6;}
+            a.puan2{width:40%;z-index: 5;}
+            a.puan3{width:60%; z-index: 4;}
+            a.puan4{width:80%; z-index: 3;}
+            a.puan5{width:100%; z-index: 2;}
+        }
+        li.filtreSelected{
+            a{
+                background-position: left bottom;
+            }
+        }
+    }
+}
+.yorumDurum{
+    border-radius: 3px;
+    border: 1px solid #00941e;
+    color: #00941e;
+    background: #e5f4e7;
+    @include space(padding, all, $small);  
+    @include space(margin, top, $large);
+    &:empty{display: none;}
+}
+#lnkIlkYorum{
+    display: inline-block;
+    background: $white;
+    color: $color-5;
+    font-size: $small-18;
+    border-radius: 10px;
+    @include space(padding, all, 6px $xMedium)
+    @include space(margin, all, $large $reset $reset $reset )
+    i {
+        color: $cool-blue;
+        float: right;
+        margin: 2px 0 0 10px;
+    }
+    &:hover {
+        background: $color-5;
+        color: $white;
+        i {
+            color: $white;
+        }
+    }
+}
+div.btnYorumGonder,
+div.dvYorumPuan{
+    text-align: center;
+}
+a.btnYorumGonder{
+    background: $white;
+    color: $color-5;
+    font-size: $small-18;
+    border-radius: 10px;
+    @include space(padding, all, 6px $xMedium)
+    @include space(margin, all, $large $reset 33px $reset )
+    @include Position(relative, null);
+    &:hover{
+        background: $color-5;
+            color: $white;
+    }
+}
+
+.dvYorumPuan{
+    .spnYorumPuan{
+        display: inline-block;
+        vertical-align: middle;
+        color: $color-5;
+        @include space(margin, right, $xxlarge);
+    }
+}
+.ulYorumFiltre{
+    > li{
+        &:nth-child(1),
+        &:nth-child(2){display: none;}
+    }
+   
+}
+
+a[name="yorumEkle"]{display: none;}
+
+.yorumEkleDegerlendir{
+    @include space(margin, top, $large);
+}
+.ems-login{
+    .yorumEkle span[id$="lbfYORUM_EKLE"] {display: none;}
+}
+
+.star-rating {
+    width: 70px;
+    height: 14px;
+    overflow: hidden;
+    background-position: left top;
+    position: relative;
+    float: left;
+    background:url(/images/frontend/stars.png) repeat-x;
+    .current-rating{
+        background:url(/images/frontend/stars.png) repeat-x; 
+        position: absolute;
+        display: inline-block;
+        text-indent: -999em;
+        height: 14px;
+        line-height: 14px;
+        outline: 0;
+        overflow: hidden;
+        border: 0;
+        transition: none;
+        background-position: 0px -18px;
+    }
+}
+
+/* Product Detail */
+
+.ems-detail-comment-stars {
+    .ratingOzet {
+        background:url(/images/frontend/star-icons-medium.png) repeat-x;
+    }
+    .star-rating {
+        width: 90px;
+        height: 15px;
+        overflow: hidden;
+        background-position: left top;
+        position: relative;
+        float: left;
+        .current-rating{
+            background:url(/images/frontend/star-icons-medium.png) repeat-x; 
+            position: absolute;
+            display: inline-block;
+            text-indent: -999em;
+            height: 15px;
+            line-height: 15px;
+            outline: 0;
+            overflow: hidden;
+            border: 0;
+            transition: none;
+            background-position: 0px -15px;
+        }
+    }
+    .tableYorumListe_yorumMesaj {display: none;}
+}
+
+/* List Rating */
+
+.urunListe_yorum {
+    .urunListe_yorumSayi {display: none;}
+    .toplamYorum {font-size: $small-10; color: $color-36; line-height: $small-16; margin-left: 7px; }
+}

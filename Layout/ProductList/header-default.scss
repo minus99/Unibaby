@@ -1,0 +1,80 @@
+.navigasyon {
+     background-image: linear-gradient(rgba(246,236,204,1) 40%,rgba(246,236,204,0) 100%);
+    > span{
+        &:first-child{
+            display: block;
+            @include space(padding, all, 18px $large 15px $large);
+            &:empty{display: none;}
+        }
+    }
+    a{
+        display: none;
+        font-size: $small-14;
+        color: $dark-slate-blue;
+        font-family: $medium;
+        &.navigasyonSeviye1,
+        &.navigasyonSeviye2{display: inline-block;}
+        &:before{
+            content:'/';
+            font-size: $small-14;
+            color: $dark-slate-blue;
+            margin: 0 5px;
+        }
+        &:first-child{
+            &:before{display: none;}
+        }
+    }
+    span[id$="lblNAVIGATION_SEPERATOR"]{display: none;}
+}
+
+.pnlUrunKiyasSecim{
+    text-align: left;
+    .urunKiyaslamaOzellik_secimbaslik,
+    .urunKiyaslamaOzellik_UrunSayi{display: none;}
+}
+.urunKiyaslamaOzellik_secimler{
+    a{
+        /*width: 46%;*/
+        display: inline-block;
+        vertical-align: middle;
+        border-radius: 5px;
+        color: $very-dark-g;
+        font-size: $small-13;
+        font-family: $medium;
+        border:1px solid $vivid-yellow;
+        white-space: nowrap;
+        @include space(padding, all, $xSmall $small);
+        @include space(margin, top, $xSmall);
+        @include space(margin, right, 2%);
+        @include space(margin, left, 2%);
+        &:before{
+            font-family:'icomoon';
+            content:'\e907';
+            width: 16px;
+            height: 16px;
+            float: right;
+            line-height: 16px;
+            text-align: center;
+            color: $vivid-yellow;
+            font-size: $small-22;
+            border-radius: 100%;
+            margin-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.grid-colmn {
+    &-mobile-filter{
+        @include Position(relative, null);
+        .btn-filter{
+            @include Position(absolute, top 50% right $xMedium);
+            @include setTransform(translateY(-50%));
+            font-size: $small-13;
+            color: $very-dark-g;
+            text-decoration: underline;
+            @include space(padding, all, $xs);
+        }
+    }
+}

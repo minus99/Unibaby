@@ -1,0 +1,28 @@
+.site-footer-menu{
+    @include space(margin, top, $xxlarge);
+    @include space(margin, bottom, $reset);
+    > ul{
+        width: 50%;
+        margin-left: 50%;
+        > li{
+            > a{
+                font-family: $bold;
+                font-size: $small-18;
+                color: $dark-slate-blue;
+                letter-spacing: 1px;
+                display: inline-block;
+                margin-bottom: 15px;
+            }
+            >ul{
+                >li{
+                    >a{
+                        display: inline-block;
+                        padding: 6px 0;
+                        color: $dark-slate-blue;
+                        font-size: $small-15;
+                    }
+                }
+            }
+        }
+    }
+}

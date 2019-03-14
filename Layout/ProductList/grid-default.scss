@@ -1,0 +1,388 @@
+/* ===========================
+    Hizli erisim sayfası
+===========================*/
+
+.site-pages-listsearch .pageArama,
+.site-pages-listsearch .tableArama,
+.site-pages-listsearch .tableTitleArama,
+.site-pages-listsearch .tblBtnAraIptal{
+    display: none;
+}
+
+.site-pages-listsearch{
+    .grid-colmn-mobile-filter{
+        height: 45px;
+        background: $color-17;
+    }
+}
+
+.urnList {
+    @include space(padding, all, $large $reset);
+}
+
+.ems-prd-list-count {
+    @include space(padding, all, $reset $xMedium $xMedium $xMedium);
+}
+
+.ems-prd-list-sort-products {
+    border-bottom: 1px solid $color-6; 
+    >span {
+        display: block;
+        font-size: $small-14;
+        font-family: $medium;
+        @include space(padding, all, 16px 60px 16px $xxlarge);
+        @include Position(relative, null);
+        background: none;
+        border-bottom: 1px solid $color-6;
+        margin-bottom: -1px;
+        border-radius: 0;
+        &:after {
+            font-family: 'icomoon';
+            content: '\e916';
+            @include Position(absolute, top 15px right 30px);
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 21px;
+            color: $bright-blue; 
+            font-size: 20px;
+            font-weight: normal;
+            display: block;
+        }
+        small{
+            font-size: $small-14;
+            color: $very-dark-g;
+            font-family: $regular;
+            float: right;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            max-width: 120px;
+            width: 40%;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            text-align: right;
+            white-space: nowrap;
+            &:empty{display: none;}
+        }
+    }
+    ul{
+        position: relative;
+        top: inherit;
+        left: inherit;
+        @include space(padding, all, $small $xxlarge $small $xxlarge);
+        width: 100%;
+        display: none;
+        li{
+            a{
+                display: block;
+                font-size: $small-12;
+                font-family: $medium;
+                @include space(padding, all, 9px 15px 9px 30px);
+                @include Position(relative, null);
+                &:before{
+                    content:'';
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    margin-top: -9px; 
+                    width: 16px;
+                    height: 16px;
+                    line-height: 16px;
+                    text-align: center;
+                    border-radius: 3px;
+                    border: 1px solid $gray;
+                }
+            }
+            &.selected{
+                a{
+                    &:before{
+                        font-family:'icomoon';
+                        content:'\e906';
+                        border-radius: 3px;
+                        color: $vivid-orange;
+                        font-size: $small-15;
+                        border: 1px solid #ddd;
+                    }
+                }
+            }
+        }
+    }
+    &.activeted{
+        > span{
+            &:after{
+                content: '\e918';
+            }
+        }
+    }
+}
+
+.grid-colmn{
+    &-filter-wrapper{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 20;
+        right: 0;
+        display: none;
+        @include transition(transform .2s ease);
+        @include setTransform(translateX(100%));
+    }
+    &-filter{
+        @include Position(absolute, top 60px left 0);
+        width: 100%;
+        height: calc(100% - 150px);
+        overflow-y: auto;
+    }
+    &-btnAll{
+        @include Position(absolute, left 0 bottom 0);
+        width: 100%;
+        .btnAllResult {
+            @include space(padding, top, 16px);
+            @include space(padding, bottom, 16px);
+            color: $color-5;
+            background: none;
+            font-size: $small-13;
+            &:after {
+                content: '\e903';
+                font-family: 'icomoon';
+                display: inline-block;
+                color: $bright-blue;
+                margin-left: 7px;
+
+            }
+        }
+    }
+}
+
+.ems-prd-list-view{
+    border-bottom: 1px solid $color-6;
+    > span{
+        border: none;
+        display: block;
+        font-size: $small-14;
+        @include space(padding, all, 16px 60px 16px $xxlarge);
+        text-align: right;
+        @include Position(relative, null);
+        height: 50px;
+        border-bottom: 1px solid $color-6;
+        margin-bottom: -1px;
+        i{display: none;}
+        &:before{
+            content:'Görünüm';
+            font-size: $small-14;
+            font-family: $medium;
+            float: left;
+        }
+        &:after{
+            font-family: 'icomoon';
+            content: '\e916' !important;
+            @include Position(absolute, top 15px right 30px);
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 21px;
+            color: $bright-blue; 
+            font-size: 20px;
+            font-weight: normal;
+        }
+    }
+    ul{
+        display: none;
+        width: 100%;
+        @include space(padding, all, $small $xxlarge);
+    }   
+    li{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    li a{
+        display: block;
+        @include space(padding, all, $small);
+    }
+    li span{
+        font-size: $small-15;
+    }
+    li{
+        i{
+            /*width: 32px;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            @include space(margin, right, $xs);
+            &:before{
+                font-size: 16px;
+            }*/
+            &:before{
+                content:'';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                margin-top: -9px;
+                width: 16px;
+                height: 16px;
+                line-height: 16px;
+                text-align: center;
+                border-radius: 3px;
+                border: 1px solid $gray;
+            }
+            &.link_selected{
+                &:before{
+                    font-family:'icomoon';
+                    content:'\e906';
+                    border-radius: 3px;
+                    color: $vivid-orange;
+                    font-size: $small-15;
+                    border: 1px solid #ddd;
+                }
+            }
+        }
+    }
+    li.selected{
+        i:before{
+            font-family:'icomoon';
+            content:'\e906';
+            border-radius: 3px;
+            color: $vivid-orange;
+            font-size: $small-15;
+            border: 1px solid #ddd;
+        }
+    }
+    .tekli, 
+    .ikili {
+        /*@include space(padding, right, $small);
+        @include space(padding, left, $small);
+        display: inline-block;
+        vertical-align: middle;*/
+        width: 50%;
+        a{
+            /*border-radius: 3px;
+            border: 1px solid $color-6;
+            height: 55px;
+            line-height: 35px;*/
+            display: block;
+            font-size: $small-15;
+            color: $very-dark-g;
+            @include space(padding, all, 9px 15px 9px 30px);
+            @include Position(relative, null);
+        }
+    }
+    
+    &.activeted{
+        > span{
+            &:after{
+                content: '\e918'; 
+            }
+        }
+    }
+}
+
+.filter-popup-ready{
+    @include mobi-body-render;
+    .grid-colmn-filter-wrapper{
+        display: block;        
+    }
+}
+.filter-popup-animate{
+    .grid-colmn-filter-wrapper{
+        @include setTransform(translateX(0));
+    }
+}
+
+.number-records{
+    display: none;
+    color: $very-dark-g; 
+    @include space(padding, all, 17px $xMedium 16px $xMedium);
+}
+
+.product-list-error{
+    max-width: 800px;
+    @include space(margin, top, 50px);
+    @include space(margin, left, auto);
+    @include space(margin, right, auto);
+    text-align: center;
+    p{
+        font-family: $bold;
+        font-size: $small-20;
+        @include space(margin, top, 50px);
+    }
+}
+.product-list-error-img{
+    width: auto;
+    height: 294px;
+    background: url(/images/frontend/no-product.png) center center no-repeat;
+    @include space(margin, left, auto);
+    @include space(margin, right, auto);
+}
+
+.grid-colmn-filter {
+    .kutuBodyOzellikFiltre {
+        display: block;  
+    }
+}
+
+/* Liste Ceo Metin Alanı */
+
+.catTags {
+    background: $very-light-gray; 
+    @include space(padding, all, 40px); 
+    @include space(margin, top, 40px);
+    color: $very-dark-g;  
+    h1 {
+        @include space(margin, bottom, 20px);        
+    }
+    > span {
+        line-height: 18px; 
+        max-height: 55px; 
+        overflow: hidden;
+        display: block;  
+    }
+    .dfazla {}
+    .daz {display: none;}
+    > a {
+        margin-top: 10px;
+        color: $color-5;
+        i {float: right; margin-left: 10px; margin-top: 2px;}
+    }
+    &.opened {
+        .dfazla {display: none;}
+        .daz {display: block;}
+        > span {
+            max-height: none; 
+        }
+    }
+}
+
+/* Ürün Liste Kısayol Linkler */
+
+.listShortCutMenu {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    ul {
+        @include flex;
+        justify-content: center;
+        li {
+            width: 100%;
+            max-width: 33.333%;
+            text-align: center;
+            a {
+                border-bottom:6px solid $egg-shell;
+                width: 100%;
+                @include space(padding, all, 16px 0 13px 0); 
+            }
+            &.selected {
+                a {
+                    border-color: #ffc629;
+                    span {
+                        font-family: $bold;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,61 @@
+.site-header {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+    .navbar-holder {
+        //grid-template-columns:1fr minmax(auto, 23px) minmax(auto,720px) minmax(auto, 310px) minmax(auto, 310px) 1fr;
+        //grid-template-rows: minmax(0,auto);
+        grid-template-columns: minmax(auto, 150px) minmax(auto, 630px) minmax(auto, 120px) minmax(auto, 330px);
+        grid-template-areas:
+        "LGO MN SCH MMB";
+        align-items: center;
+        height: 100%;
+        max-width: $siteContainerSmallWidth;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .navbar-item-logo {
+        width: inherit;
+        grid-area: LGO;
+        display: inline-block;
+        @include space(padding, left, 20px);
+    }
+
+    .navbar-item-mini-member {
+        width: inherit;
+        grid-area: MMB;
+    }
+
+    .navbar-item-search {
+        grid-area: SCH;
+    }
+    .navbar-item-none{
+        grid-area: NON;
+    }
+    .navbar-item {
+        grid-template-columns: 1fr auto;
+        justify-items: right;
+        align-items: center;
+    }
+    .navbar-item-mini-member{
+        @include space(padding, all, $reset);
+    }
+    .mod-mini-cart {
+        margin-left: 10px;
+    }
+    .xs-icons{
+        &.icon-mini-bag:before{
+            content:'\e91b';
+        }
+    }
+    .navbar-item-logo{
+        h1{
+            img{
+                height: 48px;
+            }
+            a{
+                @include space(padding, top, 15px);
+                @include space(padding, bottom, 15px);
+            }
+        }
+    }
+}

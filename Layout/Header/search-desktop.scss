@@ -1,0 +1,379 @@
+.mod-mini-search {
+    .leaf {display: none;}
+    &-body {
+        position: relative;
+        height: inherit;
+        overflow: visible;
+        background: inherit;
+        z-index: 20;
+        left: 0;
+        right: 0;
+        top: 0;
+        max-width: 900px;
+        @include space(margin, left, auto);
+        @include space(margin, right, auto);
+        display: block;
+
+        .ems-search-header {
+            background: none;
+        }
+    }
+
+    .ems-form-inner {
+        width: inherit;
+        @include space(padding, left, $reset);
+    }
+
+    .ems-field {
+        @include space(padding, all, $reset);
+
+        input {
+            border: 0;
+            border-radius: 0;
+        }
+    }
+
+    .ems-field.submit {
+        top: 2px;
+        right: 10px;
+        .btnArama{
+            line-height: 40px;
+            min-width: 100px;
+            &:hover{
+                background: none;
+            }
+            img {
+                width:40px;
+                float: right;
+            }
+            &:before {
+                color: $dark-slate-blue;
+                content: 'Arama';
+                font-family: $medium;
+                font-size: 15px;
+                margin-right: 10px;
+            }
+        }
+    }
+    
+    .ems-search-body {
+        top: 42px;
+        @include space(padding, all, $xxlarge $reset);
+    }
+}
+
+.ems-page-home {
+    .mod-mini-search-header {
+        display: none;
+    }
+}
+
+.searchSuggestDiv {
+    top: 0px;
+    border-radius: 0 0 3px 3px;
+    position: relative !important;
+    height: auto;
+    overflow-y: inherit;
+}
+
+.searchSuggestDivHolder {
+    @include grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "PRD CAT"
+        "PRD BRN"
+        "BTN .";
+    grid-template-rows: minmax(0,auto);
+    /*background: $very-light-gray;*/
+    overflow-x:inherit;
+    overflow-y: inherit;
+
+    /*Webkit scrolling*/
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    ::-webkit-scrollbar-track {
+        background: $pale-sky-blue;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #4ebdff;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: #4ebdff;
+    }
+
+    h3 {
+        font-family: $bold !important;
+        font-size: $small-15;
+        color: $dark-slate-blue;
+        @include space(margin, bottom, $xs);
+        @include space(padding, all, $reset);
+        background: none;
+    }
+
+    .prdCount {
+        top: 25px;
+        left: 0;
+    }
+
+    .prd,
+    .cat,
+    .brand {
+        @include space(padding, all, $xxlarge $xxlarge $xxlarge 0);
+        @include space(margin, top, 60px);
+    }
+
+    .prd,
+    .dvTumunuGoster {
+        background: $white;
+    }
+
+    .cat,
+    .wordSearch {
+        .suggest_link {
+            >a {
+                @include transition(all .2s ease);
+
+                &:hover {
+                    color: $color-8;
+                }
+            }
+        }
+    }
+
+    .prd {
+        grid-area: PRD;
+        border-top: 1px solid $color-4;
+        max-height: 331px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        padding-top: 0px;
+    }
+
+    .cat {
+        grid-area: CAT;
+        padding: 0px 30px 30px 60px;
+        margin-top: 25px;
+    }
+    .dvTumunuGoster {
+        grid-area: BTN;
+    }
+    .brand {
+        grid-area: BRN;
+        padding-top: 0;
+        padding-left: 60px;
+        .spnBrand{
+            a{
+                display: inline-block;
+                font-size: $small-13;
+                color: $very-dark-g;
+                @include space(padding, all, $xSmall $reset);
+                @include transition(all .2s ease);
+                border-top: none;
+                &:hover {
+                    color: $color-8;
+                }
+            }
+        }
+    }
+
+    .wordSearch {
+        display: none;
+    }
+
+    .sHolder {
+        .suggest_link {
+            >a {
+                display: inline-block;
+                font-size: $small-13;
+                color: $very-dark-g;
+                @include space(padding, all, $xSmall $reset);
+                border-top: none;
+            }
+        }
+    }
+
+    .sHolder table tr {
+        @include space(padding, top, $large);
+        @include space(padding, left, $reset);
+        @include space(padding, right, $reset);
+        @include space(padding, bottom, $large);
+        min-height: auto;
+        @include grid;
+        grid-template-columns: 90px minmax(0,30px) 1fr minmax(auto,120px) 1fr;
+        grid-template-areas:
+        "THI TD2 TD2 TD2 TD2" 
+        "THI TD9 TD6 TD7 TD8"
+        "THI TD9 TD4 TD7 TD8"
+        ;
+
+        align-items: center;
+        border-bottom:1px solid $color-4; 
+        td:nth-child(2) {
+            display: inherit;
+            span {
+                @include space(margin, bottom, $reset);
+                min-height: inherit;
+                max-height: inherit;
+                overflow: visible;
+                padding-left: $small-10;
+                padding-right: $small-15;
+            }
+        }
+        td{
+            width: auto;
+            .suggest_urnsubscriptionprice{
+                position: relative;
+                bottom: inherit;
+                right: inherit;
+            }
+        }
+    }
+
+    .sHolder table tr th {
+        grid-area: THI;
+        left: 0;
+        position: static;
+        top: 0;
+        left: 0;
+        margin-top: 0;
+    }
+
+    .sHolder table tr td:nth-child(2) {
+        grid-area: TD2;
+    }
+
+    .sHolder table tr td:nth-child(4) {
+        grid-area: TD4;
+        align-self: flex-start;
+    }
+    .sHolder table tr td:nth-child(6) {
+        grid-area: TD6;
+        align-self: flex-end;
+    }
+    .sHolder table tr td:nth-child(7) {
+        grid-area: TD7;
+        align-self: center;
+    }
+    .sHolder table tr td:nth-child(8) {
+        grid-area: TD8;
+    }
+    .sHolder table tr td:nth-child(9) {
+        grid-area: TD9;
+    }
+
+    .dvTumunuGoster {
+        display: block !important;
+        @include space(padding, all, 28px 0);
+        .btnArama{
+            /*@include space(padding, all, 12px $xs);
+            @include space(margin, top, $xxlarge);
+            border:2px solid $color-6;*/
+            &:hover{
+                background: none;
+            }
+            &::after {
+                content: '\e916';
+                font-family:'icomoon';
+                color: $cool-blue;
+                margin-left: 10px;
+                position: relative;
+                top:2px;
+            }
+        }
+    }
+}
+
+/* Body search keyup animation
+=================================== */
+body {
+    &.search-focused {
+        .mod-mini-search {
+            width: 100%; 
+            @include Position(fixed, top 0px left 0px);
+            @include space(padding, top, 40px);
+            @include space(padding, bottom, 40px);
+            background: $white;
+            z-index: 999;
+            overflow: hidden;
+            &-body{
+                width: 100%; 
+                .btnArama {
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
+            .ems-search-body{
+                display: block;
+                position: static; 
+            }
+            .ems-field {
+                input {
+                    border: 2px solid #ddd;
+                    border-radius: 5px;
+                    height: 48px;
+                }
+                &.submit {
+                    top: 4px; 
+                }
+            }
+            .leaf {display: block;}
+            .leaf-left-top {
+                left: 70px;
+                top: -20px;
+                -moz-border-radius: 0px 50px;
+                -webkit-border-radius: 0px 50px;
+                border-radius: 0px 50px;
+                width: 100px;
+                height: 100px;
+            }
+            .leaf-right-bottom {
+                right: 70px;
+                bottom: -40px;
+                -moz-border-radius: 0px 80px;
+                -webkit-border-radius: 0px 80px;
+                border-radius: 0px 80px;
+                background: linear-gradient(to bottom, rgba(251, 178, 219, 0.3), rgba(246, 123, 180, 0.3) 30%);
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        .vailSearch {
+            opacity: 1;
+            visibility: visible;
+            z-index: 20;  
+        }
+        .ems-search-close {
+            display: inline-block !important;
+            @include Position(absolute, bottom 0px right 0px);
+            span {
+                display: block;
+                margin-bottom: 5px;
+                color: #4ebdff;
+                text-decoration: underline;
+            }
+            i {
+                background: #4ebdff;
+                border-radius: 40%;
+                @include setTransform(rotate(-90deg));
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                &:before {
+                    font-size: 60px;
+                    position: relative;
+                    left: -10px;
+                }
+
+            }
+        }
+    }
+    &.search-ready {
+        @include mobi-body-reset;
+    }
+}

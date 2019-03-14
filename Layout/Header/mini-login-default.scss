@@ -1,0 +1,136 @@
+ .ems-logoff {
+    .mod-mini-login-body,
+    [id$="lbfKUTU_HESABIM"],
+    .navbar-item-member{
+        display: none !important;
+    }
+    .mLogoffBtn a {display: inline-block;}
+}
+
+.ems-login {
+
+    .sub.logoff,
+    [id$="lbfkutuUyeGiris1"] {
+        display: none !important;
+    }
+    .mLoginBtn a {display: inline-block;}
+}
+
+.mod-mini-login {
+    .sub.logoff {
+        display: none;
+    }
+}
+
+.mod-mini-login {
+    &-header {
+        @include transition(all .2s ease);
+        display: none;
+        >span[id$="lbfKUTU_HESABIM"],
+        >span[id$="lbfkutuUyeGiris1"] {
+            display: block;
+
+            &:empty {
+                display: none;
+            }
+        }
+    }
+
+    &-body {
+        @include Position(fixed, top 0 right 0);
+        @include transition(transform .2s ease);
+        @include setTransform(translateX(425px));
+        width: 90%;
+        z-index: 20;
+        height: 100%;
+        max-width: 325px;
+        background: $white;
+    }
+
+    &-footer {
+        display: none;
+    }
+
+    .ems-user-pages {
+        @include space(padding, all, 25px);
+        
+        .info {
+            border-bottom: 1px solid $egg-shell;
+            @include space(padding, all, 0 0 15px 0px);
+            margin-bottom: 10px;
+            text-align: left;
+            position: relative;
+        }
+        .icon-mini-login-close{
+            &:before{
+                color: #f67bb4;
+                font-size: 40px;
+            }
+        }
+
+        .ems-col {
+            a {
+                display: block;
+                @include space(padding, all, 10px 0px);
+                font-size: $small-14;
+                text-align: left;
+                color: $very-dark-g;
+                &:hover {
+                    color: $color-18;
+                }
+            }
+            .btnKutuLogout {
+                @extend .btn-secondary;
+                /*font-size: $small-15;*/
+                /*color: $vivid-pink;*/
+                /*font-family: $regular;*/
+                /*text-decoration: underline;*/
+                @include space(padding, all, 14px 30px 14px 30px);
+                border: 1px solid $color-4;
+                border-radius: 5px;
+                @include space(margin, top, 30px);
+                text-align: center; 
+            }
+        }
+    }
+    .mod-mini-login-name{
+        width: 85%;
+        font-family: $medium;
+        font-size: $small-15;
+    }
+    .btnMemberClose {
+        @include Position(absolute, top -10px right 0);
+        margin: 0;
+    }
+
+    &.opened {
+        .mod-mini-login-body {
+            @include setTransform(translateX(0));
+        }
+    }
+}
+
+.vailLogin {
+    z-index: 10;
+    top: 0px;
+}
+
+body {
+
+    &.mini-login-ready,
+    &.mobi-login-ready {
+        .vailLogin {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+body{
+    &.mobi-login-ready{
+        @include mobi-body-render;
+        .mod-mini-login-body{
+            @include setTransform(translateX(0));
+        }
+    }
+}

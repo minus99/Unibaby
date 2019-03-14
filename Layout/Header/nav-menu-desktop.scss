@@ -1,0 +1,324 @@
+.navbar-main {
+    //position: relative;
+    ul li {
+        border-bottom: none !important;
+        border-top: none !important;
+    }
+
+    >ul {
+        @include flex;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0;
+        /*Mobile Reset*/
+        position: inherit;  
+        height: inherit;
+        overflow-y: none;
+        width: inherit;
+        top: inherit;
+        overflow-y: inherit;
+
+        >li {
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 7%;
+            /*margin-left: 30px;*/
+
+            /*Mobile Reset*/
+            border-bottom: none;
+
+            &:nth-child(2) {
+                margin-left: 0;
+            }
+
+            >a {
+                /*@include grid;*/
+                text-align: center;
+                align-items: center;
+                /*height: 100%;*/
+                @include transition(all .2s ease);
+                //overflow: hidden;
+                border: 0;
+                text-align: left;
+                white-space: nowrap;
+                /*Mobile Reset*/
+                @include space(padding, all, 16px 0);
+                &:after {
+                    display: none;
+                }
+                &:after {
+                    display: none !important;
+                }
+                /*&:after {
+                    content: '';
+                    left: 0;
+                    bottom: -5px;
+                    width: 100%;
+                    height: 3px;
+                    background: $vivid-orange;
+                    @include transition(all .2s ease);
+
+                    top: inherit;
+                    right: inherit;
+                    font-size: inherit;
+                    margin-top: inherit;
+                    color: inherit;
+                    border-radius: inherit;
+                    text-align: inherit;
+                }*/
+
+                &:hover {
+                    font-weight: bold;
+
+                    &:after {
+                        display:none;
+                    }
+                }
+            }
+
+            &.selected {
+                >a {
+                    /*color: $vivid-orange;*/
+                    font-weight: bold;
+                    &:after {
+                        display:none;
+                    }
+                }
+                .sub-nav-wrapper {
+                    @include flex;
+                }
+            }
+
+            &.dark-link {
+                border-bottom: none;
+                background: none;
+
+                >a {
+                    @include space(padding, left, $reset);
+                    @include space(padding, right, $reset);
+                }
+            }
+        }
+    }
+
+    .sub-nav-header-menu {
+        top: 80px;
+        background: $white;
+        z-index: 10;
+        width: 100%;
+        max-height: 430px;
+        position: absolute; 
+        /*Mobile Reset*/
+        overflow: hidden;
+        height: inherit;
+        left: 0;
+        right: 0;
+        @include space(margin, left, auto);
+        @include space(margin, right, auto);
+        .leaf {
+            display: block;
+        }
+        .leaf-left-top {
+            left: 70px;
+            top: -20px;
+            -moz-border-radius: 0px 50px;
+            -webkit-border-radius:  0px 50px;
+            border-radius: 0px 50px;
+            width: 100px;
+            height: 100px;
+        }
+        .leaf-right-bottom {
+            right: 70px;
+            bottom: -40px;
+            -moz-border-radius: 0px 80px;
+            -webkit-border-radius:  0px 80px;
+            border-radius: 0px 80px;
+            background: linear-gradient(to bottom, rgba(251, 178, 219, 0.3), rgba(246, 123, 180, 0.3) 30%);
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .sub-nav-wrapper {
+        display: none;
+        width: 100%;
+        img {
+            display: inline-block;
+        }
+        >li.sub-menu.selected {
+            >a {
+                position: inherit;
+                top: inherit;
+                left: inherit;
+                max-width: inherit;
+                width: inherit;
+            }
+        }
+    }
+}
+
+.navbar-main {
+    .sub-nav-wrapper {
+        /*@include grid;
+        grid-template-rows: repeat(9, 40px);*/
+        max-width: $containerWidth;
+        width: 100%;
+        position: relative;
+        height: 100%;
+        @include space(margin, left, auto);
+        @include space(margin, right, auto);
+        @include space(padding, all, $xMedium $large 40px $large);
+        /*background: $e9-Gray;*/
+        justify-content: space-evenly;
+        display: none;
+        ul {
+            >li {
+                /*@include grid;
+                grid-template-columns: 225px 1fr;
+                grid-template-areas:
+                    "LI1 UL2";*/
+
+                >a {
+                    //grid-area: LI1;
+                }
+
+                &.selected {
+                    >a {
+                        background: $white;
+                        font-family: $medium;
+                    }
+                }
+                &.sub-nav-lnk {
+                   > a {
+                        border-radius: 5px;
+                        border: 1px solid $color-4 ;
+                        background: #fff;
+                        //box-shadow: 1px 2px 4px 0 rgba(246, 123, 180, 0.15); 
+                        @include space(padding, all, $reset);
+                        @include space(margin, bottom, $xlarge);
+                        font-size: $small-20;
+                        font-family: $baloo;
+                        color: $cool-blue;
+                        max-width: 240px;
+                        max-height: none;
+                        overflow: hidden;
+                        @include flex;
+                        align-items: center;
+                        line-height: $xlarge;
+                        span {
+                            @include space(padding, all, $reset $reset $reset $xlarge); 
+                        }
+                        img {
+                            height: auto;
+                            width: auto;
+                            @include space(margin, all, $reset -1px -1px $reset);
+                        }
+                        &:after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        /*&:before,
+        &:after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+
+        &:before {
+            left: -100%;
+            background: $e9-Gray;
+        }
+
+        &:after {
+            right: -100%;
+            background: $white;
+        }*/
+    }
+
+    .level-2-wrapper {
+        @include Position(absolute, top 0 right 0);
+        width: calc(100% - 225px);
+        height: 100%;
+        background: $white;
+        @include space(padding, left, $large);
+        @include space(padding, top, $xMedium);
+        border-left: 1px solid #e1e1e1;
+    }
+
+    .level-2 {
+        /*@include grid;
+        grid-area: UL2;
+        grid-template-columns: minmax(0, 434px) minmax(0, 520px);
+        grid-template-rows: minmax(0, auto);*/
+        >li {
+            /*@include grid;
+            grid-template-columns: 1fr 1fr;*/
+
+            >a {
+                @include transition(all .2s ease);
+                @include space(padding, all, 10px 20px);
+                font-size: $small-18 !important;
+                &:hover {
+                    color: $cool-blue;
+                }
+            }
+
+            &.cover {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .level-3 {
+        >ul>li {
+            >a {
+                display: block;
+                @include space(padding, all, 10px 10px);
+                @include transition(all .2s ease);
+                font-size: $small-15;
+
+                &:hover {
+                    color: $vivid-orange;
+                }
+            }
+        }
+    }
+
+    .cover {
+        img {
+            max-height: 330px;
+            height: 100%;
+        }
+
+        >a {
+            display: block;
+            position: relative;
+        }
+
+        .text {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            max-width: 285px;
+        }
+    }
+
+    .level-1>li.selected .level-2 {
+       /* @include grid;*/
+    }
+}
+
+body.main-menu-ready {
+    .sub-nav-header-menu {
+        display: block;
+    }
+    .vailMenu{
+        top: 80px; 
+    }
+}

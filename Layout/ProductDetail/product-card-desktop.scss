@@ -1,0 +1,225 @@
+.urunDetay{
+    .pnlSepetGrup,
+    .urunDetay_btnStokHaberci{
+        @include space(padding, top, $reset);
+        @include space(padding, left, $reset);
+        @include space(padding, right, $reset);
+    }
+}
+
+.ems-detail-name, .ems-detail-comment-stars, .UrunListeGrup_listeUrunDetayGrup {
+    padding: 0;
+}
+
+.UrunListeGrup_listeUrunDetayGrup {
+    .swiper-wrapper {flex-wrap:wrap;} 
+    .swiper-slide {width: auto !important; max-width: none;}
+
+}
+
+.ems-detail-name {
+    font-size: $small-22;
+}
+
+.urunDetay_KazancOran {
+    min-width: 50px;
+    @include space(padding, left, $xMedium);
+    @include space(padding, right, $xMedium);
+    @include space(margin, right, $large);
+}
+
+.urunDetay_satisFiyatIkFiyat {
+    font-size: $small-15;
+}
+
+.urunDetay_satisFiyat {
+    font-size: $small-20;
+}
+
+.urunDetay_urunAdet {
+    width: 20%;
+    margin-right: 2%;
+
+    input:not([type="checkbox"]):not([type="radio"]) {
+        height: 54px;
+        //background: $color-9;
+        font-size: $small-18;
+        //color: $white;
+        border-color: $color-4;
+        border-radius: 3px;
+        text-align: center;
+        font-family: $medium;
+        @include space(padding, right, $small-30);
+        @include space(padding, left, $small-20);
+    }
+}
+
+.urunDetay_btnSepeteAt, .urunDetay_btnStokHaberci {
+    a.btnsepeteAt,
+    a.btnStokHaberci{
+        display: block;
+        font-size: $small-15;
+        @include space(padding, top, $small-16);
+        @include space(padding, bottom, $small-16);
+        font-weight: normal;
+    }
+}
+.urunDetay_btnStokHaberci {
+    a.btnStokHaberci{
+        background: $color-26;
+        &:hover {
+            background: $color-36;
+        }
+    }
+}
+.urunDetay_btnSepeteAt{
+    a.btnsepeteAt{
+        border-radius: 3px;
+    }
+}
+
+.urunDetay_urunAdet .counter-btn {
+    right: 15px;
+}
+
+.urunDetay_urunAdet .counter-btn.top-btn {
+    top: 15px;
+}
+
+.urunDetay_urunAdet .counter-btn.bottom-btn {
+    bottom: 15px;
+}
+
+.urunDetay_urunAdet .counter-btn.top-btn:after,
+.urunDetay_urunAdet .counter-btn.bottom-btn:after {
+    /*color: $white;*/
+}
+
+.ems-prd-desc-title {
+    top: 80px;
+    margin-top: 0;
+    > span {
+        a {
+            font-size: 18px;
+        }
+    }
+}
+
+.grid-triple-bts {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, auto);
+    grid-template-areas:
+        "LFT";
+    align-items: center;
+    grid-gap: 10px;
+    @include space(margin, top, 20px);
+    @include space(padding, left, $reset);
+    @include space(padding, right, $reset);
+}
+.ems-prd-desc-wrapper{
+    @include space(padding, all, $reset);
+}
+.ems-detail-desc{
+    //display: block;
+    @include space(padding, all, 55px);
+    > span {
+        font-size: $small-36;
+        @include space(margin, bottom, 50px);
+    }
+    ul {
+        li {
+            font-size: $small-18;
+        }
+    }
+}
+.ems-prd-detail-label {
+    @include space(margin, top, 60px);
+    display: inline-block;
+    &:after{
+        display: none;
+    }
+}
+
+.ems-detail-favorites {
+    margin-top: 40px;
+    @include Position(static, null);
+    .btnFavoriEkle{
+        @include space(margin, bottom, $reset);
+        &:before{
+            @include transition(all .2s ease);
+        }
+        &:hover{
+            background: none;
+            color: $color-18;
+        }
+        span {
+            display: inline-block;
+        }
+    }
+    .btnFavoriEkleAbone{
+        &:hover{
+            color: $color-18;
+            &:before{
+                color: $color-18;
+            }
+        }
+    }
+}
+
+.ems-detail-new {
+    span {
+        @include space(margin, left, $reset);
+    }
+}
+
+.ems-prd-zoom {
+    .swiper-left-column {
+        display: block;
+    }
+    .mousetrap {
+        display: block;
+    }
+}
+
+.grid-triple-left {
+}
+.ems-detail-subscriber-lbl{
+    font-size: $small-15;
+    font-family: $medium;
+}
+.ems-detail-subscriber-price-normal{
+    font-size: $small-18;
+}
+.ems-detail-subscriber-price{
+    font-size: $small-20;
+}
+.abonelikSureItem a{
+    @include transition(all .2s ease);
+    &:hover{
+        border-color: $color-18;
+        color:$color-18;
+    }
+}
+.abonelikPeriyotItem span{
+    @include transition(all .2s ease);
+}
+
+.abonelikPeriyotItem{
+    @include transition(all .2s ease);
+    &:hover{
+        border-color: $color-18;
+        span{
+            color: $color-18;
+        }
+    }
+}
+
+
+.btnAbonelikSepeteAt{
+    @include space(padding, top, $small-16);
+    @include space(padding, bottom, $small-16);
+    font-size: $small-15;
+    &:hover{
+        background: $color-39 !important;
+    }
+}

@@ -1,0 +1,43 @@
+.kutuKategori{
+    height: 50px;
+}
+.kutuHeaderKategori{
+    display: none;
+}
+.kutuBodyKategori{
+    display: none;
+}
+
+/*Mobile Menu*/
+.category-widget {
+    padding: 0 10px;
+    .swiper-slide{
+        padding: 0 5px;
+        width: auto;
+        b{display: none;}
+        a{
+            font-size: $small-15;
+            color: $very-dark-g;
+            display: block;
+            @include space(padding, all, 13px 15px);
+            position: relative;
+            border: 1px solid $color-4;
+            border-radius: 5px;
+        }
+        &.opened {
+            a{
+                //color: $color-8;
+                /*&:after{
+                    content:'';
+                    width: 100%;
+                    height: 2px;
+                    background: $color-8;
+                    @include Position(absolute, bottom 0 left 0);
+                }*/
+            }
+        }
+        > ul{
+            display: none;
+        }
+    }
+}

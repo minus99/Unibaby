@@ -1,0 +1,195 @@
+.fm-24-32{
+    font-size: $small-32;
+}
+
+.scroll-layer {
+    padding-top: 0px;
+}
+
+.grid-banner-box {
+    @include grid;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    grid-template-areas:
+        "ONE TWO"
+        "ONE TRE";
+
+    .mt-10 {
+        margin-top: 0;
+    }
+
+    .mb-mt-20 {
+        @include space(margin, top, $reset);
+    }
+
+    >div {
+        .grid-banner-box-text {
+            width: 49%;
+            bottom: 40px;
+            left: 40px;
+        }
+
+        &:nth-child(1) {
+            grid-area: ONE;
+        }
+
+        &:nth-child(2) {
+            grid-area: TWO;
+        }
+
+        &:nth-child(3) {
+            grid-area: TRE;
+        }
+    }
+
+    >div {
+        .grid-banner-box-text {
+            width: 45%;
+        }
+
+        .grid-banner-box-text-alternate {
+            top: 30px;
+            left: 30px;
+            bottom: inherit;
+            width: 45%;
+        }
+    }
+
+    &-triple {
+        >div {
+
+            &:nth-child(2),
+            &:nth-child(3) {
+                .grid-banner-box-text {
+                    bottom: 30px;
+                    left: 30px;
+                    height: calc(100% - 60px);
+                    display: grid;
+                    align-content: space-between;
+                }
+            }
+        }
+    }
+
+    /*Tekli Banner*/
+    &-single {
+        grid-column-gap: 0;
+        grid-row-gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "ONE";
+
+        >div {
+            &:nth-child(1) {
+                .grid-banner-box-text {
+                    left: inherit;
+                    right: 60px;
+                    width: 100%;
+                    max-width: 300px;
+                    bottom: inherit;
+                    top: 50%;
+                    @include setTransform(translateY(-50%));
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    /*İkili Banner*/
+    &-double {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-template-areas:
+            "ONE TWO";
+    }
+
+    /*Uçlu*/
+    &-column3 {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 15px;
+        grid-template-areas: "ONE TWO TRE";
+
+        >div .grid-banner-box-text {
+            width: 71%;
+        }
+    }
+
+    &-double-thn {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 15px;
+
+        .btnBannerDefault {
+            @include space(margin, top, 30px);
+        }
+    }
+
+    .hp-img {
+        img {
+            height: 100%;
+        }
+    }
+}
+.btnBannerDefault {
+    @include space(margin, top, 30px);
+}
+
+
+/* Sticky Main Manü */
+
+.grid-colmn-a {
+    &.position-sticky {
+        @include Position(Sticky, top 80px);
+        z-index: 2;
+        margin-top: 0;
+    }
+}
+
+/* Sticky Main Manü */
+
+.main-tab-sticky {
+    ul {
+        li {
+            @include space(padding, all, $xMedium $small);
+            width: 100%;
+            cursor: pointer;
+            a {
+                span {
+                    @include space(margin, left, $xMedium);
+                    line-height: 35px;
+                    color: $dark-slate-blue;
+                }
+            }
+            i {
+                display: block;
+                float: left;
+                background: $dark-slate-blue;
+            }
+            &.selected {
+                &:after {
+                    height: 6px;
+                }
+                a {
+                    span {
+                        color:  $dark-slate-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Anasayfa Liste Görsel */
+
+.main-list-temp {
+    display: none;
+    &.selected {
+        display: block;
+    }
+}
+
+.main-list-container {
+    .swiper-slide {
+        padding: 0 10px;
+        width: 25%;
+    }
+}

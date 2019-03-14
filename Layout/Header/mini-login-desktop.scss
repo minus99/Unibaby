@@ -1,0 +1,120 @@
+.mod-mini-login {
+    position: relative;
+    &-header {
+        @include space(padding, all, $large);
+        cursor: $cursor-pointer;
+        font-family: $medium;
+        font-size: $small-15;
+        color: $dark-slate-blue;
+        vertical-align: middle;
+        @include transition(all .2s ease);
+        position: relative;
+        z-index: 11;
+        @include flex;
+        align-items: center;
+        .mod-mini-login-free {
+            .member-login-wrp {
+                @include flex;
+                margin-right: 5px;
+                white-space: nowrap;
+                a {
+                    color: $dark-slate-blue;
+                    margin: 0 5px;
+                }
+            }
+        }
+        .mod-mini-login-member{display: none;}
+        .mod-mini-login-info{
+            position: relative;
+            z-index: 11;
+            display: inline-block;
+            vertical-align: middle;
+            @include transition(all .2s ease);
+            &:after {
+                @include transition(all .2s ease);
+                font-family: 'icomoon';
+                content: '\e91a';
+                width: 30px;
+                height: 30px;
+                color: $white;
+                text-align: center;
+                line-height: 30px;
+                font-size: 20px;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: $small-10;
+            }
+        }
+        img {
+            width: 40px;
+            float: right; 
+        }
+    }
+
+    &-body {
+        @include Position(absolute, top 80px left inherit right 0);
+        width: 230px;
+        max-width: 230px;
+        transform: none;
+        @include transition(max-height .2s ease);
+        max-height: 0;
+        height: inherit;
+        overflow: hidden;
+        border-radius: 0 0 5px 5px;
+    }
+    .mod-mini-login-name{
+        width: 65%;
+    }
+    .ems-user-pages{
+        position: relative;
+        .info {
+            border-bottom: 1px solid $bright-blue;
+        }
+        .ems-col {
+            a {
+                @include space(padding, all, 8px 0px);
+                @include transition(all .2s ease);
+                border-bottom: none;
+                &:hover{
+                    //color: $vivid-orange;
+                }
+            }
+            .btnKutuLogout {
+                //@include Position(absolute, top 19px right 15px);
+                //@include space(padding, all, $xs);
+                //color: $color-5;
+            }
+        }
+    }
+}
+
+.vailLogin {
+    top: 80px;
+}
+
+/*Opened*/
+.mod-mini-login.opened {
+    .mod-mini-login-header {
+        background: $white;
+        .mod-mini-login-info{
+            color: $vivid-orange;
+            &:after {
+                color: $vivid-orange;
+            }   
+        }
+    }
+
+    .mod-mini-login-body {
+        max-height: 515px;
+        overflow: visible;
+    }
+}
+
+body{
+    &.mobi-login-ready{
+        @include mobi-body-reset;
+        .mod-mini-login-body{
+            transform: none;
+        }
+    }
+}

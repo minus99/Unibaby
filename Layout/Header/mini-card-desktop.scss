@@ -1,0 +1,26 @@
+.mod-mini-cart{
+    display: block;
+    @include space(padding, top, $large);
+    @include space(padding, bottom, $large);
+    .ems-cart-info{
+        display: inline-block;
+        line-height: 40px;
+        span[id$="lbfKUTU_SEPET"] {
+            color: $dark-slate-blue;
+            float: left;
+        }
+        .sepetAdet {
+            float: right;
+            img {
+                max-width: 40px;
+            }
+        }
+    }
+}
+body.anaBody.mini-cart-ready{
+    .vailCart{
+        opacity: 1;
+        visibility: visible;
+        z-index: 21;
+    }
+}

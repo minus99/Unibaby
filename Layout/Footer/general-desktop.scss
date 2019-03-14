@@ -1,0 +1,83 @@
+.site-footer{
+    display: block;
+    &-wrap{
+        //@include space(padding, bottom, 80px);
+    }
+    &-logo{
+        @include space(padding, left, $reset);
+    }
+    &-inner{
+        @include grid;
+        grid-template-columns: 1fr minmax(0, 980px) minmax(0, 240px) 1fr;
+        grid-template-rows: minmax(0, auto);
+        grid-template-areas:
+        ". A A ."
+        ". B E ."
+        ". D D ."
+        ". F F ."
+        ". N N .";
+        position: relative;
+    }
+    .grid-row-c,
+    .grid-row-e{
+        @include column-reset;
+        text-align: inherit;
+    }
+    .grid-row-a{
+        grid-area: A;
+        margin-bottom: inherit;
+    }
+    .grid-row-b{
+        grid-area: B;
+    }
+    .grid-row-c{
+        grid-area: C;
+    }
+    .grid-row-d{
+        grid-area: D;
+        &:before {
+            content: '';
+            height: 1px;
+            background: $color-4;
+            @include Position(absolute, bottom 70px left 0px);
+            width: 100%;
+            left: 0;
+        }
+    }
+    .grid-row-e{
+        grid-area: E;
+    }
+    .grid-row-f{
+        grid-area: F;
+    }
+    .grid-row-none{
+        grid-area: N;
+    }
+    &-support{
+        font-family: $bold;
+        font-size: $small-18;
+        @include space(margin, top, 100px); 
+        text-align: center;
+    }
+    &-copyright{
+        text-align: right;
+        font-size: $small-16;
+        @include space(padding, all, 27px $large 26px $large); 
+        @include flex; 
+        justify-content: space-between;
+        font-size: $small-14;
+        font-family: $regular;
+        &-menu {
+            ul {
+                @include flex; 
+                li {
+                    padding: 0 15px;
+                    border-right: 1px solid $color-4;
+                    &:last-child {
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.grid-info-box {
+    .grid-info-box-boxes {
+        li {
+            text-align: center;
+            @include space(padding, all, 5px 5px);
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            min-height: 180px;
+            max-height: 180px;
+            >* {
+                display: block;
+            }
+
+            i {
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
+                text-align: center;
+                display: inline-block;
+                @include space(margin, top, $xs);
+            }
+
+            i,
+            i:before {
+                font-size: 40px;
+            }
+
+            i:before {
+                color: $vivid-orange;
+            }
+
+            .fm-r,
+            .fm-m {
+                @extend .m-t-10;
+            }
+
+            .fm-r {
+                color: #5a5a5a;
+                overflow: hidden;
+                max-height: 45px;
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+.kutuKategori{
+    @include Position(relative, null);
+    height: 100%;
+    @include space(padding, top, $xxlarge);
+}
+.kutuBodyKategori{
+    display: block;
+    position: -webkit-sticky;
+    top: 120px;
+    position: sticky;
+}
+.menuKategori{
+    padding-left: 50px;
+    > .menuKategori { 
+        padding: 0;
+    }
+    li{
+        b{
+            position: absolute;
+            left: -40px;
+            display: none;
+            &:before {
+                content: '\e915';
+                font-family: 'icomoon';
+                font-size: 40px;
+                color:$cool-blue;
+                font-weight: normal;
+                
+            }
+        }
+        @include Position(relative, null);
+        a{
+            display: block;
+        }
+        &.sub-items {
+            > b {
+                display: inline-block;
+            }
+            &.opened{
+                > b{
+                    &:before{
+                        content:'\e911';
+                    }
+                }
+            }
+        }
+    }
+    > li{
+        > a{
+            font-family: $medium;
+            font-size: $small-16;
+            @include space(padding, all, 11px 12px);
+        }
+        > ul{
+            /*@include space(padding, top, $small);
+            @include space(padding, bottom, $small);*/
+            > li{
+                &.sub-items{
+                    > b{
+                        display: inline-block;
+                        text-align: center;
+                        z-index: 1;
+                        cursor: pointer;
+                        &:before{
+                            content: '\e915';
+                            font-family: 'icomoon';
+                            font-size: 40px;
+                            color:$cool-blue;
+                            font-weight: normal;
+                        }
+                    }
+                }
+                &.sub-items.opened{
+                    > b{
+                        &:before{
+                            content:'\e911';
+                        }
+                    }
+                }
+                > a{
+                    font-family: $medium;
+                    font-size: $small-16;
+                    @include space(padding, all, 9px 9px 9px 12px);
+                    @include transition(all .2s ease);
+                    &:hover, &.active{
+                        color: $vivid-orange;
+                    }
+                }
+                > ul {
+                    display: none;
+                    @include space(padding, all, 10px 0px);
+                    > li{
+                        a{
+                            @include space(padding, all, 7px 10px);
+                            font-size: $small-14;
+                            color: #4a4a4a;
+                            @include transition(all .2s ease);
+                            &:hover, &.active{
+                                color: $vivid-orange;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

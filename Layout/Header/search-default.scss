@@ -1,0 +1,371 @@
+/* Static: Mini Search
+=================================== */
+.mod-mini-search{
+    .leaf {display: none;}
+    &-header{
+        @include space(padding, all, $xSmall);
+        background: $white;
+        @include box-shadow(0, 2px, 2px, rgba(155, 155, 155, 0.3));
+        display: none;
+        > span{
+            @extend .b-el;
+            border-radius: $alternate-border-radius;
+            background: $white;
+            @include space(padding, all, $xMedium);
+            position: relative;
+            height: 46px;
+            line-height: $small-15;
+            font-size: $small-15;
+            color: $dark-gray;
+            border:2px solid rgba(155, 155, 155, 0.30);
+            cursor: pointer;
+        }
+        .btnSearch{
+            @extend .b-el;
+            @include Position(absolute, top 5px right 10px);
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            i:before{color: $very-dark-gray;}
+        }
+    }
+    &-body{
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        //background: $white;
+        z-index: 20;
+        .ems-search-header{
+            background: $very-light-gray;
+        }
+        .ems-form{
+            position: relative;
+        }
+    }
+    .ems-search-prev{
+        @include Position(absolute, top 15px left 15px);
+        z-index: 1;
+        i:before{color:$dark-gray; font-size:$small-13;}
+    }
+    .ems-form-inner{
+        position: relative;
+        @include space(padding, left, 60px);
+    }
+    .ems-field{
+        @include space(padding, all, $xSmall $xSmall $xSmall $reset);
+        input{
+            font-size: $small-15;
+            color: $dark-gray;
+            border-color: rgba(155, 155, 155,0.30);
+        }
+    }
+    .ems-field.submit{
+        @include Position(absolute, top 9px right 15px);
+        @include marginTop0;
+        @include space(padding, all, $reset);
+    }
+    .btnArama{
+        @extend .btn-secondary;
+        border: none;
+        i, i:before{
+            font-size: $small-18;
+        }
+        i{
+            @include marginLeft0;
+            &:before{
+                color: $very-dark-gray;
+            }
+        }
+    }
+    .clear-search{
+        width: 40px;
+        height: 40px;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        background: #fff;
+        margin-top: 0;
+        .xs-icons{
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            &:before{
+                font-size: 40px;
+                color: $vivid-yellow;
+            }
+        }
+    }
+    .ems-search-body{
+        //background: $white;
+        width: $width100;
+        @include Position(absolute, top 58px left 0);
+        @include space(padding, all, $large $small);
+        display: none;
+
+        > div{
+            &:empty{display: none;}
+        }
+    }
+    .ems-search-title{
+        @include space(padding, bottom, $xs);
+        //@include space(margin, left, $small);
+    }
+    .last-search ul{
+        @include space(margin, bottom, $xxlarge);
+        &:empty{display: none;}
+    }
+    .populer-words-list, .last-search ul{
+        @include table-row;
+        li{
+            display: inline-block;
+            vertical-align: middle;
+            @include space(margin, right, $small);
+            a{
+                border-radius: 15px;
+                font-size: $small-12;
+                border: 1px solid $color-6;
+                @include space(padding, all, 7px 20px);
+                @include space(margin, top, $small);
+            }
+        }
+    }
+}
+
+.ems-page-home{
+    /*.mod-mini-search-header{ display: block; }
+    .navbar-item-mbsearch{ display: none; }*/
+    .site-header {
+        border: 0;
+    }
+}
+
+/* Search Suggest
+=================================== */
+.searchSuggestDiv{
+    position: fixed !important;
+    width: 100% !important;
+    top: 58px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 58px);
+    background: $white;
+    overflow-y: auto;
+}
+.searchSuggestDivHolder{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: relative;
+    h3{
+        font-weight: normal;
+        font-family: $medium;
+        font-size: $small-16;
+        color: $black;
+        @include space(padding, all, $small-20 $small-30);
+        background: $very-light-gray;
+    }
+    .brand{
+        display: block;
+        &:empty{display: none;}
+        .spnBrand > a{
+            display: block;
+            font-size: $small-15;
+            color: $very-dark-gray-two;
+            @include space(padding, all, $xMedium $xxlarge);
+            border-top: 1px solid #eaeaea;
+        }
+    }
+    .prd{
+        padding-top: 50px;
+        h3{
+            display: none;
+        }
+    }
+    .sHolder{
+        .suggest_link{
+            > a{
+                display: block;
+                font-size: $small-15;
+                color: $very-dark-gray-two;
+                @include space(padding, all, $xMedium $xxlarge);
+                border-top: 1px solid #eaeaea;
+            }
+            &:first-child{
+                border-top: none;
+            }
+        }
+        table{
+            width: 100%;
+            tr{
+                border-bottom: 1px solid $pinkish-grey;
+                @include space(padding, top, $xMedium);
+                @include space(padding, right, $large);
+                @include space(padding, left, 90px);
+                @include space(padding, bottom, $xMedium);
+                position: relative;
+                display: block;
+                min-height: 100px;
+                th{
+                    position: absolute;
+                    top: 50%;
+                    margin-top: -35px;
+                    left: 10px;
+                }
+                td{
+                    .suggest_urnprice{
+                        font-family: $bold;
+                        font-size: $small-16;
+                    }
+                    .suggest_urnnormalprice{
+                        font-size: $small-12;
+                        text-decoration: line-through;
+                    }
+                    .suggest_urnprice,
+                    .suggest_urnnormalprice{
+                        display: inline-block;
+                        
+                        &:before{
+                            content:'₺';
+                        }
+                        &:empty{display: none;}
+                    }
+                    .suggest_urnsubscriptionprice {
+                        display: inline-block;
+                        @include space(padding, all, $small-5);
+                        border-radius: 3px;
+                        border: 1px solid $color-18;
+                        @include Position(absolute, bottom 15px right 20px);
+                        &:empty{display: none;}
+                        > span{
+                            display: block;
+                            color: $color-18;
+                            &:first-child{
+                                font-size: $small-12;
+                            }
+                            &:last-child{
+                                font-family: $bold;
+                                font-size: 16px;
+                                &:before{
+                                    content:'₺';
+                                }
+                            }
+                        }
+                    }
+                    span.suggest_urndiscountrate.emos_invisible{
+                        display: block;
+                        span{
+                            display: block;
+                            background: $color-8;
+                            border-radius: 3px;
+                            color: $white;
+                            text-align: left;
+                            width: 24px;
+                            padding: 3px;
+                            font-family: $bold;
+                            font-size: $small-14;
+                            margin-right: $small-10;
+                            &:before{
+                                content:'%';
+                                display: block;
+                            }
+                            &:empty{
+                                display: none;
+                            }    
+                        }
+                        &:empty{
+                            display: none;
+                        }
+                    }
+                    &:empty{display: none;}
+                }
+                td:nth-child(2){
+                    display: block;
+                    span{
+                        font-size: $small-12; 
+                        font-family: $medium;
+                        display: block;
+                        @include space(margin, bottom, $small);
+                        min-height: 37px;
+                        max-height: 37px;
+                        overflow: hidden;
+                    }
+                    span b{font-weight: normal;}
+                }
+                td:nth-child(3),
+                td:nth-child(5),
+                td:nth-child(9){/*display: none;*/}
+
+                td:nth-child(4),
+                td:nth-child(6){
+                    display: block;
+                    width: 60%;
+                }
+            }
+        }
+    }
+    .prdCount{
+        position: absolute;
+        top: $small-20;
+        left: $small-20;
+        z-index: 1;
+        display: inline-block;
+        h3{
+            font-family: $regular;
+            font-size: $small-15;
+            margin-bottom: $reset;
+            padding: $reset;
+            background: none;
+            font-size: black;
+        }
+        h3, .sHolder{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .sHolder{
+            margin-left: $small-5;
+            &:before{
+                content:'(';
+            }
+            &:after{
+                content:')';
+            }
+        }
+    }
+    .btnArama{
+        display: block;
+        max-width: 230px;
+        text-align: left;
+        border-radius: 3px;
+        font-size: $small-13;
+        color: $color-5;
+    }
+    .suggest_link,
+    .suggest_link_over{
+        img{max-width: 70px;}
+    }
+    .wordSearch{display: none;}
+}
+
+body{
+    &.search-keyup{
+        .mod-mini-search .clear-search{
+            z-index: 2;
+        }
+    }
+    &.search-result{
+        .mod-mini-search{
+            .ems-search-body{
+                display: none;
+            }
+        }
+    }
+    &.search-ready{
+        @include mobi-body-render;
+        .mod-mini-search-body,
+        .ems-search-body{display: block;}
+    }
+}

@@ -1,0 +1,229 @@
+.ems-tab-detail-product{
+    position: fixed;
+    z-index: 9;
+    height: 67px;
+    bottom: 0;
+    &.ems-tab {
+        .content-js {
+            > li {
+                display: none;
+                &.selected {
+                   display: block;
+                }
+            }
+        }
+    }
+}
+
+
+
+.product-tab-head {
+    @include table-cell;
+    table-layout: fixed;
+
+    li{
+        min-width: 50%;
+        background: $white;
+        position: relative;
+        cursor: pointer;
+        a{
+            &:empty{display: none;}
+        }
+        &.selected{
+            //border-top: 5px solid $color-8;
+            /*border-left: 1px solid $color-4;
+            border-right: 1px solid $color-4;*/
+            //background: $color-17;
+            /*&:after{
+                content:'\e909';
+                color: $color-19;
+            }*/
+            /*&:before{
+                content:'';
+                width: 100%;
+                height: 1px;
+                background: none;
+                @include Position(absolute, bottom -1px left 0);
+                z-index: 2;
+                background: #F5F5F5;
+                border-left: 1px solid $color-4;
+            }*/
+        }
+    }
+    li {
+        &.tab-1 {
+            background: $color-8;
+            color: $white;
+        }
+        &.tab-2 {
+            background: $color-18;
+            color: $white;
+            .tab-btn {
+                @include flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                .ems-detail-subscriber-lbl {
+                    width: 100%;
+                }
+                .ems-detail-monthlysub {
+                    flex: 50%;
+                    opacity: 0.7;
+                    &:empty {
+                        display: none;
+                    }
+                }
+                .ems-detail-subscriber-price {
+                    flex: 50%;
+                }
+            }
+        }
+    }
+    li.tab-1.selected{
+        border-top-color: $color-18;
+        background: $light-green;
+        .ems-detail-subscriber-lbl {
+            color: $vivid-orange;
+        }
+        .ems-detail-price-right {
+            color: $dark-slate-blue;
+        }
+        &:before {
+            content: '';
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $vivid-orange;
+        }
+    }
+    li.tab-2.selected{
+        border-top-color: $color-18;
+        background: $light-pink;
+        .ems-detail-subscriber-lbl {
+            color: $color-18;
+        }
+        .ems-detail-subscriber-price, .ems-detail-monthlysub {
+            color: $dark-slate-blue;
+        }
+        &:before {
+            content: '';
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $color-18;;
+        }
+    }
+    .tab-btn{
+        @include space(padding, all, $xMedium $large $small $large);
+        min-height: 50px;
+    }
+}
+
+.ems-tab-detail-product.ems-no-subscriptions{
+    .product-tab-head li:after{/*display: none;*/}
+}
+.product-tab-wrap{
+    //border-radius:3px;
+    //border: 1px solid $color-4;
+    //@include space(padding, all, $small $small $large $small); 
+    > li {
+        &.selected {
+            @include space(padding, all, $large); 
+        }
+        &.tab-1{
+            background: $light-green;
+            //@include space(padding, all, $large);
+        }
+        &.tab-2{
+            background: $light-pink;
+            //@include space(padding, all, $large);
+        }
+    }
+    
+}
+
+.icon-info-detail{
+    vertical-align: middle;
+    @include space(margin, right, $xMedium);
+    &:before{
+        font-size: 20px;
+        color: #1f1f1f;
+    }
+}
+
+/* Fixed Area */
+
+.ems-prd-fixed-area {
+    @include Position(relative, null);
+    max-height: 100%;
+    overflow-y: auto;
+    &-closed {
+        display: none;
+        @include Position(absolute, right 10px top 10px);
+        font-size: 35px;
+        color: $bright-blue;
+        cursor: pointer;
+    }
+    &-top {
+        @include space(padding, bottom, $xlarge); 
+    }
+    &::-webkit-scrollbar-track
+    {
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 3px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: #000000;
+        border: 2px solid #555555;
+    }
+}
+
+body.ems-product-tab-ready {
+    overflow: hidden;
+    .ems-prd-fixed-area {
+        @include Position(fixed, left 0px top 0px);
+        background: $white;
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        &-closed {
+            display: inline-block;
+        }
+        &-top {
+            padding-top: 50px;
+            background: #fff;
+        }
+    }
+    .ems-tab-detail-product {
+        @include Position(static, null);
+        height: auto;
+    }
+
+    .product-tab-head li.tab-1.selected:after {
+        content: '';
+        @include Position(fixed, left 0px top 0px);
+        width: 100%;
+        height: 100%;
+        background: $light-green;
+        z-index: -1;
+    }
+    .product-tab-head li.tab-2.selected:after {
+        content: '';
+        @include Position(fixed, left 0px top 0px);
+        width: 100%;
+        height: 100%;
+        background: $light-pink;
+        z-index: -1;
+    }
+}
