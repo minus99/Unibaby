@@ -330,7 +330,7 @@
 
 /* Anasayfa Liste Görsel */
 
-.main-list-container {
+.main-list-container { 
     @include Position(relative, null);  
     @include space(margin, bottom, 0px)
     .swiper-container {
