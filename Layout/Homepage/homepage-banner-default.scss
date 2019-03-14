@@ -331,7 +331,7 @@
 /* Anasayfa Liste Görsel */
 
 .main-list-container {
-    @include Position(relative, null); 
+    @include Position(relative, null);  
     @include space(margin, bottom, 0px)
     .swiper-container {
         @include fluid-type(margin-top, 0px, 2000px, 0px, 100px);
