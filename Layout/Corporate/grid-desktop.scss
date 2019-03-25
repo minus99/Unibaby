@@ -1,5 +1,5 @@
 .site-pages-corporate{
-    grid-template-columns: 1fr minmax(0, 220px) 60px minmax(0, 920px) 1fr;
+    grid-template-columns: 1fr minmax(0, 220px) 20px minmax(0, 1000px) 1fr;
     grid-template-areas:
     ". LFT . RGH .";
     @include space(padding, top, 50px);
@@ -18,20 +18,27 @@
 }
 
 .ems-content-wrapper{
-    max-width: 810px;
+    //max-width: 810px;
     @include space(margin, left, 0);
     @include space(margin, right, auto);
     .title{
         @include space(padding, top, 12px);
         @include space(padding, bottom, 12px);
+        display: block;
+        margin-bottom: $small-30;
+        border-bottom: 1px solid $e9-Gray;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: $bold;
     }
     .hp-img{
         @include space(margin, top, $small);
         @include space(margin, bottom, $xlarge);
     }
     .content-text{
-        font-size: $small-15;
-        line-height: 18px;
+        font-size: $small-18;
+        line-height: 20px;
+        color: $very-dark-g;
         @include space(padding, right, 50px);
     }
 }

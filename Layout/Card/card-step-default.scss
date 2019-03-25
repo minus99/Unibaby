@@ -1,77 +1,315 @@
-.tabloTabBtnAdimSiparis{
+div[id$='pnlSiparisBaslik'] {
     width: 100%;
-    a{
-        font-family: $regular;
-        font-size: $small-18;
+    border-top: 1px solid $color-4;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0;
+}
+.tabloTabBtnAdimSiparis {
+    width: 100%;
+    max-width: 450px;
+    display: inline-block;
+
+    tbody, tr {
+
+        width: 100%;
         display: block;
-        background: $color-17;
-        padding: $small-17 $small-10;
-        border-bottom: 5px solid $color-6;
-        position: relative;
+
     }
-    tbody tr td{
-        display: block;
-        position: relative;
+    tbody tr td {
+        display: flex;
+        width: 100%;
     }
-    tbody tr td > span{
-        &.tabBtnAdimDefault {
-            display: none;   
+
+    tbody tr td>span {
+        display: table-cell;
+        vertical-align: middle;
+        width: 33.333%;
+
+        .btn-absolute {
+            display: none;
         }
-        &.tabBtnSelectedDefault {
-            display: block;
-            a{
-                &:after{
-                    content:'';
-                    height: 5px;
-                    background: $color-8;
-                    position: absolute;
-                    bottom: -5px;
-                    left: 0;
-                    z-index: 1;
+        .icon-mb-hide {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            @include Position(relative,null);
+            z-index: 1;
+            &:before {
+                font-size: 44px;
+                line-height: 52px;
+                color: $white;
+                position: absolute;
+                right: 0;
+                left: 0;
+            }
+            &:after {
+                content: '\e923';
+                font-family: 'icomoon';
+                font-size: 35px;
+                color: $vivid-pink;
+
+            }
+        }
+        &.tabBtnAdimDefault {
+            display: table-cell;
+            >a>span i,
+            >a>span span {
+                &:after {
+                    color: $vivid-pink;
                 }
             }
         }
-        &.tabBtnAdimDefault.prevBack{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 60px;
-            height: 55px;
-            text-align: center;
-            display: block;
-            z-index: 2;
-            a{
-                border-bottom:none;
-                padding:5px;  
-                height: 100%;
-                line-height: 47px;
+        &.tabBtnAdimDefault.prevAll{
+            i{
                 &:before{
-                    font-family:'icomoon';
-                    content:'\e903';
-                    font-size: 16px;
-                    color: $color-1;
+
+                }
+            }
+            >a>span i,
+            >a>span span {
+                opacity: 1;
+            }
+        }
+
+        &.tabBtnSelectedDefault {
+            display: table-cell;
+            opacity: 1;
+
+            a>span {
+                position: relative;
+                &::before {
+                    border-color: $vivid-pink;
+                }
+            }
+
+        }
+
+        &.tabBtnAdimDefault.prevBack {
+            position: inherit;
+            top: inherit;
+            left: inherit;
+            width: 33.333%;
+            height: inherit;
+            text-align: inherit;
+            display: table-cell;
+            z-index: inherit;
+            display: none;
+
+            a {
+                border-bottom: inherit;
+                padding: inherit;
+                height: inherit;
+                line-height: inherit;
+
+                &:before {
+                    display: none;
                 }
             }
             .icon-mb-card,
-            .hide-prev{display: none;}
+            .hide-prev{display: block;}
         }
-        &.tabBtnSelectedSepet{
-            a:after{
-                width: 33.333%;
+        &.btnDisable {
+            .icon-mb-hide {
+                &:after {
+                    color: $color-4;
+                }
+            }
+            a {
+              >  span {
+                    &:before {
+                        border-color: $color-4;
+                    }
+                }
             }
         }
-        &.tabBtnSelectedTeslimat{
-            a:after{
-                width: 66.666%;
-            }
+    }
+
+    a {
+        font-family: $medium;
+        background: none;
+        padding: $reset;
+        border-bottom: none;
+        span {
+            vertical-align: middle;
+            display: block;
+            font-family: $medium;
+            font-size: $small-12;
         }
-        &.tabBtnSelectedOdeme{
-            a:after{
+
+        >span {
+            @include space(padding, all, 0px $xMedium);
+            position: relative;
+            background: $white;
+            padding: 0 40px;
+
+            &:before {
+                content: '';
                 width: 100%;
+                //min-width: 220px;
+                border-top: 4px solid $vivid-pink;
+                margin-top: -10px;
+                position: absolute;
+                top: 50%;
+                right: 50%;
             }
         }
-        .icon-mb-hide{
+
+        &:after {
+            display: none;
+        }
+    }
+
+    tbody tr td>span:nth-child(1) {
+        a>span:before {
             display: none;
         }
     }
 }
+
+/*.tabloTabBtnAdimSiparis {
+    max-width: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    tbody, tr {
+
+        width: 100%;
+        display: block;
+
+    }
+    tbody tr td {
+        display: flex;
+        width: 100%;
+    }
+
+    tbody tr td>span {
+        display: table-cell;
+        vertical-align: middle;
+        width: 33.333%;
+
+        .btn-absolute {
+            display: none;
+        }
+        .icon-mb-hide {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            @include Position(relative,null);
+            z-index: 1;
+            &:before {
+                font-size: 44px;
+                line-height: 52px;
+                color: $white;
+                position: absolute;
+                right: 0;
+                left: 0;
+            }
+            &:after {
+                content: '\e923';
+                font-family: 'icomoon';
+                font-size: 35px;
+                color: $vivid-pink;
+
+            }
+        }
+        &.tabBtnAdimDefault {
+            display: table-cell;
+            >a>span i,
+            >a>span span {
+                &:after {
+                    color: $color-4;
+                }
+            }
+        }
+        &.tabBtnAdimDefault.prevAll{
+            i{
+                &:before{
+
+                }
+            }
+            >a>span i,
+            >a>span span {
+                opacity: 1;
+            }
+        }
+
+        &.tabBtnSelectedDefault {
+            display: table-cell;
+            opacity: 1;
+
+            a>span {
+                position: relative;
+            }
+        }
+
+        &.tabBtnAdimDefault.prevBack {
+            position: inherit;
+            top: inherit;
+            left: inherit;
+            width: 33.333%;
+            height: inherit;
+            text-align: inherit;
+            display: table-cell;
+            z-index: inherit;
+
+            a {
+                border-bottom: inherit;
+                padding: inherit;
+                height: inherit;
+                line-height: inherit;
+
+                &:before {
+                    display: none;
+                }
+            }
+            .icon-mb-card,
+            .hide-prev{display: block;}
+        }
+    }
+
+    a {
+        font-family: $medium;
+        background: none;
+        padding: $reset;
+        border-bottom: none;
+        span {
+            vertical-align: middle;
+            display: block;
+        }
+
+        >span {
+            @include space(padding, all, 14px $xMedium);
+            position: relative;
+            background: $white;
+
+            &:before {
+                content: '';
+                width: 100%;
+                border-top: 4px solid $vivid-pink;
+                margin-top: -8px;
+                position: absolute;
+                top: 50%;
+                right: 50%;
+            }
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    tbody tr td>span:nth-child(2) {
+        a>span:before {
+            display: none;
+        }
+    }
+}
+*/

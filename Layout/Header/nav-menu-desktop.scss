@@ -68,7 +68,7 @@
                 }*/
 
                 &:hover {
-                    font-weight: bold;
+                    color: $cool-blue;
 
                     &:after {
                         display:none;
@@ -78,8 +78,7 @@
 
             &.selected {
                 >a {
-                    /*color: $vivid-orange;*/
-                    font-weight: bold;
+                    color: $cool-blue;
                     &:after {
                         display:none;
                     }

@@ -59,6 +59,11 @@
     .ems-search-body {
         top: 42px;
         @include space(padding, all, $xxlarge $reset);
+        background: none;
+    }
+    .search-populer-words {
+        @include space(padding, all, $reset);
+        border-top: 0;
     }
 }
 
@@ -90,7 +95,7 @@
 
     /*Webkit scrolling*/
     ::-webkit-scrollbar {
-        width: 4px;
+        width: 3px;
     }
     ::-webkit-scrollbar-track {
         background: $pale-sky-blue;
@@ -98,11 +103,11 @@
         border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb {
-        background: #4ebdff;
+        background: $bright-blue;
         border-radius: 10px;
     }
     ::-webkit-scrollbar-thumb:window-inactive {
-        background: #4ebdff;
+        background: $bright-blue;
     }
 
     h3 {
@@ -165,6 +170,7 @@
         grid-area: BRN;
         padding-top: 0;
         padding-left: 60px;
+        display: none;
         .spnBrand{
             a{
                 display: inline-block;

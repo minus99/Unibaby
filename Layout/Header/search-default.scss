@@ -40,16 +40,19 @@
         //background: $white;
         z-index: 20;
         .ems-search-header{
-            background: $very-light-gray;
+            background: $white;
         }
         .ems-form{
             position: relative;
         }
     }
     .ems-search-prev{
-        @include Position(absolute, top 15px left 15px);
+        @include Position(absolute, top 10px left 10px);
         z-index: 1;
-        i:before{color:$dark-gray; font-size:$small-13;}
+        i:before{
+            content: "\e901";
+            color: $bright-blue;
+        }
     }
     .ems-form-inner{
         position: relative;
@@ -100,7 +103,7 @@
         }
     }
     .ems-search-body{
-        //background: $white;
+        background: $white;
         width: $width100;
         @include Position(absolute, top 58px left 0);
         @include space(padding, all, $large $small);
@@ -132,6 +135,10 @@
                 @include space(margin, top, $small);
             }
         }
+    }
+    .search-populer-words {
+        @include space(padding, all, $large $reset);
+        border-top: 1px solid $color-4;
     }
 }
 
@@ -169,7 +176,7 @@
         background: $very-light-gray;
     }
     .brand{
-        display: block;
+        display: none;
         &:empty{display: none;}
         .spnBrand > a{
             display: block;
@@ -359,7 +366,7 @@ body{
     &.search-result{
         .mod-mini-search{
             .ems-search-body{
-                display: none;
+                display: none !important;
             }
         }
     }

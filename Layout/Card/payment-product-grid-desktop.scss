@@ -5,24 +5,36 @@
 
 .ems-cart-payment-trigger,
 .payment-cart-open-trigger{
-    padding: $reset $reset $small-25 $reset;
-    border-top:none;
+    //padding: $reset $reset $small-25 $reset;
+    font-size: $small-14;
+    padding: $small-17 $small-30 $small-17 $small-10;
+    border: 0;
+    span {
+        font-size: $small-14;
+        font-family: $bold;
+    }
     &:after{
         display: none;
     }
+}
+
+.ems-cart-payment-header {
+    display: block;
+    span > span {font-size: $small-14; font-family: $bold;}
 }
 
 .ems-cart-payment-wrapper{
     @include grid;
     grid-template-columns:1fr 8% 1fr;
     grid-template-rows: minmax(0, auto);
-    grid-template-areas: "SPT . ADR";
-    border-top:1px solid $color-30;
-    padding-top: $small-20;
+    grid-template-areas:
+    "HTT HTT HTT" 
+    "SPT . ADR";
     margin-top: $small-15;
 }
 
 .ems-grid-payment-wrapper{
+    > span {display: none;}
     .ems-grid-default-cart{
         display: block;
     }
@@ -31,18 +43,20 @@
 /*Product card*/
 .ems-grid-payment-wrapper {
     .ems-grid-default-cart {
+        border: 0;
         .ems-grid-row{
             grid-template-columns: 70px 1fr 1fr;
             grid-template-areas:
-            "IMG NAM NAM"
-            "IMG TTL SBR";
+            "IMG NAM NAM NAM"
+            "IMG PRC SBR TTL";
             padding-left: $reset;
             padding-right: $reset;
             border-bottom: none;
             align-items: flex-start;
+            grid-row-gap: 0px;
+            padding: 10px 0px 20px 0px;
         }
         .ems-grid-name a{
-            min-height: 36px;
             margin-bottom: $small-5;
         }
         .ems-grid-img{
@@ -50,12 +64,24 @@
         }
         .ems-grid-name{
             grid-area: NAM;
+            a {
+                font-size: $small-12;
+            }
         }
         .ems-grid-subscriptions{
             grid-area: SBR;
         }
+        .ems-grid-price { 
+            .brFiyat {
+                font-size: 12px;
+            }
+            .satBrFiyat {
+                font-size: 14px;
+            }
+        }
         .ems-grid-price-total {
             grid-area: TTL;
+            display: none;
         }
     }
 }

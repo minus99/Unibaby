@@ -1,29 +1,52 @@
 /*Sozlesme Forms*/
+
+.onBilgilendirmeForm,
+.siparisOnaySozlesme {
+    border-radius: 3px;
+    border: 2px solid $color-4;
+    padding: $small-14 $small-15;
+    margin-bottom: $small-20;
+    position: relative;
+    text-transform: uppercase;
+    &.opened {
+        
+        .tableTitleSiparisOnaySatisSozlesme{
+            span{
+                margin-bottom: $small-30;
+            }
+        }
+        .tableTitleSiparisOnBilgilendirmeForm{
+            span{
+                margin-bottom: $small-30; 
+            }
+        }
+        
+    }
+}
+
 .onBilgilendirmeFormMetin,
 .siparisOnaySozlesmeMetin {
     display: none;
-    border-radius: 3px;
-    border: 1px solid $color-4;
-    padding: $small-15;
     margin-left: $small-10;
     margin-right: $small-10;
     margin-bottom: $small-20;
+    line-height: 25px;
     
     /*Webkit scrolling*/
     ::-webkit-scrollbar {
-        width: 2px;
+        width: 3px;
     }
 
     ::-webkit-scrollbar-track {
-        background: $pinkish-grey;
+        background: $pale-sky-blue;
     }
 
     ::-webkit-scrollbar-thumb {
-        background: $very-dark-gray;
+        background: $bright-blue;
     }
 
     ::-webkit-scrollbar-thumb:window-inactive {
-        background: $very-dark-gray;
+        background: $bright-blue;
     }
 }
 
@@ -36,28 +59,28 @@
     .tableTitleSiparisOnaySatisSozlesme{
         span{
             display: block;
-            padding: $small-17 $small-30 $small-17 $small-10;
-            border-top:2px solid $color-30;
-            font-family: $bold;
-            font-size: $small-20;
+            font-family: $regular;
+            font-size: $small-13;
+            margin-bottom: 0;
         }
     }
     .tableTitleSiparisOnBilgilendirmeForm{
         span{
             display: block;
-            padding: $small-17 $small-30 $small-17 $small-10;
-            border-top:2px solid $color-30;
-            font-family: $bold;
-            font-size: $small-20;
+            font-family: $regular;
+            font-size: $small-13;
+            margin-bottom: 0; 
         }
     }
 
     .tableTitleSiparisOnaySatisSozlesme,
     .tableTitleSiparisOnBilgilendirmeForm{
-        position: relative;
+        border: 0;
+        padding: 0;
+        margin: 0;
         &:after{
             font-family: 'icomoon';
-            content:'\e90c';
+            content: '\e903';
             position: absolute;
             top: 50%;
             right: $small-10;
@@ -66,13 +89,12 @@
             text-align: center;
             margin-top: -10px;
             line-height: $small-20;
-            font-size: $small-10;
-            color: $color-10;
+            font-size: $small-13;
+            color: $cool-blue;
         }
     }
     .ems-cart-agreement-mobile{
         display: block;
-        border-top: 2px solid #bebebe;
         padding-top: $small-10;
         .pageSiparisOnay_lbfOnBilgilendirmeForm,
         .pageSiparisOnay_lbfSatisSozlesme{
@@ -145,7 +167,7 @@
 
     .tableTitleSiparisOnaySatisSozlesme:after,
     .tableTitleSiparisOnBilgilendirmeForm:after{
-        content:'\e91c';
+        content:'\e918';
     }
 }
 

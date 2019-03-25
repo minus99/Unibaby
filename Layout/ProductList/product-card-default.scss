@@ -177,7 +177,7 @@
 }
 
 .urunListe_yeniUrun {
-    display: inline-block !important;
+    display: none !important;
     @include Position(absolute, top 0 left 0);
     z-index: 1;
 
@@ -232,6 +232,7 @@
         color: $vivid-orange;
         border-width: 1px;
         font-family: $bold;
+        height: 44px;
     }
 
     span[id$="lblURN_ADET"] {

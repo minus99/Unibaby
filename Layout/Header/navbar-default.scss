@@ -1,15 +1,15 @@
 .site-header{
-    /*background: $vivid-orange;*/
-    width: 100%;    
-    position: -webkit-sticky;
+    width: 100%;  
+    //@include Position(fixed, top 0);  
     @include Position(sticky, top 0);
+    position: -webkit-sticky;
     z-index: 20;
     border-bottom: 1px solid $color-4;
     background: $white;
     .medium-small{
         font-family: $medium;
         font-size: $small-15;
-        color: $dark-slate-blue; 
+        color: $dark-slate-blue;  
         display: inline-block;
         vertical-align: middle;
         margin-right: 10px;

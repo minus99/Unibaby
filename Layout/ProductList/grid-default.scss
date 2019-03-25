@@ -3,6 +3,7 @@
 ===========================*/
 
 .site-pages-listsearch .pageArama,
+.site-pages-listsearch .pageDescArama,
 .site-pages-listsearch .tableArama,
 .site-pages-listsearch .tableTitleArama,
 .site-pages-listsearch .tblBtnAraIptal{
@@ -14,7 +15,41 @@
         height: 45px;
         background: $color-17;
     }
+    &-empty {
+        grid-template-areas: 
+        "CVR CVR CVR CVR CVR" 
+        "FLW FLW FLW FLW FLW" 
+        ". FFT FFT FFT ." 
+        ". CAT . . ." 
+        ". LST LST LST ." 
+        ". FIL . . ." 
+        ". FTR FTR FTR ." 
+        ". NON NON NON ." !important;
+        
+        .grid-colmn-filter, .ems-prd-list-footer, .ems-prd-list {
+            display: none; 
+        }
+        .pageArama {
+            display: block;
+        }
+    }
 }
+
+.ems-page-search-empty {
+    text-align: center;
+    img, > span, p {
+        display: block;
+        @include space(margin,bottom, 35px); 
+    }
+    a {
+        @include space(padding,all, 17px $xs); 
+        width: 100%;
+        max-width: 310px;
+        border-radius: 5px;
+    }
+}
+
+.site-pages-listsearch
 
 .urnList {
     @include space(padding, all, $large $reset);

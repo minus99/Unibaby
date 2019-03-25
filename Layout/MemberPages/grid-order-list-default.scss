@@ -20,8 +20,8 @@
             border-radius: 5px 0 0 5px;
             > div{
                 padding: 14px 10px;
-                border-top: 2px solid $color-6;
-                color: $color-22;
+                border-top: 1px solid $color-6;
+                font-family: $medium;
                 &:first-child{
                     border-top: none;
                 }
@@ -45,7 +45,7 @@
             border-radius: 0 5px 5px 0;
             > div{
                 padding: 14px 10px;
-                border-top: 2px solid $color-6;
+                border-top: 1px solid $color-6;
                 max-height: 47px;
                 overflow: hidden;
                 white-space: nowrap;
@@ -71,7 +71,7 @@
             .ems-grid-add-to-cart{
                 a{
                     display: block;
-                    color: $color-36;
+                    color: $cool-blue;
                     font-size: $small-14;
                     span{
                         text-decoration: underline;

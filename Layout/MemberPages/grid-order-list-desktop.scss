@@ -4,7 +4,7 @@
     }
     .ems-grid-default-order{
         .ems-grid-header{
-            background: none;
+            //background: none;
             width: 100%;
             margin-bottom: $reset;
             border-top: none;
@@ -51,11 +51,11 @@
             }
             .ems-grid-add-to-cart{
                 a{
-                    color: $color-36;
+                    color: $cool-blue;
                     font-size: $small-12;
                     @include transition(all .2s ease);
                     &:hover{
-                        color: $color-8;
+                        color: $bright-blue;
                     }
                 }
             }

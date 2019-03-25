@@ -3,7 +3,7 @@
         @include grid;
         grid-template-areas:
         "AA . CC BB";
-        grid-template-columns: minmax(0,190px) 1fr minmax(0,190px) minmax(0,190px);
+        grid-template-columns: minmax(0,190px) 1fr minmax(0,220px) minmax(0,220px);
         grid-gap: 15px;
         align-items: center;
         margin-top: $small-25;
@@ -63,30 +63,40 @@
                 margin-top: 0;
                 max-width: inherit;
                 .sStylerWrp_checkbox{
-                    margin-right: $small-10;
                     display: inline-flex;
+                    align-items: center;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    background: $white;
                     .cStyler{
+                        border: 1px solid $gray;
+                        border-radius: 3px;
                         width: 17px;
                         height: 17px;
-                        padding: $reset;
-                        min-height: inherit;
-                        max-height: inherit;
+                        position: relative;
+                        transition: all .2s ease;
+                        min-height: auto;
+                        max-height: none;
+                        padding: 0;
                         &:before{
-                            width: 10px;
-                            height: 10px;
+                            font-family:'icomoon';
+                            content: "";
+                            width: 15px;
+                            height: 16px;
                             position: absolute;
                             left: 50%;
                             top: 50%;
                             transform: translate(-50%, -50%);
-                            font-size: 10px;
-                            letter-spacing: inherit;
+                            transition: all .2s ease;
+                            font-size: 15px;
+                            line-height: 17px;
+                            color: $vivid-orange;
                         }
                         &.checked{
-                            border: none;
-                            background: $color-8;
+                            border-color: $color-4;
+                            background: none;
                             &:before{
-                                font-family: 'icomoon';
-                                color: $white;
+                                content:'\e906';
                             }
                         }
                     }
@@ -126,7 +136,7 @@
                 right: inherit;
                 a.btnDefault{
                     i:before{
-                        font-size: $small-10;
+                        font-size: $small-30;
                     }
                 }
             }

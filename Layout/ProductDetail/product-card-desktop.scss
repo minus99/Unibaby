@@ -1,3 +1,7 @@
+.ems-page-detail {
+    padding-bottom: 0px;
+}
+
 .urunDetay{
     .pnlSepetGrup,
     .urunDetay_btnStokHaberci{
@@ -13,7 +17,7 @@
 
 .UrunListeGrup_listeUrunDetayGrup {
     .swiper-wrapper {flex-wrap:wrap;} 
-    .swiper-slide {width: auto !important; max-width: none;}
+    .swiper-slide {width: 20% !important; max-width: none;}
 
 }
 
@@ -102,6 +106,9 @@
         a {
             font-size: 18px;
         }
+    }
+    ul li a {
+        font-size: $small-18;
     }
 }
 

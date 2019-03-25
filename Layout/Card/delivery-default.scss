@@ -4,10 +4,31 @@
 */
 .ems-page-default-order-delivery {
     .page-top-title {
-        width: 50%;
+        //width: 50%;
         text-align: left;
         display: inline-block;
         vertical-align: middle;
+        border: 0 !important; 
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        span {
+            font-size: $small-13;
+        }
+    }
+
+    .add-new-address {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        @include Position(absolute, top $xMedium right $large);
+        a {
+            color: $dark-slate-blue;
+            font-size: $small-13;
+            background: none;
+            padding: 0;
+            text-decoration: underline;
+            font-family: $regular;
+        }
     }
 
     .bottom-step {
@@ -29,8 +50,9 @@
 
 .ems-page-delivery-left {
     padding: $small-20;
+    position: relative;
 }
 
 .ems-page-delivery-right {
-    background: $color-17;
+    //background: $color-17;
 }

@@ -7,27 +7,31 @@
 .pageSiparisSonuc_lbfSiparisKaydedilmedi{
     > span{
         @include grid;
-        grid-template-columns:1fr minmax(0,480px) 100px minmax(0,480px) 1fr;
+        grid-template-columns:1fr;
         grid-template-rows: minmax(0,auto);
-        grid-template-areas:
-         ". CVR . TXT .";
+        grid-template-areas: 
+        "CVR"
+        "TXT";
     }
 }
 
 .ems-page-success-grid{
     @include grid;
-        grid-template-columns:1fr minmax(0,480px) 100px minmax(0,480px) 1fr;
+        grid-template-columns:1fr;
         grid-template-rows: minmax(0,auto);
         grid-template-areas:
-         ". CVR . TXT .";
+         "CVR"
+         "TXT";
 }
 
 .pageSiparisSonuc_lbfOdemeAlinamadi{
     > span{
         @include grid;
-        grid-template-columns:1fr minmax(0,480px) 100px minmax(0,480px) 1fr;
+        grid-template-columns:1fr;
         grid-template-rows: minmax(0,auto);
-        grid-template-areas: ". CVR . TXT .";
+        grid-template-areas: 
+        "CVR"
+        "TXT";
     }
 }
 
@@ -39,14 +43,14 @@
 .ems-page-success-text{
     grid-area:TXT;
     padding-top: 80px;
-    text-align: left;
+    text-align: center;
     margin-top: $reset;
 }
 
 .ems-page-success-back-buttons{
     max-width: 355px;
     text-align: left;
-    a.btnDefault {
+    a.btnDefault { 
         width: 50%;
         max-width: 170px;
         display: inline-block;

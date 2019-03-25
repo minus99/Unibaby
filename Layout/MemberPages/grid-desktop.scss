@@ -5,22 +5,26 @@
     }
     /* Pages Right Right Layout Space*/
     .ems-member-page-right{
-        padding-right: 120px;
+        //padding-right: 120px;
     }
     /*Pages Title*/
     .page-top-title {
         display: block;
-        padding-top: $small-12;
-        padding-bottom: $small-12;
-        margin-bottom: $small-10;
+        padding-top: $small-18;
+        padding-bottom: $small-18;
+        margin-bottom: $small-30;
+        border-bottom: 1px solid $e9-Gray;
+        text-transform: uppercase;
     }
     
     /*Pages Title Alternate*/
     .page-top-title-alternate {
         display: block;
-        padding-top: $small-12;
-        padding-bottom: $small-12;
-        margin-bottom: $small-10;
+        padding-top: $small-18;
+        padding-bottom: $small-18;
+        margin-bottom: $small-30;
+        border-bottom: 1px solid $e9-Gray;
+        text-transform: uppercase;
     }
 
     /*Member Pages Empty Message reset div*/
@@ -67,16 +71,15 @@
         border-radius: 3px; 
        .ems-grid-header{
            display: none;
-           @include space(padding, all, $small-8 $small-20);
+           @include space(padding, all, $small-20 $small-20);
            border-bottom:1px solid $color-6;
            > div{
-               font-family: $regular;
-               font-size: $small-12;
-               color: $color-36;
+               font-family: $medium;
+               font-size: $small-14;
            }
        }
        .ems-grid-header:first-child{
-           @include grid;
+           //@include grid;
        }
        .ems-grid-row{
            @include grid;
@@ -84,6 +87,17 @@
            @include space(padding, all, $small-10 $small-20);
            border-bottom:1px solid $color-6;
            min-height: 50px;
+           .ems-grid-price{
+                .first{
+                    font-family: $regular;
+                    font-size: $small-18;
+                    text-decoration: line-through;
+                }
+                .last{
+                    font-family: $bold;
+                    font-size: $small-18;
+                }
+           }
        }
        .ems-grid-row:last-child{
            border-bottom:none;

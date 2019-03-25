@@ -64,6 +64,26 @@
             border-radius: 5px;
             border: 1px solid $color-4;
             overflow: hidden;
+            height: auto;
+            text-align: center;
+            a {
+                height: 100%;
+            }
+            &.ems-video {
+                &:before {
+                    content: '\e920';
+                    font-family: 'icomoon';
+                    font-size: 60px;
+                    color: $cool-blue;
+                    @include vAlign;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                }
+            }
+            &.selected {
+                border-color: $bright-blue;
+            }
         }
     }
 }

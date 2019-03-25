@@ -29,24 +29,17 @@ Description : Corporate Lef Menu
 /* Corporate Slider Menu */
 .site-pages-corporate {
     .category-widget{
-        border-bottom: 1px solid #e7e7e7;
         margin-bottom: $small-20;
         overflow: hidden;
+        margin: 10px 0;
         .swiper-inner{
             overflow: visible;
         }
         .act.swiper-slide{
             a{
                 position: relative;
-                color: $color-8;
                 font-family: $bold;
-                &:after{
-                    content:'';
-                    @include Position(absolute, bottom 0 left 0);
-                    width: 100%;
-                    height: 2px;
-                    background: $color-8;
-                }
+                border-color: $color-5;
             }
         }
     }

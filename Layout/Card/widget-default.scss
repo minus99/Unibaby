@@ -2,29 +2,49 @@
 =========================================
     Swiper
 */
+
+.swiper-container-card{
+    .swiper-slide {
+        width: 180px !important;
+    }
+    .widget-header {
+        margin-top: 0;
+        span {
+            font-size: $small-13;
+            padding-bottom: $large;
+            border-bottom: 1px solid $color-4;
+            text-align: left;
+            font-family: $bold;
+        }
+    }
+}
+
+/*
 .swiper-container-card{
     overflow: hidden;
     padding-left: $reset;
     padding-right: $reset;
     padding-top: $small-30;
-    margin-top: $small-40;
+    margin-top: 150px;
     border-top:1px solid $color-6;
     .widget-header span{
         margin-left:$small-20;
+        text-align: center;
     }
     .swiper-inner{
-        overflow: visible;
+       
     }
     .swiper-slide{
-        width: 240px;
+
+        width: auto;
     }
     .swiper-button-prev,
     .swiper-button-next{
         margin-top: 22px;
-        display: none;
+        //display: none;
     }
 }
-
+*/
 /*
 =========================================
     Swiper Kargo ve BDDK
@@ -38,15 +58,18 @@
         overflow: visible;
     }
     .swiper-slide{
-        width: 98%;
+        //width: 98%;
         padding-right: $small-5;
         padding-left: $small-5;
+        display: flex;
+        height: auto;
+        width: 250px;  
         > div{
-            padding: $small-15 $small-10 $small-15 $small-10;
+            padding: $small-20 $small-20 $small-20 $small-20;
             background: $color-17;
             position: relative;
-            width: 100%;
-            display: table;
+            //width: 100%;
+            border-radius: 5px;
         }
         strong{
             font-family: $medium;
@@ -67,10 +90,31 @@
                 color: $color-8;
             }   
         }
+        b {
+            margin-bottom: $small-10;
+        }
         span{
             display: table-cell;
             vertical-align: middle;
             font-size: $small-15;
+        }
+        &.ems-hidden {
+            display: none;
+        }
+        &:nth-child(2n+1){
+            > div {
+                background: #edf7fc;
+            }
+        }
+        &:nth-child(2n+2){
+            > div {
+                background: #fff4f6;
+            }
+        }
+        &:nth-child(3n+3){
+            > div {
+                background: #f3faf1;
+            }
         }
     }
 }

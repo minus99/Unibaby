@@ -173,19 +173,17 @@
     }
     &::-webkit-scrollbar-track
     {
-        background-color: #F5F5F5;
+        background: $pale-sky-blue;
     }
 
     &::-webkit-scrollbar
     {
         width: 3px;
-        background-color: #F5F5F5;
     }
 
     &::-webkit-scrollbar-thumb
     {
-        background-color: #000000;
-        border: 2px solid #555555;
+        background: $bright-blue;
     }
 }
 

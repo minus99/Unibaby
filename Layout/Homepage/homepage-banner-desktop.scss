@@ -2,8 +2,12 @@
     font-size: $small-32;
 }
 
+.site-pages-home {
+    padding-top: 0;
+}
 .scroll-layer {
     padding-top: 0px;
+    height: auto; 
 }
 
 .grid-banner-box {
@@ -139,6 +143,7 @@
 .grid-colmn-a {
     &.position-sticky {
         @include Position(Sticky, top 80px);
+        position: -webkit-sticky;
         z-index: 2;
         margin-top: 0;
     }
@@ -178,6 +183,35 @@
     }
 }
 
+/* Anasayfa Slider */
+
+.general-slider {
+     .title { 
+        font-family: $baloo;
+        font-size: 40px;
+        line-height: 40px;
+        width: 60%;
+    }
+    .subTitle {
+        width: 60%;
+        font-size: $small-20;
+    }
+    .box-colmn-banner-bottom {
+        @include space(padding, all, 0 50px 50px 50px);
+        align-items: flex-end;
+        bottom: 0;
+    }
+    .box-colmn-banner-content {
+        flex: 5;
+    }
+    .swiper-slide {
+        height: auto;
+    }
+    .swiper-pagination-bullets {
+        bottom: 30px;
+    }
+}
+
 /* Anasayfa Liste Görsel */
 
 .main-list-temp {
@@ -188,8 +222,39 @@
 }
 
 .main-list-container {
-    .swiper-slide {
+    .main-tab-list-swiper {
+        overflow: visible;
+        .swiper-inner {
+            overflow: hidden;
+        }
+        .swiper-slide {
+            padding: 0 10px;
+            width: 25%;
+        }
+    }
+    .main-tab-cat-swiper {
+        padding: 0 !important;
+        .swiper-slide {
+            width: auto;
+        }
+    }
+    .main-list-wrp {
+        .main-list-title {display: block;}
+        .main-list-title, .main-list-content, .main-list-cat, .swiper-container {
+            @include space(padding, all, $reset 100px);
+        }
+    }
+    .swiper-button-next, .swiper-button-prev {
+        display: block;
+    }
+    .item-head {
+        font-size: 23px;
+    }
+    .item-text-wrap {
+        @include space(padding, all, $large);
+        @include space(margin, all, $large $reset);
+    }
+    .blog-post-wrp {
         padding: 0 10px;
-        width: 25%;
     }
 }

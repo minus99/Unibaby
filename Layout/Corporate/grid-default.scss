@@ -1,9 +1,10 @@
 .user-info{
-    background: $color-17;
+    background-image: linear-gradient(rgba(246,236,204,1) 40%,rgba(246,236,204,0) 100%);
     @include space(padding, all, 21px 20px);
     span{
         color: $very-dark-g;
         font-size: $small-15;
+        margin-right: 5px;
         strong{
             font-family: $medium;
             font-weight: normal;
@@ -12,7 +13,6 @@
     a{
         display: block;
         font-size: 13px;
-        color: #5a5a5a;
         float: right;
     }
 }

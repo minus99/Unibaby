@@ -2,7 +2,7 @@
  ===================================== */
  .site-pages-member{
     .same-address {
-        display: none;
+        /*display: none;*/
     }
 }
 
@@ -49,14 +49,14 @@
     }
     /*Grid Row*/
     .ems-grid-default-address{
-        @include space(margin, top, $reset);
+        //@include space(margin, top, $reset);
         border: none;
         border-radius: 0;
         max-width: inherit;
-        max-height: 240px;
+        //max-height: 240px;
         .ems-grid-adress-row{
-            margin-left: $small-20;
-            margin-right: $small-20;
+            //margin-left: $small-20;
+            //margin-right: $small-20;
         }
     }
     .ems-address-buttons{
@@ -66,11 +66,12 @@
         }
     }
     .ems-grid-address{
-        font-size: $small-15;
+        color: $very-dark-g;
     }
-    .ems-grid-address-select{display: none;}
+    .ems-grid-address-select{display: flex;}
     /*Add New Address*/
     .ems-page-new-address{
+        grid-column: 1;
         max-width: 100%;
         @include space(margin, all, $reset);
 
@@ -82,10 +83,25 @@
         .back-to-card{
             display: inline-block;
             @include space(margin, bottom, $reset);
-            @include Position(fixed, top 0 left 0);
+            //@include Position(fixed, top 0 left 0);
             z-index: 35;
             display: block;
             width: 100%;
+        }
+        &-img {
+            grid-column: 2;
+            @include space(padding, all, $small $large);
+            div {
+                display: none;
+            }
+        }
+    }
+    #validateTeslimat {
+        &.kurumsal {
+            .kurumsal-img {display: block;}
+        }
+        &.bireysel {
+            .bireysel-img {display: block;}
         }
     }
  }

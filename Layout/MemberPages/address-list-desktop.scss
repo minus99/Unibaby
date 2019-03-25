@@ -3,9 +3,9 @@
 .site-pages-member{
     /*Add New Button*/
     .add-new-address{
-        @include Position(absolute, top $small-7 right 0);
-        width: auto;
-        padding: $reset;
+        //@include Position(absolute, top $small-7 right 0);
+        //width: auto;
+        //padding: $reset;
     }
     /*Grid Row*/
     .ems-grid-default-address{
@@ -17,12 +17,26 @@
         }
     }
     /*Add New Address*/
-    .ems-page-new-address{
+    .ems-page-new-address{ 
         .back-to-card{
             display: inline-block;
             @include Position(relative, top inherit left inherit);
             z-index: 1;
             width: auto;
+        }
+    }
+    #validateTeslimat {
+        @include grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        grid-auto-flow: dense; 
+        .ems-page-new-address-img {
+            @include space(padding, all, $reset);
+            div {
+                position: sticky;
+                position: -webkit-sticky; 
+                top: 90px;
+            }
         }
     }
 }

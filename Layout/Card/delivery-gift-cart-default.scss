@@ -1,15 +1,13 @@
 .ems-gift-tab{
-    background: $color-17;
-    border-radius: 3px;
-    padding: $small-20;
-    margin-top: $small-20;
+    margin-top: $small-20; 
 }
 .ems-delivery-tab-header{
     display: none;
+    margin-bottom: 10px;
 }
 .ems-delivery-wrp.packet{
     > span{
-        font-size: $small-15;
+        font-size: $small-14;
         vertical-align: middle;
     }
 }

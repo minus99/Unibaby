@@ -15,14 +15,14 @@
 
 .ems-page-success-cover{
     width: 100%;
-    max-width: 435px;
+    //max-width: 435px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .pageSiparisSonuc_lbfSiparisKaydedilmedi{
     .ems-page-success-cover{
-        max-width: 407px;
+        //max-width: 407px;
     }
 }
 
@@ -50,6 +50,7 @@
 }
 
 .ems-page-success-back-buttons{
+    margin: 20px auto;
     a.btnDefault {
         width: 100%;
         max-width: 240px;

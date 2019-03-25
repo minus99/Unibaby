@@ -6,6 +6,8 @@
     @include space(padding, right, $small);
     @include space(padding, bottom, $small);
     @include space(padding, left, $small);
+    position: relative;
+    z-index: 1;
     img{
         width: 40px;
         float: left;
@@ -72,7 +74,10 @@
 .navbar-main {
     .mobi-close-btn {
         right: 20px;
+        z-index: 9;
+        position: absolute;
         .icon-close {
+            display: inline-block;
             &:before {
                 font-size: 40px;
                 color: #f67bb4;
@@ -84,24 +89,23 @@
     }
     >ul {
         @include space(padding, all, 0px 20px); 
-        /* scroll */
-        &::-webkit-scrollbar {
-            width: 10px;
+        height: calc(100% - 177px);
+        width: 100%;
+        overflow-y: auto;
+        position: absolute;
+        -webkit-overflow-scrolling: touch;
+        /*Webkit scrolling*/
+        &::-webkit-scrollbar { 
+            width: 2px;
         }
-        
-        /* Track */
         &::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+            background: $pale-sky-blue;
         }
-        
-        /* Handle */
         &::-webkit-scrollbar-thumb {
-            background: #888; 
+            background: $bright-blue;
         }
-        
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-            background: #555; 
+        &::-webkit-scrollbar-thumb:window-inactive {
+            background: $bright-blue;
         }
         >li {
             >a {

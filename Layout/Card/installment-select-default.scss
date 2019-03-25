@@ -4,17 +4,16 @@ table{
 
 .tableOdemeTaksit{
     width: 100%;
-    border-width: 0 0 2px 0;
-    border-style: solid;
-    border-color: $color-6;
     margin-top: $small-5;
-    margin-bottom: $small-30;
+    border-top: 1px solid $color-6;
+    background: $white;
     tbody{
         tr.tableTitleOdemeTaksit{
             border-top: none;
             border-left: none;
             border-right: none;
             min-height: auto;
+            display: none;
             td{
                 padding-bottom: 10px;
                 span{
@@ -25,15 +24,13 @@ table{
             }
         }
         tr:nth-child(2){
-            border-top: 2px solid $color-6;
+            
         }
         tr{
             display: table;
             table-layout: fixed;
             width: 100%;
-            border-right: 2px solid $color-6;
-            border-left: 2px solid $color-6;
-            min-height: 45px;
+            min-height: 65px;
             td{
                 display: table-cell;
                 vertical-align: middle;
@@ -46,26 +43,38 @@ table{
                     font-size: $small-15;
                 }
             }
-            border-top: 1px solid $color-6;
             .sStylerWrp_radio{
                 display: inline-block;
-                vertical-align: middle;
-                width: $small-18;
-                height: $small-18;
-                text-align: center;
-                line-height: $small-18;
+                margin-top: $small-5;
+                float: right;
+                cursor: pointer;
                 .rStyler{
+                    border: 1px solid $gray;
+                    border-radius: 50%;
+                    width: 22px;
+                    height: 22px; 
+                    position: relative;
+                    transition: all .2s ease;
+                    display: inline-block;
                     &:before{
-                        font-family: 'icomoon';
-                        content:'\e90a';
-                        color: $color-10;
-                        background: $white;
-                        font-size: $small-18;
+                        font-family:'icomoon';
+                        content: "";
+                        width: 22px;
+                        height: 22px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        transition: all .2s ease;
+                        line-height: 23px; 
+                        color: $white;
                     }
                     &.checked{
+                        border-color: $vivid-orange;
+                        background: $vivid-orange;
                         &:before{
-                            content:'\e909';
-                            color: $color-19;
+                            content: "\e906";
+                            color: $white !important;
                         }
                     }
                 }
@@ -75,7 +84,11 @@ table{
 }
 
 .pageOdemeBilgi_odemeTaksit{
-    img{display: none;}
+    background: #f7f7f7;
+    border: 1px solid $color-6;
+    border-radius: 3px;
+    text-align: center;
+    img{width: auto; padding: 20px;}
     .pageOdemeBilgi_lbfOdemeBankaKampanyaNot,
     .btnBankaPromosyonUygula{display: none !important;}
 }

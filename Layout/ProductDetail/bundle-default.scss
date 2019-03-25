@@ -242,19 +242,19 @@
 
     .ems-list {
         ::-webkit-scrollbar {
-            width: 2px;
+            width: 3px;
         }
 
         ::-webkit-scrollbar-track {
-            background: $pinkish-grey;
+            background: $pale-sky-blue;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: $very-dark-gray;
+            background: $bright-blue;
         }
 
         ::-webkit-scrollbar-thumb:window-inactive {
-            background: $very-dark-gray;
+            background: $bright-blue;
         }
     }
 

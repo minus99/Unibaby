@@ -11,20 +11,20 @@
     .cart-section-left{
         /*Webkit scrolling*/
         ::-webkit-scrollbar {
-            width: 2px;
+            width: 3px;
         }
         ::-webkit-scrollbar-track {
-            background: $pinkish-grey;
+            background: $pale-sky-blue;
         }
         ::-webkit-scrollbar-thumb {
-            background: $very-dark-gray;
+            background: $bright-blue;
         }
         ::-webkit-scrollbar-thumb:window-inactive {
-            background: $very-dark-gray;
+            background: $bright-blue;
         }
     }
     .cart-section-left-inner{
-        max-height: 240px;
+        max-height: 330px;
         overflow-y: auto;
         overflow-x: hidden;
         padding-right: $small-30;
@@ -32,16 +32,30 @@
     .cart-section-right{
         height: 95%;
     }
+    .big-text-order {
+        display: block;
+    }
 }
 
 .ems-page-payment-left{
     grid-area: A;
-    padding: 45px $reset 45px $reset;
+    padding: 10px $reset 45px $reset;
+    .page-top-desc {
+        span {
+            font-size: $small-14;
+        }
+    }
+    .tableTitleDefault {
+        b {
+            font-size: $small-14; 
+        }
+    }
 }
 .ems-page-payment-right{
     grid-area: B;
-    padding-top: 25px;
-    padding-bottom: 25px;   
+    margin-top: 45px;
+    //padding-top: 25px;
+    //padding-bottom: 25px;   
 }
 
 
@@ -56,8 +70,15 @@
     > div{
         @include grid;
         grid-template-columns: 1fr 20px 1fr;
-        grid-template-areas: "TBL . CRT";
+        grid-template-areas: 
+        "TTD TTD TTD"
+        "IZY IZY IZY"
+        "TBL . CRT"
+        "TKS . .";
         grid-template-rows: minmax(0,auto);
+    }
+    .tableTitleDefault {
+        grid-area: TTD;
     }
     .ems-card-wrapper{
         grid-area: CRT;
@@ -67,11 +88,21 @@
     .tableOdemeBilgiKrediKarti{
         grid-area: TBL;
     }
+    .izy-saveCreditCard {
+        grid-area: IZY;
+        margin-bottom: 30px;
+    }
+    .pageOdemeBilgi_odemeTaksit {
+        grid-area: TKS;
+    }
 }
 
 /*Kredi Kart*/
 .tableOdemeBilgiKrediKarti{
     max-width: 330px;
+    .cvc {
+        position: absolute;
+    }
 }
 
 .ems-grid-payment-wrapper{
@@ -79,11 +110,22 @@
 }
 .ems-cart-pay-adress{
     grid-area:ADR;
+    background: $very-light-gray;
+    padding: 20px;
+    #plhTesAdrLabel, #plhFatAdrLabel {
+        font-family: $medium;
+        margin-bottom: $xs;
+    }
+}
+
+.ems-cart-payment-header {
+    grid-area:HTT;
 }
 
 /*Adress*/
 .ems-cart-pay-inner {
     .ems-delivery-address {
+        background: $white;
 
         &.right{
             margin-bottom: $reset;

@@ -67,6 +67,11 @@
                 color: $white;
             }
         }
+        &.swiper-button-disabled {
+            &::before {
+                display: none;
+            }
+        }
     }
     .swiper-button-prev{
         left: 0;

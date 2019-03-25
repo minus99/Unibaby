@@ -124,6 +124,11 @@ body {
             visibility: visible;
         }
     }
+    &.ems-logoff {
+        .vailLogin {
+            display: none; 
+        }
+    }
 }
 
 body{

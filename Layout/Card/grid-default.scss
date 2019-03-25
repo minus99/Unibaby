@@ -30,22 +30,28 @@
             }
         }
     }
+    &-row-content {
+        .swiper-container-bddk {
+            display: block !important;
+            margin-top: 20px;
+        }
+    }
+    
 }
 
 .ems-cart-top {
-    background: $color-8;
-    display: none;
+    //display: none;
     &-inner {
         max-width: 1200px;
         @include space(margin, left, auto);
         @include space(margin, right, auto);
-        @include space(padding, top, $small);
-        @include space(padding, bottom, $small);
+        @include space(padding, top, 6px);
+        @include space(padding, bottom, 7px);
 
         >div {
             display: inline-block;
             vertical-align: middle;
-            width: 50%;
+            width: 100%;
         }
 
         .left {
@@ -56,8 +62,13 @@
             text-align: right;
         }
         .logo{
-            padding-left: $small-10;
+            padding: $small-10 0 0 $small-20;
+            float: left;
         }
+    }
+
+    &-menu {
+        
     }
 
     .user-info {
@@ -66,31 +77,56 @@
         float: right;
         padding: $reset;
         > a{
-            color: $white;
             font-family: $medium;
             font-size: $small-15;
             position: relative;
-            padding: $small-10 40px $small-10 0;
-            &:after {
-                content: '\e91a';
-                font-family: 'icomoon';
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 32px;
-                height: 32px;
-                line-height: 32px;
-                text-align: center;
-                margin-top: -16px;
-                font-size: $small-16;
-                color: $white;
+            padding: $small-14 20px $small-14 0;
+            line-height: 40px;
+            img {
+                width: 40px;
+                float: right;
             }
             &:hover{
-                text-decoration: underline;
+               
             }
         }
     }
 }
+
+.ems-page-cart-row-header {
+    .swiper-container-bddk {
+        display: none !important;
+    }
+}
+
+.ems-page-cart-step0 {
+
+    .ems-page-order-empty {
+        text-align: center;
+        .big-text-order {
+            text-align: center;
+            margin: 30px 0;
+        }
+    }
+    .page-card-title {
+        padding: 0 0 20px 20px !important;
+    }
+}
+
+.basket-empty {
+    .ems-page-cart-step0 {
+        .cart-section-left-inner {
+            padding: 0;
+        }
+        .ems-page-default-order-cart {
+            grid-template-areas:
+                ". LFT LFT LFT" 
+                ". SLD RGH RGH";
+        }
+    }
+    .cart-section-right, .swiper-container-card, .swiper-container-bddk {display: none;}
+}
+
 
 .grid-info-box-card {
     display: none;
@@ -112,12 +148,31 @@
 
 .ems-page-cart {
     .btnAlisverisDevam {
-        text-decoration: underline;
         background: none;
-        font-family: $regular;
-        color: $color-1;
-        font-size: $small-15;
-        margin-top: $small-10;
-        margin-left: $small-15;
+        color: $color-5;
+        font-size: $small-14;
+        font-family: $bold;
+        //margin-top: $small-10;
+        padding: $small-16;
+        &:before {
+            content:'\e90e';
+            font-family: 'icomoon';
+            float: left;
+            color: $bright-blue;
+            margin-right: 5px;
+            margin-top: 1px;
+        }
+        &:hover {
+            background: none;
+        }
+    }
+    .btnSepetBosalt {
+        background: none;
+        color: $color-5;
+        font-size: $small-14;
+        font-family: $bold;
+        //margin-top: $small-10;
+        float: right;
+        padding: $small-16;
     }
 }

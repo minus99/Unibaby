@@ -16,10 +16,10 @@ input, textarea, select{
 //----- INPUT STYLE
 //-------------------------------------------//
 input:not([type="checkbox"]):not([type="radio"]){
-    height: 44px;
+    height: 46px;
     padding: 10px 15px;
     border-radius: 3px;
-    border: 2px solid $pinkish-grey;
+    border: 2px solid $color-4;
     background-color: $white;
 
     &[id$="txtUYM_TELEFON"]{
@@ -92,8 +92,8 @@ select{
             right: 7px;
             top:50%;
             transform: translateY(-50%);
-            @extend [class^="icon-"];
-            @extend .icon-arrow-bottom:before;
+            font-family: 'icomoon';
+            content: '\e903';
             font-size: 13px;
             color: $color-10;
             width: 32px;
@@ -120,6 +120,7 @@ select{
     align-items: center;
     margin-right: 10px;
     cursor: pointer;
+    background: $white;
     .cStyler{
         border: 1px solid $gray;
         border-radius: 3px;
@@ -138,12 +139,10 @@ select{
             transform: translate(-50%, -50%);
             transition: all .2s ease;
             font-size: 15px;
+            line-height: 17px;
             color: $vivid-orange;
         }
         &.checked{
-            //border-radius: 2px;
-            //border: none;
-            //background: $vivid-orange;
             border-color: $color-4;
             &:before{
                 content:'\e906';
@@ -213,7 +212,7 @@ input[type="radio"]:checked{
 }
 .ems-form-label{
     pointer-events: none;
-    font-size: $small-13;
+    font-size: $small-12;
     //color: $light-grey;
     @include space(margin, bottom, $small);
     &:empty{
@@ -351,7 +350,7 @@ $alert-info-border:                 $color-9;
         font-size: 10px;
     }
     &.ems-message-error{
-        color: $alert-error-color;
+        //color: $alert-error-color;
         background-color: $alert-error-background;
         border-color: $alert-error-border;
         &:before{

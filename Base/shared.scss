@@ -23,7 +23,7 @@ body {
     overflow-x: hidden;
     font-weight: 400;
     font-family: $regular;
-    color: $dark-slate-blue;
+    color: $dark-slate-blue; 
 
     &.anaBody {
         overflow-y: scroll;
@@ -172,4 +172,14 @@ span[id$="lbfURN_KDVDAHILSATIS"] {
 
 .clearfix:after {
     clear: both;
+}
+
+
+.show-mobile, .show-desktop {display: none;}
+@media screen and (max-width:$breakpoint-medium){
+    .show-mobile {display: inline-block; width: 100%;}
+}
+
+@media screen and (min-width:$breakpoint-medium){ 
+    .show-desktop {display: inline-block; width: 100%;}
 }

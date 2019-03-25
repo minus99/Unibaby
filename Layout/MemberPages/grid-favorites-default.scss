@@ -8,9 +8,11 @@
             a.btnDefault{
                 display: inline-block;
                 width: 100%;
-                max-width: 240px;
+                max-width: 250px;
                 text-align: center;
                 margin-top: $small-20;
+                padding: 17px 5px;
+                text-transform: uppercase;
             }
         }
     }
@@ -20,8 +22,8 @@
             @include btnReset;
             display: inline-block;
             font-family: $regular;
-            font-size: $small-15;
-            color: $color-1;
+            font-size: $small-13;
+            color: $cool-blue;
             text-decoration: underline;
             padding: $small-5;
         }
@@ -154,9 +156,6 @@
                     height: $small-30;
                     i{
                         line-height:$small-30;
-                        &:before{
-                            font-size: $small-15;
-                        }
                     }
                 }
             }

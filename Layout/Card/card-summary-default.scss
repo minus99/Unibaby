@@ -8,7 +8,7 @@
             &.emos_invisible{display: none;}
             th,
             td {
-                @include space(padding, all, $xs $small);
+                @include space(padding, all, $xs $reset);
                 display: table-cell;
                 vertical-align: middle;
             }
@@ -16,12 +16,14 @@
             th {
                 text-align: left;
                 font-weight: normal;
-                font-size: $small-15;
+                font-size: $small-14;
+                font-family: $medium;
             }
 
             td {
                 text-align: right;
-                font-size: $small-15;
+                font-size: $small-14;
+                font-family: $medium;
 
                 .pb1 {
                     display: inline-block;
@@ -36,12 +38,11 @@
         }
 
         .pnlDipToplam_sipToplam {
-            border-top: 1px solid $color-6;
             margin-top: $small-20;
             th,
             td {
                 vertical-align: bottom;
-                font-size: $small-20;
+                font-size: $small-16;
                 font-family: $bold;
                 padding-top: $small-15;
             }
@@ -58,31 +59,21 @@
     padding: $small-20;
     background: $color-17;
     margin-top: $small-30;
+    position: relative;
 }
 
 .ems-cart-summary-title{
     span{
         display: block;
-        padding: $reset $small-10 $small-10 $small-10;
-        font-family: $medium;
+        padding: $reset $reset $small-20 $reset;
+        font-family: $bold;
         font-size: 18px;
-        color: $color-1;
-    }
-}
-
-.ems-cart-summary-coupon {
-    >span {
-        font-size: $small-18;
-        color: $color-26;
-        cursor: pointer;
-        display: block;
-        @include space(padding, all, $small);
     }
 }
 
 .ems-cart-summary-coupon-body {
     position: relative;
-
+    display: block;
     input {
         width: 100% !important;
     }
@@ -96,9 +87,11 @@
 
     .btnHediyeCekiKullan {
         background: none;
-
+        padding: 0;
+        border: 0;
         i:before {
-            font-size: $small-14;
+            font-size: 50px;
+            line-height: 40px;
             color: #8E8E8E;
         }
 
@@ -118,11 +111,28 @@
     }
 }
 
+.ems-cart-summary-coupon {
+    margin-bottom: 20px;
+    >span {
+        font-size: $small-14;
+        text-decoration: underline;
+        cursor: pointer;
+        display: block;
+        @include space(padding, all, $small);
+        @include Position(absolute, top 10px right 10px); 
+    }
+    &.opened {
+        .ems-cart-summary-coupon-body {
+            display: none;
+        }
+    }
+}
+
 .ems-cart-summarybottom {
     a.btnDefault {
-        display: block;
-        @include space(padding, top, $small-14);
-        @include space(padding, bottom, $small-14);
+        display: block; 
+        @include space(padding, top, $small-17);
+        @include space(padding, bottom, $small-17);
         @include space(margin, top, $small-15);
         border-radius: 5px;
     }

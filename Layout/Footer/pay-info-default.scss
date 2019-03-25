@@ -1,44 +1,47 @@
 .grid-info-box {
     .grid-info-box-boxes {
+        width: 100%;
         li {
             text-align: center;
-            @include space(padding, all, 5px 5px);
-            width: 50%;
+            @include space(padding, all, $reset 5px $reset 30px);
             display: inline-block;
             vertical-align: top;
-            min-height: 180px;
-            max-height: 180px;
+            max-width: 250px;
+            width: 100%;
+            border-right: 1px solid $color-4;
+
             >* {
                 display: block;
+                text-align: left;
             }
 
             i {
-                width: 60px;
-                height: 60px;
-                line-height: 60px;
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
                 text-align: center;
                 display: inline-block;
-                @include space(margin, top, $xs);
+                float: left;
             }
 
             i,
             i:before {
-                font-size: 40px;
+                font-size: 80px;
             }
 
             i:before {
-                color: $vivid-orange;
             }
 
             .fm-r,
             .fm-m {
-                @extend .m-t-10;
+
             }
 
-            .fm-r {
-                color: #5a5a5a;
-                overflow: hidden;
-                max-height: 45px;
+            .fm-b {
+                margin-top: 25px;
+            }
+            &:last-child {
+                border: 0;
             }
         }
     }

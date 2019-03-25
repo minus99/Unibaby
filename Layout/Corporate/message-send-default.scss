@@ -18,14 +18,44 @@
         margin-top: $small-30;
         margin-bottom: $small-30;
         li{
+            margin-bottom: 30px;
+            b {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: normal;
+                font-family: $bold;
+                padding-left: 60px; 
+                position: relative;
+            }
             span, p{
                 font-size: $small-15;
             }
             span{
-                font-family: $medium;
+                font-family: $bold;
+                font-size: $small-13;
+                display: block;
+                padding-bottom: 15px;
+                margin-bottom: 15px;
+                border-bottom: 1px solid $e9-Gray;
             }
             p{
                 margin-top: $small-5;
+                padding-left: 60px;
+            }
+            a {
+                margin-bottom: 15px;
+                padding-left: 60px;
+                &.mapLink {
+                    margin-top: 15px;
+                    text-decoration: underline;
+                }
+            }
+            i {
+                font-size: 65px;
+                position: absolute;
+                left: -10px;
+                top: -15px;
+                color: $bright-blue; 
             }
         }
     }

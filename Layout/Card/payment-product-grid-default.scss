@@ -6,12 +6,20 @@
 .ems-cart-payment-trigger,
 .payment-cart-open-trigger{
     display: block;
-    padding: $small-17 $small-30 $small-17 $small-10;
+    border-radius: 3px;
+    border: 2px solid $color-4;
+    padding: $small-14 $small-15;
+    margin-bottom: $small-20;
+    font-family: $regular;
     position: relative;
-    border-top:2px solid $color-30;
+    //border-top:2px solid $color-30;
+    span {
+        font-size: $small-13;
+        font-family: $regular;
+    }
     &:after{
-        font-family: 'icomoon';
-        content:'\e90c';
+        font-family: 'icomoon'; 
+        content:'\e903';
         position: absolute;
         top: 50%;
         right: $small-10;
@@ -20,8 +28,18 @@
         text-align: center;
         margin-top: -10px;
         line-height: $small-20;
-        font-size: $small-10;
-        color: $color-10;
+        font-size: $small-13;
+        color: $cool-blue;
+    }
+}
+
+.ems-cart-payment-header {
+    display: none;
+    span > span {
+        display: block;
+        border-bottom: 1px solid $color-4;
+        padding-left: 0px;
+        margin-bottom: 30px;
     }
 }
 
@@ -40,7 +58,8 @@
         }
         .ems-grid-piece{display: none;}
         .ems-grid-subscriptions .abonelikUrun{
-            border: none;
+            //border: none;
+            padding: $xs;
             text-align: left;
             *{
                 font-size: $small-13;
@@ -54,7 +73,7 @@
     }   
     .payment-cart-open-trigger{
         &:after{
-            content:'\e91c';
+            content:'\e918';
         }
     }
 }
@@ -72,7 +91,7 @@
     }
     .ems-cart-payment-trigger{
         &:after{
-            content:'\e91c';
+            content:'\e918';
         }
     }
 }

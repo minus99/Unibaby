@@ -2,16 +2,14 @@
     @include space(margin, left, $xxlarge);
     @include space(margin, right, $xxlarge);
     .grid-info-box-boxes {
-        @include grid;
+        display: inline-block;
+        /*@include grid;
         grid-template-columns:1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;
+        grid-column-gap: 20px;*/
         
         li{
-            border:1px solid $gray;
-            border-radius: $alternate-border-radius;
-            width: auto;
             i{
-                @include space(margin, top, $large);
+                //@include space(margin, top, $large);
             }
         }
     }

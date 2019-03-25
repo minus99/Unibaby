@@ -1,3 +1,7 @@
+.ems-page-detail {
+    padding-bottom: 70px;
+}
+
 .urunDetay {
 
     .pnlSepetGrup,
@@ -234,7 +238,7 @@
     position: -webkit-sticky;
     position: sticky;
     top: 60px;
-    z-index: 1;
+    z-index: 2;
     background: $white;
     margin-top: 20px;
     ul {
@@ -283,6 +287,9 @@
             width: 100%;
             @include space(margin, all, $xMedium 0);
         }
+        iframe {
+            position:static !important;
+        }
         p {
             @include space(margin, bottom, $xMedium); 
         }
@@ -330,6 +337,12 @@
                 span {
                     &:after {
                         content: '\e918';
+                    }
+                    .dfazla {
+                        display: none;
+                    }
+                    .daz {
+                        display: inline-block !important;
                     }
                 }
             }
@@ -476,9 +489,11 @@
     .ems-detail-product-type {
         @include flex;
         width: 100%;
-
+        align-items: center;
         >div {
-            padding-left: $small-10;
+            //padding-left: $small-10;
+            width: 100%;
+            text-align: center;
         }
 
         >div:first-child {
@@ -522,18 +537,29 @@
         display: none;
         font-size: $small-14;
         position: relative;
-        min-width: 100px;
-        max-width: 160px;
+        /*min-width: 100px;
+        max-width: 160px;*/
         min-height: 40px;
-        @include space(padding, all, $small-15 $small-10 $small-15 70px);
+        @include space(padding, all, $small-15 $small-10 $small-15 60px);
 
         &:before {
             font-family: 'icomoon';
             content: '\e921';
             @extend .icon-32x32;
             font-size: 60px;
-            @include Position(absolute, top 50% left 10px);
+            @include Position(absolute, top 50% left 0px);
             margin-top: -16px;
+        }
+        &.spr47 {
+            &::before {
+                content: "\e924";
+                font-size: 49px;
+            }
+        }
+        &.spr51 {
+            &::before {
+                content: "\e925";
+            }
         }
     }
 
@@ -545,6 +571,47 @@
         &:empty {
             display: none;
         }
+    }
+    .urunDetay_satisKoliLbl{
+        font-size: $small-14;
+        position: relative;
+        /*min-width: 100px;
+        max-width: 160px;*/
+        min-height: 40px;
+        text-align: left;
+        @include space(padding, all, $small-15 $small-10 $small-15 60px);
+        &:before {
+            font-family: 'icomoon';
+            content: '\e921';
+            @extend .icon-32x32;
+            font-size: 60px;
+            @include Position(absolute, top 50% left 0px);
+            margin-top: -16px;
+        }
+    }
+    .urunDetay_satisKoliLbl,
+    .urunDetay_satisKoli{
+        &:empty{display: none;}
+    }
+    .urunDetay_lbfSatisFiyatKoliAdet{
+        font-size: $small-14;
+        &:empty{display: none;}
+    }
+    .urunDetay_satisKoli{
+        display: none;
+    }
+    .urunDetay_satisFiyatKoliAdet{
+        display: block;
+        font-family: $bold;
+        font-size: $small-14;
+        text-align: left;
+        &:before{
+            content:'₺';
+            font-family: $bold;
+            font-size: $small-14;
+        }
+        &:empty{display: none;}
+        span[id$="lbfURN_KDVDAHILADET"] {display:none;}
     }
 }
 

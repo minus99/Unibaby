@@ -2,11 +2,12 @@
     border-top: none;
     .ems-grid-row {
         @include grid;
-        grid-template-columns:70px 1.5fr minmax(0,60px) 1fr 1fr 30px;
+        grid-template-columns:70px 1fr 0.5fr minmax(0, 100px) 0.3fr 0.5fr 30px;
         grid-template-rows: minmax(0, auto);
         align-items: center;
+        grid-template-areas: "IMG NNM PRC ADT PRT ABN CLS";
         grid-gap: 10px;
-        @include space(padding, all, $small-10);
+        @include space(padding, all, $small-20 $small-10);
     }
 
     .ems-grid-img {
@@ -16,18 +17,61 @@
         width: inherit;
         height: inherit;
         margin-top: inherit;
+        grid-area: IMG;
+        top: 50%;
+        margin-top: -35px;
+    }
+    .ems-grid-name {
+        grid-area: NNM;
+        a{
+            font-size: $small-15;
+        }
+    }
+    
+    .brutFiyat, .topFiyat {
+        font-size: $small-18; 
+    }
+    .brutFiyat{}
+    
+    .brFiyat {
+        font-size: $small-18;
+    }
+    .satBrFiyat {
+        font-size: $small-18;
+    }
+
+    .netFiyat {
+        font-size: $small-18;
+    }
+    .ems-grid-price {
+        grid-area: PRC;
+        margin-right: 0px;
+    }
+    .ems-grid-price-total {
+        grid-area: PRT;
+        width: auto;
+    }
+    .ems-grid-piece {
+        text-align: center;
     }
     .ems-grid-piece-wrapper {
         margin-top: $reset;
+        .sStylerWrp_select .sStylerWrp {
+            padding: 10px 36px 10px 16px;
+            font-size: $small-14;
+        }
     }
     .ems-grid-price-total {
         width: auto;
         margin-top: $reset;
     }
     .ems-grid-subscriptions {
-
+        margin-top: 0px;
+        grid-area: ABN;
         float: none;
         margin-top: $reset;
+        text-align: center;
+        width: auto;
         &:empty{
             display: inherit;
         }
@@ -37,10 +81,13 @@
         position: relative;
         top: inherit;
         right: inherit;
+        grid-area: CLS;
     }
 }
 
 .page-card-title{
-    @include space(padding, top, $reset);
-    @include space(padding, left, $reset);
+    @include space(padding, all, $large);
+    span {
+        font-size: $small-14;
+    }
 }

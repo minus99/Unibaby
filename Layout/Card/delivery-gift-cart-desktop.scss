@@ -6,13 +6,16 @@
         max-width: 530px;
     }
 }
+.ems-delivery-wrp.packet{
+    font-size: $small-15;
+}
 .ems-delivery-wrp.gift{
     padding-left: $small-27;
 }
 .ems-delivery-wrp.note{
     textarea{
         height: 65px;
-        max-width: 685px;
+        //max-width: 685px;
         margin-bottom: $small-10;
     }
 }

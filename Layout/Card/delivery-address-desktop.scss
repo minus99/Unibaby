@@ -5,17 +5,18 @@
 
 .add-new-address {
     width: 40%;
+    @include space(margin,top,30px);
 }
 .ems-grid-default-address {
     @include grid;
-    grid-template-columns: repeat(2, 1fr);
+    //grid-template-columns: repeat(2, 1fr);
     grid-template-rows: minmax(0, auto);
     grid-gap: $small-30;
     .ems-grid-adress-row {
         margin-top: $reset;
     }
-    max-height: inherit;
-    overflow: inherit;
+    /*max-height: inherit;
+    overflow: inherit;*/
 }
 
 .ems-grid-address-select {
@@ -30,21 +31,45 @@
 
 .ems-address-buttons {
     a.btnDefault {
+        color: $cool-blue;
+        font-size: 14px;
         &:hover {
-            color: $color-8;
+            
         }
     }
 }
 
+.divTeslimatKargo{
+    ul {
+        li {
+            .kargoAdi {
+                font-size: $small-15;
+                small {
+                    font-size: $small-15;
+                }
+            }
+        }
+    }
+}
+
+.dvFarkliFatAdrSec {
+    >span {
+        &:last-child{font-size: $small-15;}
+    }
+}
+
+.ems-grid-address-name, .ems-grid-address {
+    font-size: $small-16;
+}
 
 .ems-message-error-address{
     margin-left:auto;
     margin-right:auto;
 }
 
-a.btnAdresEkle:hover{
+/*a.btnAdresEkle:hover{
     text-decoration: underline;
-}
+}*/
 
 /* =======================
     New Adress
@@ -54,7 +79,7 @@ a.btnAdresEkle:hover{
     max-width: 680px;
     margin: 50px auto;
     .adresTip {
-        grid-column-start: span 2;    
+        //grid-column-start: span 2;    
     }
     
     .back-to-card{
@@ -77,7 +102,7 @@ a.btnAdresEkle:hover{
 
     .ems-form-inner {
         @include grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-gap: $small-20;
         padding: $reset;
 
@@ -93,7 +118,7 @@ a.btnAdresEkle:hover{
     }
 
     .ems-field-col-span {
-        grid-column-start: span 2;
+        //grid-column-start: span 2;
     }
     .ems-form-inner .ems-field + .ems-field{
         margin-top: 0;
