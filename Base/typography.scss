@@ -20,3 +20,15 @@ $regular:                                        'regular';
 $medium:                                         'medium';
 $bold:                                           'bold';
 $baloo:                                          'baloo';
+
+.ff-baloo {
+    font-family: $baloo !important;
+}
+
+.ff-medium {
+    font-family: $medium !important;
+}
+
+.ff-bold {
+    font-family: $bold !important;
+}

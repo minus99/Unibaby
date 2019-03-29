@@ -239,6 +239,7 @@
         }
     }
     .main-list-wrp {
+        justify-content: center;
         .main-list-title {display: block;}
         .main-list-title, .main-list-content, .main-list-cat, .swiper-container {
             @include space(padding, all, $reset 100px);

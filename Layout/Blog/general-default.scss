@@ -22,6 +22,41 @@
       padding: 20px 0;
   }
 
+
+/* Blog Page Menu */
+
+ .blog-page {
+      .main-tab-sticky {
+          [rel$="tab1"]:hover {
+              i {
+                background: $color-18;
+              }
+          }
+          [rel$="tab2"]:hover {
+                i {
+                background: $color-5;
+                }
+            }
+            [rel$="tab3"]:hover {
+                i {
+                background: $vivid-yellow;
+                }
+            }
+            [rel$="tab4"]:hover {
+                i {
+                background: $cool-blue;
+                }
+            }
+            [rel$="tab5"]:hover {
+                i {
+                background: $vivid-orange;
+                }
+            }
+      }
+  }
+
+
+  /* */
   
   .blog-page .blog-header-navbar-wrapper {display:  block; /*margin-bottom:38px;*/ padding: 0 20px;}
   .blog-page .blog-header-navbar-wrapper .blog-header-navbar .blog-menu {display:  block;}
@@ -35,15 +70,15 @@
   /* TAG */
 
   
-  .blog-page .blog-tag {}
-  .blog-page .etiketListe {padding: 0 20px;}
+  .blog-page .blog-tag {@include flex; align-items: center;}
+  .blog-page .etiketListe {padding: 0px;} 
   .blog-page .etiketListe .headerEtiketListe {display: none;}
   .blog-page .etiketListe .blogTag ul {@include flex;}
-  .blog-page .etiketListe .blogTag ul li {padding-right: 20px; margin-right: 10px; border-right: 1px solid $color-4;} 
+  .blog-page .etiketListe .blogTag ul li {padding: 0 20px; margin-right: 10px; border-right: 1px solid $color-4;} 
   .blog-page .etiketListe .blogTag ul li:last-child {border: 0;} 
   .blog-page .etiketListe .blogTag ul li.selected a {color:$cool-blue;}
   .blog-page .etiketListe .blogTag ul li.selected a:before {color:$cool-blue;}
-  .blog-page .etiketListe .blogTag ul li a {font-size: $small-14; font-family: $medium; line-height: 25px;}
+  .blog-page .etiketListe .blogTag ul li a {font-size: $small-14; font-family: $regular; line-height: 25px;}
   .blog-page .etiketListe .blogTag ul li a:before {font-family: 'icomoon'; font-size: 40px; float: left; color: $color-4;}
   .blog-page .etiketListe .blogTag ul li.tag-makale a:before {content: '\e914';}
   .blog-page .etiketListe .blogTag ul li.tag-video a:before {content: '\e914';}
@@ -65,7 +100,28 @@
   //.blog-page .blog-list .icerikListe_Tablo tbody tr:nth-child(1) {flex: 0 auto; flex-basis: 100%; padding: 0 0 50px 0; order: 1;}
   //.blog-page .blog-list .icerikListe_Tablo tbody tr:nth-child(2) {width: 100%; flex: 1; background-color: #f9f9f9; padding: 45px 10px 45px 20px; flex-basis: 50%; order: 2;}
   //.blog-page .blog-list .icerikListe_Tablo tbody tr:nth-child(3) {width: 100%; flex: 1; background-color: #f9f9f9; padding: 45px 20px 45px 10px; flex-basis: 50%; order: 3;}
-  .blog-page .urunPaging {display: none !important;} 
+  .blog-page .urunPaging {/*display: none !important;*/} 
+
+  /* Blog Sort */
+
+  .ems-prd-list-sort-blog {
+    border-left: 1px solid $color-4 !important; 
+    > span {
+        padding: 5px 60px 6px 30px;
+        color: $dark-slate-blue !important;
+        font-family: $regular !important;
+        &:after {
+            display: none;
+        }
+        i {
+            font-size: 30px;
+            color: $color-4;
+            line-height: 20px;
+            float: left;
+        }
+    }
+  }
+  
 
   .blog-page .blog-list .blogTitleKategoriAd {font-family: $medium; font-size: 45px; margin-bottom: 20px; text-align: center; display: block; line-height: normal;display: none;}
   .blog-post-wrp {padding: 0 10px; height: 100%;}
@@ -74,6 +130,16 @@
   .blog-post-item .item-img {width:100%;display: block; background-size: cover; background-position: center;}
   .blog-post-item .item-img a {width: 100%;}
   .blog-post-item .item-text-wrap {padding: 18px 18px 30px 18px; display: block;} 
+  .blog-post-item.pink {background: #F66AA9; border-color:#F66AA9; }
+  .blog-post-item.pink .item-date {display: none !important;}
+  .blog-post-item.pink .item-head {color: #fff !important;} 
+  .blog-post-item.pink .item-summary {color: #fff !important;}
+  .blog-post-item.pink .item-link i {color: #fff !important;}
+  .blog-post-item.blue {background: #3c89ce; border-color:#3c89ce;}
+  .blog-post-item.blue .item-date {display: none !important;}
+  .blog-post-item.blue .item-head {color: #fff !important;} 
+  .blog-post-item.blue .item-summary {color: #fff !important;}
+  .blog-post-item.blue .item-link i {color: #fff !important;}
   .blog-list .blog-post-item .item-text-wrap {padding: 18px 18px 25px 18px; display: block;}  
   .blog-post-item .item-text-wrap > div a {margin-bottom:  10px;}
   .blog-post-item .item-text-wrap > div a.item-cat-text {color: $cool-blue; font-family: $medium; margin: 0 0 15px;} 
@@ -267,3 +333,515 @@
   }
   */
   /*UNI BABY BLOG DETAY*/
+
+  /* Doğum Çantası Kontrol Listesi */
+
+  .blog-detail .sec-special {
+    max-width: none;
+    padding: 0px;
+  }
+  
+  .maternity-bag-checklist {
+      padding: 0 20px;
+  }
+
+  .maternity-bag-checklist, .maternity-date {
+      display: block;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      .col1 {
+        margin-top: $small-50;
+        width: 100%;
+        max-width: none;
+        margin-bottom: 30px;
+        text-align: center;
+        > h1 { 
+        font-size: 30px !important;
+        line-height: 30px;
+        text-align: center;
+        }
+        > span {
+        font-size: $small-18 !important; 
+        text-align: center;
+        }
+      }
+      img {width: auto;}
+      .maternity-bag-tab {
+          display: flex;
+          justify-content: center;
+          .needs-tab {
+              border: 1px solid $gray;
+              border-radius: 3px;
+              padding: 20px 0px;
+              width: 100%;
+              max-width: 230px;
+              margin: 0 10px;
+              text-align: center;
+              position: relative;
+              span {
+                  font-size: $small-13;
+                  font-family: $medium;
+                  text-align: center;
+                  margin-top: $small-15;
+                  display: block;
+              }
+              i {
+                font-size: 100px;
+                width: 125px;
+                height: 125px;
+                border: 1px solid $gray;
+                border-radius: 100%;
+              }
+              &::before {
+                  content: '';
+                  font-family: 'icomoon';
+                  position: absolute;
+                  font-size: 18px;
+                  left: 10px;
+                  top: 10px;
+                  color: $vivid-orange;
+                  width: 20px;
+                  height: 20px;
+                  border: 1px solid $gray;
+                  border-radius: 100%; 
+                  color: #fff;
+              }
+          }
+          .mother-needs {
+              i {
+                  color: $vivid-orange;
+              }
+          }
+          .baby-needs {
+            i {
+                color: $vivid-yellow;
+            }
+        }
+      }
+      .maternity-bag-list {
+          margin: 20px 20px;
+          > div {display:none;}
+          ul {
+            max-height: 250px;
+            overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 3px;
+                }
+                &::-webkit-scrollbar-track {
+                    background: $pale-sky-blue;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background: $bright-blue;
+                }
+                &::-webkit-scrollbar-thumb:window-inactive {
+                    background: $bright-blue;
+                }
+              li {
+                color:$very-dark-g;
+                font-family: $medium;
+                line-height: 23px;
+                i {
+                    color: $vivid-orange;
+                    width: 30px;
+                    height: 30px;
+                    margin-right: 5px;
+                }
+              }
+          }
+      }
+  }
+
+  .maternity-bag-wrp {
+      &.select-mother {
+          .mother-needs {
+                border-color: $vivid-orange;
+              &:before {
+                content: '\e906';
+                background: $vivid-orange;
+                border-color: $vivid-orange;
+              }
+              i {
+                  background: $light-green;
+                  border-color: $light-green;
+              }
+          }
+          .maternity-bag-list {
+              .mom-list {
+                  display: block;
+              }
+          }
+      }
+      &.select-baby {
+          .baby-needs {
+              border-color: $vivid-yellow;
+              &:before {
+                content: '\e906';
+                background: $vivid-orange;
+                border-color: $vivid-orange;
+              }
+              i {
+                  background: #fffae9;
+                  border-color: #fffae9;
+              }
+          }
+          .maternity-bag-list {
+            .baby-list {
+                display: block;
+            }
+        }
+      }
+  }
+
+  /* Doğum Tarih Hesaplayıcı */
+
+  .maternity-date-wrp {
+    background:url(/images/frontend/dogum-tarihi-bg.jpg) top center no-repeat;
+    background-size: cover;
+    padding: 50px 20px;
+  }
+
+  .maternity-date {
+        padding: 0px;   
+        .col1 {
+            margin-top: 0;
+            > h1 {
+                color: $white;
+            }
+            > span {
+                color: $white;
+                margin-bottom: 30px;
+            }
+        } 
+        .col2 {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+        &-calc {
+            display: block;
+            > div {
+                width: 100%;
+                margin-bottom: 20px;
+                > span {
+                    color: $white;
+                    text-align: center;
+                    display: block;
+                    margin-bottom: 25px;
+                }
+            }
+            .ems-prd-sort-maternity {
+                display: inline-block;
+                width: 100%;
+                > span {
+                    cursor: pointer;
+                    border-bottom: none;
+                    font-size: 14px;
+                    font-family: $bold;
+                    color: $dark-slate-blue;
+                    text-align: center;
+                    border: 1px solid $color-4;
+                    padding: 10px 15px;
+                    height: 42px;
+                    border-radius: 5px;
+                    background: #fff;
+                    display: block;
+                    line-height: 20px;
+                    &:after {
+                        font-family: 'icomoon';
+                        content: '\e903';
+                        text-align: center;
+                        line-height: 18px;
+                        color: $bright-blue;
+                        font-size: 14px;
+                        font-weight: normal;
+                        display: inline-block;
+                        margin-left: 10px;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+        }
+        &-reg {
+            padding-right: 0px;
+            input {
+                text-align: center;
+                font-family: $bold;
+                color: $dark-slate-blue;
+                height: 42px !important;
+                border-radius: 5px !important; 
+                font-size: 14px !important;
+                border-width: 1px !important;
+            }
+        }
+        &-length {
+            padding-left: 0px;
+        }
+        &-btn {
+            margin-top: 20px;
+            a {
+                max-width: none;
+                background: $color-18;
+                &:hover {
+                    background: $color-39;
+                }
+            }
+        }
+        &-step2 {
+            color: $white;
+            display: none;
+            text-align: center;
+            max-width: 330px;
+            margin: 0 auto;
+            a {
+                max-width: none;
+                background: $color-18;
+                margin-bottom: 20px;
+                &:hover {
+                    background: $color-39;
+                }
+            } 
+            b {
+                font-weight: normal;
+                margin-bottom: 20px;
+            }
+            span {
+                font-family: $medium;
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 40px;
+            }
+            img {
+                margin-bottom: 30px;
+                max-width: 150px;
+            }
+        }
+        &.calculated {
+            .col1 > span {display:none;}
+            .maternity-date-step1 {
+                display: none;
+            }
+            .maternity-date-step2 {
+                display: block;
+                margin-top: 50px;
+            }
+        }
+    }
+    
+
+  //datepicker
+.hasDatepicker { 
+    cursor: pointer; 
+}
+body .ui-datepicker {
+	font-family: $medium;
+    width: 100%;
+    max-width: 480px;
+	background: $white;
+	border: none;
+	border-radius: 9px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	padding: 0;
+    z-index: 999 !important;
+    overflow: hidden;
+    border: 1px solid $cool-blue;
+}
+
+body .ui-datepicker-header {
+	border: none;
+    background: $color-5;
+    font-weight: normal;
+    display: inline-block;
+    width: 100%;
+    padding: 0 !important;
+}
+
+body .ui-datepicker-header .ui-state-hover {
+	background: transparent;
+	border-color: transparent;
+	cursor: pointer;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+body .ui-datepicker .ui-datepicker-title {
+    margin: 0 !important;
+    text-align: center;
+    font-family: $bold;
+    color: $white;
+    font-size: $small-16;
+    padding: 17px 0;
+    letter-spacing: 1px;
+}
+
+body .ui-datepicker .ui-datepicker-title select {
+    background-color: transparent;
+    padding: 0 10px;
+    margin: 0;
+    border: none;
+    font-size: 16px;
+    font-family: $bold;
+    color: #fff;
+    width: auto;
+    option{
+        color: $black;
+    }
+}
+
+body .ui-datepicker .ui-datepicker-prev-hover,
+body .ui-datepicker .ui-datepicker-next-hover,
+body .ui-datepicker .ui-datepicker-next,
+body .ui-datepicker .ui-datepicker-prev {
+    border: none;
+    text-align: center;
+    border-radius: 0 !important;
+    padding: 11px;
+    cursor: pointer;
+}
+
+body .ui-datepicker .ui-datepicker-prev {
+	//left: -30px; 
+    //background: #333;
+    position: static;
+    width: 52px;
+    height: 52px;
+    float: left;
+    &::before {
+        content: '\e90e';
+        font-family: 'icomoon';
+        font-size: 20px;
+        color: $white;
+    }
+} 
+
+body .ui-datepicker .ui-datepicker-next {
+	//right: -30px;
+    //background: #333;
+    position: static;
+    width: 52px;
+    height: 52px;
+    float: right;
+    &::before {
+        content: '\e916';
+        font-family: 'icomoon';
+        font-size: 20px;
+        color: $white;
+    }
+}
+
+body .ui-datepicker .ui-datepicker-next span,
+body .ui-datepicker .ui-datepicker-prev span {
+	display: none;
+}
+body .ui-datepicker .ui-datepicker-next:before,
+body .ui-datepicker .ui-datepicker-prev:before{
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+
+}
+body .ui-datepicker .ui-datepicker-next:before{
+ 
+}
+body .ui-datepicker .ui-datepicker-prev:before{
+
+}
+
+body .ui-datepicker table {
+    //table-layout: fixed;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    padding: 30px 40px;
+    tbody {
+        display: inline-block;
+        width: 100%;
+    }
+    tr {
+        display: flex;
+        justify-content: space-between;
+    }
+    td {
+        padding: 0;
+    }
+    th {
+        text-transform: uppercase;
+        padding: 10px 0;
+        font-weight: normal;
+        display: inline-block;
+        width: 10%;
+    }
+    td {
+        width: 10%;
+        text-align: center;
+        position: relative;
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+            background: transparent;
+            border: none;
+            text-align: center;
+            padding: 10px 0;
+            margin: 0;
+            font-weight: normal;
+            color: $very-dark-g;
+            font-family: $medium;
+            font-size: 14px;
+            border-radius: 0;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            &:hover {
+                &:hover {
+                    &:after {
+                        content: '\e923';
+                        font-family: 'icomoon';
+                        font-size: 36px;
+                        position: absolute;
+                        left: -50%;
+                        right: -50%;
+                        top:0;
+                        margin: 0 auto;
+                        color: $color-4;
+                        z-index: -1;
+                    }
+                }
+            }
+        }
+        .ui-state-active {
+            color: $white;
+            &:after {
+                content: '\e923';
+                font-family: 'icomoon';
+                font-size: 36px;
+                position: absolute;
+                left: -50%;
+                right: -50%;
+                top:0;
+                margin: 0 auto;
+                color: $color-5;
+                z-index: -1;
+            }
+        }
+    }
+    thead {
+        border-bottom:1px solid $e9-Gray;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 10px;
+        tr {
+            display: flex;
+            justify-content: space-between;
+        }
+        span {
+            color: $dark-slate-blue;
+            font-family: $bold;
+            font-size: 14px;
+        }
+    }
+}

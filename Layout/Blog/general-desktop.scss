@@ -21,6 +21,8 @@
 
 .blog-post-item .swiper-slide {height: auto; width:33.333%;}
 
+.blog-detail .sec-product .miss-opp-widget .swiper-pagination {display: none;}
+
  
  /*Benzer İçerikler*/
 
@@ -28,4 +30,56 @@
  .related-posts-holder .swiper-button-prev,.related-posts-holder .swiper-button-next {display:inline-block;}
  .related-posts-holder .item-text-wrap > div a.item-summary {display: -webkit-box; -webkit-line-clamp: inherit; -webkit-box-orient: vertical; overflow: visible;}
 
- section {padding: 0px;}
+ section {padding: 0px;} 
+
+ /* Doğum Çantası Kontrol Listesi */
+
+
+ .maternity-bag-checklist {
+     padding: 0;
+ }
+ .maternity-bag-checklist, .maternity-date {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    .col1 {
+        text-align: left;
+        max-width: 480px;
+        margin-bottom: 0px;
+        > h1 {
+            font-size: 54px !important;
+            line-height: 54px;
+            text-align: left;
+        }
+        > span {
+            font-size: $small-22 !important;
+            text-align: left;
+        }
+    }
+    .maternity-bag-tab {
+        justify-content: flex-start;
+        .needs-tab {
+            
+        }
+    }
+ }
+
+ /* Doğum Tarih Hesaplayıcı */
+
+ .maternity-date-wrp {
+    padding: 80px 20px 150px 20px;
+    .col1 {
+        margin-top: $small-50;
+    }
+ }
+ .maternity-date {
+    &-calc {
+        display: flex;
+    }
+    &-reg {
+        padding-right: 10px;
+    }
+    &-length {
+        padding-left: 10px;
+    }
+ }

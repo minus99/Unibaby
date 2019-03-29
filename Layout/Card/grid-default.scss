@@ -109,7 +109,39 @@
         }
     }
     .page-card-title {
-        padding: 0 0 20px 20px !important;
+        padding: 10px 0 20px 20px !important;
+    }
+}
+
+
+/* Üyeliksiz Alışveriş */
+.ems-page-guest-Checkout {
+    .gstTitle {display:none !important;}
+    .gstDesc {
+        display: block !important;
+        font-size: $small-12;
+        color:$color-36;
+        margin-bottom: 20px;
+    }
+    .ems-grid-default-cart {
+        border: 0 !important;
+        .ems-grid-row {
+           // padding: 20px 10px !important;
+            border-bottom: 1px solid $color-4 !important;
+        }
+    }
+    .guestCheckoutInner {
+        width: 100%;
+        max-width: 530px;
+        margin: 45px auto; 
+        padding: $reset $large;
+    }
+    .btnGuestCheckoutSave {
+        width: 100%;
+        padding: 17px 5px;
+    }
+    .ems-grid-piece {
+        padding: 10px 0;
     }
 }
 

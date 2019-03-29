@@ -279,20 +279,21 @@
 }
 
 .custom-popup-header {
-    display: table;
+    display: block;
     width: 100%;
     table-layout: fixed;
 
-    >div {
-        display: table-cell;
+    >div { 
+        display: block;
         vertical-align: middle;
     }
 
 }
 
 .custom-popup-header-left {
-    @include Position(absolute, top 20px left 20px);
-    width: 80px;
+    margin-bottom: 20px;
+    //@include Position(absolute, top 20px left 20px);
+    //width: 80px;
 }
 
 .custom-popup-header-right {
@@ -302,9 +303,10 @@
 .custom-popup-header-right {
 
     .text {
+        text-align: center;
         span {
             display: block;
-            margin-left: 90px;
+            //margin-left: 90px;
 
             &:first-child {
                 font-family: $bold;
@@ -337,20 +339,23 @@
     }
 }
 
-/*.miss-opp-widget {
+.suggestions .miss-opp-widget {
     border-radius: 3px;
     background: $color-17;
     border: 1px solid $color-4;
     @include space(padding, all, 15px $small 10px $small);
     @include space(margin, top, $xlarge);
-}*/
+    .swiper-slide {
+        padding-bottom: 0px;
+    }
+}
 
-/*.widget-opp-header span {
+.suggestions .widget-opp-header span {
     font-family: $medium;
     font-size: $small-13;
     display: block;
     padding-bottom: $small-10;
-}*/
+}
 
 .emosInfinitePopup {
 
@@ -420,6 +425,16 @@
 .vailProductPp {
     z-index: 21;
 }
+.suggestions-popup {
+    .close-button {
+        i:before {
+            font-size: 30px;
+            color: $cool-blue;
+        }
+    }
+}
+
+
 
 .suggestions-popup-ready {
     .suggestions-popup {

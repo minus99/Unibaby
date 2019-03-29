@@ -13,22 +13,19 @@ Description: Grid Default
     .page-top-title.page-top-title-2 > span{display: none;}
 
     .add-new-message{ 
+        text-align: center; 
         a{
             display: inline-block;
-            font-size: $small-15;
-            &:before{
+            font-size: $small-13;
+            font-family: $bold;
+            color: $color-5;
+            &:after {
+                content: '\e91d';
+                color: $cool-blue;
                 font-family: 'icomoon';
-                content: '\e90c';
-                font-weight: normal;
-                width: 20px;
-                height: 20px;
-                text-align: center;
-                line-height: 20px;
-                font-size: 10px;
-                color: #9B9B9B;
-                display: inline-block;
-                vertical-align: middle;
-                margin-right: 10px;
+                font-size: 40px;
+                float: right;
+                line-height: 16px;
             }
         }
     }
@@ -38,7 +35,92 @@ Description: Grid Default
 Grid Row Layout Default
 ====================*/
 .site-pages-member {
-    .ems-grid-default-message{
+    .ems-grid-default-message {
+        max-height: 476px;
+        height: 100%;
+        overflow-y: auto;
+        border: 0 !important;
+        padding-right: 20px !important;
+        &::-webkit-scrollbar {
+            width: 3px;
+        }
+        &::-webkit-scrollbar-track {
+            background: $pale-sky-blue;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: $bright-blue;
+        }
+        &::-webkit-scrollbar-thumb:window-inactive {
+            background: $bright-blue;
+        }
+        .ems-grid-header {
+            background: none;
+            width: 100%;
+            margin-bottom: $reset;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+            display: none;
+            >div {
+                padding: $reset;
+                border-top: none;
+            }
+        }
+
+        .ems-grid-header:first-child {
+            //@include grid;
+            //grid-template-columns: 1fr 1fr 1fr 1fr .5fr;
+            //grid-template-rows: minmax(0, auto);
+            //grid-gap: 10px;
+        }
+
+        .ems-grid-row {
+           // display: grid;
+           // grid-template-columns: 1fr 1fr 1fr 1fr .5fr;
+            //grid-gap: 10px; 
+            display: inline-block !important;
+            width: 100%;
+            min-height: 55px;
+            width: 100%;
+            margin-bottom: 20px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius: 3px;
+            padding: 14px 20px !important;  
+            border: 1px solid $pinkish-grey !important;
+            img {width: auto;}
+            >div {
+                border-top: none;
+                padding: $reset;
+                line-height: 25px;
+                color: $very-dark-g;
+                > span {
+                    font-family: $bold;
+                    color: $dark-slate-blue;
+                }
+                > a {
+                    color: $very-dark-g;
+                }
+                &.col-1 {
+                    a {
+                        color: $color-36;
+                        font-size: $small-12;
+                    }
+                }
+                &.col-5 {
+                    margin: 20px 0;
+                }
+                &.col-1, &.col-5, &.col-6 {
+                    > span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    /*.ems-grid-default-message{
         .ems-grid-header {
             width: 50%;
             display: inline-block;
@@ -101,16 +183,20 @@ Grid Row Layout Default
                 }
             }
         }
-    }
+    }*/
 }
 
 
 /*Message Send*/
 .site-pages-member{
     .pageMesajGonder{
+        padding: 0 20px 20px 20px;
         .pageHeaderMesaj{display: none;}
         .ems-page-alternate{
             .page-top-title{display: none;}
+        }
+        img {
+            width: auto;
         }
     }
 }

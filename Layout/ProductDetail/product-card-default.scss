@@ -489,7 +489,7 @@
     .ems-detail-product-type {
         @include flex;
         width: 100%;
-        align-items: center;
+        align-items: flex-start;
         >div {
             //padding-left: $small-10;
             width: 100%;
@@ -540,20 +540,21 @@
         /*min-width: 100px;
         max-width: 160px;*/
         min-height: 40px;
-        @include space(padding, all, $small-15 $small-10 $small-15 60px);
-
+        @include space(padding, all, 60px $small-10 $small-15 $small-10);
         &:before {
             font-family: 'icomoon';
             content: '\e921';
-            @extend .icon-32x32;
+            width: 60px;
             font-size: 60px;
-            @include Position(absolute, top 50% left 0px);
-            margin-top: -16px;
+            line-height: 60px;
+            @include Position(absolute, top 0 left 0px right 0);
+            margin: 0px auto;
         }
         &.spr47 {
             &::before {
                 content: "\e924";
                 font-size: 49px;
+                left: 8px;
             }
         }
         &.spr51 {
@@ -578,15 +579,16 @@
         /*min-width: 100px;
         max-width: 160px;*/
         min-height: 40px;
-        text-align: left;
-        @include space(padding, all, $small-15 $small-10 $small-15 60px);
+        text-align: center;
+        @include space(padding, all, 60px $small-10 $small-15 $small-10);
         &:before {
             font-family: 'icomoon';
             content: '\e921';
-            @extend .icon-32x32;
+            width: 60px; 
+            line-height: 60px;
             font-size: 60px;
-            @include Position(absolute, top 50% left 0px);
-            margin-top: -16px;
+            @include Position(absolute, top 0 left 0px right 0);
+            margin: 0px auto;
         }
     }
     .urunDetay_satisKoliLbl,
@@ -604,7 +606,7 @@
         display: block;
         font-family: $bold;
         font-size: $small-14;
-        text-align: left;
+        text-align: center;
         &:before{
             content:'₺';
             font-family: $bold;
@@ -775,6 +777,12 @@
     }
 }
 
+.ems-detail-subscriber-price-discount {
+    &:before {
+        content: '₺';
+    }
+}
+
 .ems-subscriptions-clone {
     display: none;
 }
@@ -787,7 +795,7 @@
 .ems-detail-subscriber-ttl {
     color: $dark-slate-blue;
     font-size: $small-16;
-    font-family: $medium;
+    font-family: $regular;
 }
 
 .abonelikSureItem {
@@ -817,6 +825,9 @@
     }
 }
 
+.abonelikPeriyotList {
+    display: block !important;
+}
 .abonelikPeriyotItem {
     position: relative;
     vertical-align: middle;
@@ -826,8 +837,8 @@
     border: 1px solid $color-4;
     border-radius: 5px;
     cursor: pointer;
-    background: $white;
-
+    background: $white; 
+    display: inline-block !important; 
     .sStylerWrp_radio {
         display: block;
     }
@@ -860,13 +871,35 @@
     }
 }
 
+.ems-abonelik-btn {
+    display: flex;
+    @include space(margin, top, $large);
+    .counter-btn.top-btn:after, .counter-btn.bottom-btn:after {
+        color: $color-18;
+    }
+    .urunDetay_urunAdet input {
+        color: $color-18 !important;
+        border-color: $color-18 !important;
+    }
+    .urunDetay_btnSepeteAt {
+        a.btnsepeteAt {
+            border-radius: 0 3px 3px 0;
+        }
+    }
+}
+
+.ems-detail-subscriber-cardAdd {
+    width: 100%; 
+}
+
 .btnAbonelikSepeteAt {
     display: block;
     font-size: $small-17;
-    @include space(margin, top, $large);
-    @include space(padding, top, $small-15);
-    @include space(padding, bottom, $small-15);
+    //@include space(margin, top, $large);
+    @include space(padding, top, $small-13);
+    @include space(padding, bottom, $small-13);
     background: $color-18;
+    border-radius: 0 3px 3px 0;
 }
 span.btnAbonelikSepeteAt{
     padding: 0;

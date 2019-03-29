@@ -36,7 +36,7 @@
     }
 }
 
-.ems-page-cart-step0 {
+.ems-page-cart-step0, .ems-page-guest-Checkout {
     .ems-page-default-order-cart {
         @include grid;
         grid-template-columns:10px minmax(auto, 850px) minmax(auto, 350px);
@@ -55,13 +55,15 @@
     .cart-section-right {
         grid-area: RGH;
         z-index: 2;
-        margin-top: 35px; 
+        margin-top: 47px; 
     }
     .swiper-container-card{
         grid-area: SLD;
+        width: 100%;
+        max-width: 1200px;
     }
     .page-card-title {
-        padding: 0 0 20px 0px !important;
+        padding: 10px 0 20px 0px !important;
     }
 }
 

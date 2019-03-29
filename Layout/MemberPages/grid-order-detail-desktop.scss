@@ -16,8 +16,6 @@
         "BRD BRD"
         "GRD PYM"
         "BRR BRR";
-        padding-left: $reset;
-
         .order-cancel{
             grid-area: CNC;
         }
@@ -27,8 +25,8 @@
             align-items: flex-start;
             .lnkSipTekrarla{
                 @include transition(all .2s ease);
-                padding-top:$small-5;
-                padding-bottom:$small-5;
+                padding-top:$small-10;
+                padding-bottom:$reset;
                 padding-right:$reset;
                 &:hover{
                     color: $color-8;   
@@ -47,21 +45,33 @@
         .inner-title{
             grid-area: TLL;
         }
+        .order-address {
+            .text {
+                font-size: $small-14;
+            }
+        }
         .order-address-delivery{
             grid-area: DLV;
-            margin-right: $small-10;
+            //argin-right: $small-10;
+            padding: $small-40 $small-30;
         }
         .order-address-billing{
             grid-area: BLG;
-            margin-left: $small-10;
+            //margin-left: $small-10;
+            padding: $small-40 $small-30;
         }
         .inner-title-payment{
             grid-area: PYT;
         }
+        .ems-order-detail-grid-md, .order-detail-info-payment {
+            padding: $reset;
+        }
         .order-detail-info-payment{
             grid-area: PYM;
-            margin-left: 20px;
-            max-width: 300px;
+            margin-left: 35px;
+            max-width: 400px;
+            padding-right:$reset; 
+            padding-left:$reset;
         }
         .ems-order-detail-grid-md{
             grid-area: GRD;
@@ -89,23 +99,24 @@
             z-index: inherit;
             width: inherit;
             padding: 0;
+            border: 0;
             > a{
                 display: inline-block;
-                font-family: $medium;
                 padding-top: $reset;
                 padding-right: $reset;
                 padding-bottom: $reset;
+                margin-top: $small-10;
+                font-family: $regular;
+                color: $color-36;
+                font-size: $small-14;
                 &:before{
-                    font-size: $small-13;
-                    color: $color-10;
+                    font-size: $small-25;
+                    @include Position(absolute, top 50% left $reset);
                 }
             }
         }
         .ems-member-page-left {
             display: block;
-        }
-        .order-address-billing{
-            padding-top: $small-20;
         }
         .inner-title {
             margin-bottom: $small-30;

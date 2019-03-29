@@ -89,6 +89,7 @@ $small-38:                                        38px;
 $small-39:                                        39px;
 $small-40:                                        40px;
 $small-50:                                        50px;
+$small-54:                                        54px;
 
 
 // Cursor
@@ -161,6 +162,10 @@ $width100:                                        100%;
     font-size: $small-28;
 }
 
+.fs-30 {
+    font-size: $small-30; 
+}
+
 .fs-32 {
     font-size: $small-32;
 }
@@ -181,6 +186,11 @@ $width100:                                        100%;
     font-size: $small-40;
 }
 
+.fs-54 { 
+    font-size: $small-54 !important;
+    line-height: 54px;
+}
+
 .fm-24-32{
     font-size: $small-24;
 }
@@ -191,6 +201,10 @@ $width100:                                        100%;
 
 .m-t-10{
     margin-top: $small-10;
+}
+
+.m-t-15{
+    margin-top: $small-15;  
 }
 
 .m-t-20{
@@ -218,7 +232,6 @@ $width100:                                        100%;
 .algn-cntr{
     text-align: center;
 }
-
 .fw-n{
     font-weight: normal;
 }

@@ -6,10 +6,18 @@ Description: Grid Desktop
     .ems-page-default-message {
         padding: $reset;
     }
-
     .add-new-message {
         float: right;
-
+        a{
+            font-size: $small-12;
+            text-decoration: underline;
+            text-transform: none;
+            font-family: $regular;
+            color: $cool-blue;
+            &:after{
+                display: none;
+            }
+        }
         a:hover {
             text-decoration: underline;
         }
@@ -27,6 +35,13 @@ Description: Grid Desktop
     }
 }
 
+/*Message Send*/
+.site-pages-member{
+    .pageMesajGonder{
+        padding: 0;
+    }
+}
+
 /*====================
 Grid Row Layout Desktop
 ====================*/
@@ -36,45 +51,5 @@ Grid Row Layout Desktop
         padding: $reset;
     }
 
-    .ems-grid-default-message {
-        .ems-grid-header {
-            background: none;
-            width: 100%;
-            margin-bottom: $reset;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-radius: 0;
-
-            >div {
-                padding: $reset;
-                border-top: none;
-            }
-        }
-
-        .ems-grid-header:first-child {
-            @include grid;
-            grid-template-columns: 1fr 1fr 1fr .5fr;
-            grid-template-rows: minmax(0, auto);
-            grid-gap: 10px;
-        }
-
-        .ems-grid-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr .5fr;
-            grid-gap: 10px;
-            min-height: 55px;
-            width: 100%;
-            margin-bottom: $reset;
-            border-top: none;
-            border-left: none;
-            border-right: none;
-            border-radius: 0;
-
-            >div {
-                border-top: none;
-                padding: $reset;
-            }
-        }
-    }
+    
 }

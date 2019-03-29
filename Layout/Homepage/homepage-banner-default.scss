@@ -445,7 +445,7 @@
         margin: 0 auto;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-end;
         .main-list-title {
             @include fluid-type(font-size, 500px, 2000px, 30px, 54px);
             font-family: $baloo;
@@ -461,6 +461,10 @@
             display: block;
             @include space(margin, bottom, 30px)
             @include space(padding, all, $reset 30px);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
         .main-list-cat {
             @include space(padding, all, $reset 30px);

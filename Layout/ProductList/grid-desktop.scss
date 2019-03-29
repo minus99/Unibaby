@@ -15,7 +15,7 @@
 }
 
 .ems-prd-list-count {
-    padding: 0;
+    @include space(padding, all, $reset $xMedium);
 }
 
 .ems-prd-list-sort-products {
@@ -62,6 +62,7 @@
         @include space(padding, left, $xMedium);
         @include space(padding, right, $xMedium);
         background: $white;
+        z-index: 1;
         box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.17);
     }
     &.activeted {
@@ -69,6 +70,17 @@
             &:before {
                 display: none;
             }
+        }
+    }
+}
+
+/* Ürün Liste Kısayol Linkler */
+
+.listShortCutMenu {
+    ul {
+        min-height: 54px;
+        &:empty {
+            display: none;
         }
     }
 }

@@ -226,7 +226,37 @@
     @include space(padding, top, $small-16);
     @include space(padding, bottom, $small-16);
     font-size: $small-15;
+    border-radius: 3px;
     &:hover{
         background: $color-39 !important;
+    }
+}
+
+.ems-detail-product-type {
+    align-items: center !important; 
+    >div>span {
+        @include space(padding, all, $small-15 $small-10 $small-15 60px);
+        &:before {
+            width: 32px;
+            @include Position(absolute, top 50% left 0px); 
+            right: auto;
+            margin-top: -16px;
+            line-height: 32px;
+            
+        }
+    }
+    .urunDetay_satisKoliLbl{
+        @include space(padding, all, $small-15 $small-10 $small-15 60px);
+        text-align: left;
+        &:before {
+            width: 32px;
+            @include Position(absolute, top 50% left 0px);
+            right: auto;
+            margin-top: -16px;
+            line-height: 32px;
+        }
+    }
+    .urunDetay_satisFiyatKoliAdet {
+        text-align: left;
     }
 }

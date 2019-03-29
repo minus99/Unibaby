@@ -72,18 +72,18 @@
     @include space(margin, top, $large);
 }
 .custom-popup-header-left {
-    width: 27.2%;
+    width: 100%;
     position: relative;
     top: inherit;
     left: inherit;
     img{
-        max-width: 146px;
+        //max-width: 146px;
     }
 }
 
 .custom-popup-header-right {
-    width: 70%;
-    @include space(padding, left, $xlarge);
+    width: 100%;
+    //@include space(padding, left, $xlarge);
     .text{
         span{
             @include space(margin, left, $reset);
@@ -103,6 +103,9 @@
     }
     .ems-prd-price{
         width: auto;
+        &-first {
+            margin-right: 5px;
+        }
     }
     .urunListe_sepet {
         width: 70%;

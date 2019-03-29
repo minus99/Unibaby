@@ -1,7 +1,8 @@
 .site-pages-member {
     .ems-page-default-order-detail {
-        padding-left: $small-20;
-        padding-right: $small-20;
+        padding-left: $reset;
+        padding-right: $reset;
+        padding-bottom: $small-20;
         .page-top-desc{
             display: inherit;
             .lnkSipTekrarla{
@@ -9,8 +10,8 @@
                 padding:$small-19 $small-5;
                 display: block;
                 span{
-                    font-size: 15px;
-                    color: $color-1;
+                    font-size: 14px;
+                    color: $cool-blue;
                     text-decoration: underline;
                 }
             }
@@ -20,30 +21,30 @@
             position: fixed;
             top: 0;
             left: 0;
-            background: $color-17;
+            background: $white;
             z-index: 35;
             width: 100%;
             >a {
                 display: block;
-                padding: $small-19 $small-40 $small-19 $small-40;
+                padding: $small-21 $small-40 $small-21 $small-40;
                 background: none;
-                font-size: $small-18;
-                font-family: $regular;
-                color: $color-1;
+                font-size: $small-16;
+                font-family: $bold;
+                color: $dark-slate-blue;
                 border: none;
                 border-radius: 0;
                 position: relative;
                 &:before {
                     font-family: 'icomoon';
-                    content: '\e903';
-                    width: 30px;
+                    content: '\e901';
+                    width: 30px; 
                     height: 30px;
                     display: inline-block;
                     vertical-align: middle;
                     line-height: 30px;
                     text-align: center;
-                    font-size: $small-13;
-                    color: $color-1;
+                    font-size: $small-35;
+                    color: $bright-blue;
                     @include Position(absolute, top 50% left $small-10);
                     margin-top: -15px;
                 }
@@ -52,15 +53,18 @@
 
         .inner-title {
             margin-bottom: $small-20;
+            padding-bottom: $small-20;
             line-height: 1;
+            border-bottom: 1px solid $very-light-gray;
         }
         .inner-title-payment{
-            border-top: 2px solid $color-38;
+            //border-top: 2px solid $color-38;
             padding-top: $small-20;
+            font-size: $small-14;
         }
         .border-line{
             display: none;
-            border-top: 2px solid $color-38;
+            //border-top: 2px solid $color-38;
             margin-bottom: $small-30;
         }
         .border-line-2{
@@ -70,7 +74,7 @@
             padding-top: $small-20;
             padding-bottom: $small-20;
             .text {
-                font-size: $small-20;
+                font-size: $small-13;
                 font-family: $bold;
                 margin-bottom: $small-20;
                 line-height: 1;
@@ -80,13 +84,23 @@
                 border-radius: 3px;
                 border: 1px solid $color-4;
                 padding: $small-20;
+                background: $white;
                 >span {
                     font-size: $small-15; 
                 }
             }
         }
+        .ems-order-detail-grid-md, .order-detail-info-payment {
+            padding: $reset $small-20;
+        }
         .order-address-billing{
             padding-top: $reset;
+            background: #f9f9f9;
+            padding: $small-30 $small-20;
+        }
+        .order-address-delivery{
+            background: #f9f9f9;
+            padding: $small-30 $small-20;
         }
         .bottom-step {
            display: none;
@@ -113,7 +127,8 @@
     .ems-grid-default-order-products {
         border-radius: none;
         border: 0;
-        max-height: 330px;
+        max-height: 200px;
+        height: 100%;
         overflow-x: hidden;
         overflow-y: auto;
         padding-right: $small-10;
@@ -122,8 +137,9 @@
 
         .ems-grid-row {
             min-height: 110px;
-            padding: $small-10 $small-5 $small-10 100px;
+            padding: $small-20 $small-5 $small-20 100px !important; 
             position: relative;
+            border: 0 !important;
 
             .ems-grid-img {
                 position: absolute;
@@ -140,7 +156,7 @@
 
             .ems-grid-name {
                 >a {
-                    font-size: $small-15;
+                    font-size: $small-12;
                     br{display: none;}
                     strong{display: none;}
                     display: none;
@@ -159,8 +175,7 @@
                     .topFiyat,
                     .satBrFiyat {
                         font-family: $bold;
-                        font-size: $small-16;
-                        color: $black;
+                        font-size: $small-14;
                     }
 
                     .netFiyatVrg,
@@ -168,7 +183,6 @@
                     .satBrFiyatVrg {
                         font-size: $small-12;
                         text-decoration: line-through;
-                        color: $black;
                     }
 
                     .satBrFiyatVrg,
@@ -182,10 +196,11 @@
     }
 
     .order-detail-info {
-        border-top: 1px solid $color-38;
-        border-bottom: 1px solid $color-38;
+        border-top: 1px solid $e9-Gray;
         padding-top:$small-15;
         padding-bottom:$small-15;
+        padding-right:$small-20;  
+        padding-left:$small-20; 
         >div {
 
             &:empty {
@@ -206,7 +221,6 @@
             .text {
                 font-family: $medium;
                 font-size: $small-14;
-                color: black;
             }
 
             .value {
@@ -226,46 +240,54 @@
     }
 
     .order-detail-info-payment {
-        >div {
+        &-wrp {
+            padding: 30px 20px;
+            border: 1px solid $color-4;
+            border-radius: 5px;
             >div {
-                &:empty {
-                    display: none;
+                >div {
+                    &:empty {
+                        display: none;
+                    }
+    
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 50%;
+                    padding-top: 7px;
+                    padding-bottom: 7px;
+    
                 }
-
-                display: inline-block;
-                vertical-align: middle;
-                width: 50%;
-                padding-top: 7px;
-                padding-bottom: 7px;
-
-            }
-
-            .text {
-                text-align: left;
-
-                >* {
-                    color: $color-1;
-                    font-size: $small-15;
-                    font-weight: normal;
+    
+                .text {
+                    text-align: left;
+    
+                    >* {
+                        font-size: $small-15;
+                        font-weight: normal;
+                    }
                 }
-            }
-
-            .value {
-                text-align: right;
-
-                >* {
-                    color: $color-1;
-                    font-size: $small-15;
-                    font-weight: normal;
+    
+                .value {
+                    text-align: right;
+                    >* {
+                        font-size: $small-15;
+                        font-weight: normal;
+                    }
                 }
             }
         }
         .total{
-            border-top: 1px solid $color-38;
-            margin-top: 10px;
-            padding-top: 10px;
+            margin-top: 20px;
             .fs-13{
                 color: $color-26;
+            }
+            .fs-15 {
+                font-family: $bold;
+            }
+            .value {
+                >* {
+                    font-family: $bold;
+                }
             }
         }
     }

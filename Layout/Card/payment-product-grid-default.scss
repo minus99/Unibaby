@@ -53,6 +53,9 @@
         margin-top: $reset;
         margin-bottom: $small-10;
         border-top: none;
+        .ems-grid-header:first-child {
+            display: none;
+        }
         .ems-grid-row{
             border-bottom: none;
         }
