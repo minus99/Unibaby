@@ -1,3 +1,8 @@
+.site-pages-home {
+    .swiper-container{display: none;}
+    .swiper-container.plugins-active{display: block;}
+}
+
 .grid-banner-box {
     a { 
         display: block;
@@ -137,17 +142,40 @@
 
 .main-tab-sticky {
     background: $white;
+    > ul{
+        position: relative;
+        height: 75px;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+    }
+    .pointer {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        background: #f56aa9;
+        height: 3px;
+        width: 200px;
+        opacity: 0;
+        transition: all 0.3s ease;
+        &[data-rel="tab1"]{ background: #f56aa9;}
+        &[data-rel="tab2"]{ background: #9249a8;}
+        &[data-rel="tab3"]{ background: #ffd756;}
+        &[data-rel="tab4"]{ background: #3c89ce;}
+        &[data-rel="tab5"]{ background: #83b83f;}
+    }
     ul {
         @include flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
-        max-width: 1000px;
+        max-width: 940px;
         margin: 0 auto;
         li {
             @include Position(relative, null);
             @include space(padding, all, $small $small $xs $small);
             text-align: center;
             a {
+                @include Position(relative, null);
                 span {
                     line-height: 25px;
                     font-family: $medium;
@@ -156,23 +184,39 @@
                 }
             }
             i {
-                width: 35px;
-                height: 35px;
+                width: 30px;
+                height: 30px;
                 font-size: 35px;
                 color: $white;
-                background: $color-4;
+                //background: $color-4; 
                 line-height: 34px;
                 border-radius: 14px;
                 display: block;
                 margin: 0 auto;
+                @include Position(relative, null);
                 @include transition (all .2s ease);
+                &:before {
+                    width: 30px;
+                    height: 30px;
+                    line-height: 33px;
+                    margin-left: -2px;
+                    @include Position(relative, null);
+                    z-index: 1;
+                }
+                &:after {
+                    content: '\e923';
+                    font-family: 'icomoon';
+                    font-size: 30px;
+                    @include Position(absolute, left 0 right 0 top 0);
+                    color: $dark-slate-blue;
+                }
             }
             &:after {
                 @include transition (all .2s ease);
             }
             &.selected {
-                i {
-                    background: $color-18;
+                i:after {
+                    color: $color-18;
                 }
                 span {
                     color: $dark-slate-blue;
@@ -183,39 +227,43 @@
                     width: 100%;
                     height: 3px;
                     background: $color-18;
+                    display: none;
                 }
                 &[rel$='tab2'] {
-                    i {
-                        background: $color-5;
+                    i:after {
+                        color: $color-5;
                     }
                     &:after {
                         background: $color-5;
                     }
                 }
                 &[rel$='tab3'] {
-                    i {
-                        background: $vivid-yellow;
+                    i:after {
+                        color: $vivid-yellow;
                     }
                     &:after {
                         background: $vivid-yellow;
                     }
                 }
                 &[rel$='tab4'] {
-                    i {
-                        background: $cool-blue;
+                    i:after {
+                        color: $cool-blue;
                     }
                     &:after {
                         background: $cool-blue;
                     }
                 }
                 &[rel$='tab5'] {
-                    i {
-                        background: $vivid-orange;
+                    i:after {
+                        color: $vivid-orange;
                     }
                     &:after {
                         background: $vivid-orange;
                     }
                 }
+            }
+            &[rel$='tab1'] {
+                i:before {line-height: 31px;}
             }
         }
     }
@@ -243,22 +291,51 @@
             transform: rotate(180deg);
         }
     }
+    &.activeted {
+        .pointer{
+            opacity: 1;
+        }
+    }
 }
 
 /* İkili Banner */
 
 .box-colmn-banner {
-    display: grid;
+    @include grid;
     grid-column-gap: 30px;
     @include space(margin, bottom, 30px);
     @include Position(relative, null);  
     &.col2 {
         grid-template-columns: 1fr 1fr;
+        .box-colmn-banner-product {
+            flex: 4;
+        }
+        .box-colmn-banner-content {
+            .title {
+                font-size: 28px;
+            }
+            .title, .subTitle {
+                width: 100%;
+            }
+        }
     }
     &.col3 {
         grid-template-columns: 1fr 1fr 1fr;
         .box-colmn-banner-bottom {
-            @include space(padding, all, 0 40px 40px 40px);
+            @include space(padding, all, 0 10px 40px 20px);
+        }
+        .box-colmn-banner-product {
+            flex: 3;
+        }
+        .box-colmn-banner-content {
+            padding-right: 10px;
+            .title {
+                width: 100%;
+            }
+            .subTitle {
+                width: 100%;
+                margin-bottom: 20px;
+            }
         }
     }
 }
@@ -278,6 +355,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         width: 80%;
+        font-size: 24px;
     }
     .subTitle {
         @include space(margin, bottom, 25px); 
@@ -286,6 +364,9 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         width: 80%;
+    }
+    .subLinkWrp {
+        min-height: 33px;
     }
     .subLink {
         background: $white;
@@ -371,6 +452,25 @@
     .box-colmn-banner-content {
         flex: 3;
     }
+    &.swiper-arrow {
+        .swiper-button-next, .swiper-button-prev {
+            display: inline-block;
+            background: none;
+            cursor: pointer;
+            i {
+                &::before {
+                    color: $bright-blue;
+                }
+            }
+            &:hover  {
+                i {
+                    &::before {
+                        color: $cool-blue;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Anasayfa Liste Görsel */
@@ -446,6 +546,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
+        padding-bottom: 250px;
         .main-list-title {
             @include fluid-type(font-size, 500px, 2000px, 30px, 54px);
             font-family: $baloo;
@@ -467,6 +568,7 @@
             overflow: hidden;
         }
         .main-list-cat {
+            display: none;
             @include space(padding, all, $reset 30px);
             ul {
                 @include flex;
@@ -506,6 +608,14 @@
     .item-1, .item-2, .item-3, .item-4 { 
         .swiper-button-next, .swiper-button-prev {
             display: none;    
+        }
+    }
+}
+
+@media screen and (max-width:$breakpoint-small){
+    .main-list-container { 
+        .main-list-wrp {
+            padding-bottom: 50px;
         }
     }
 }
@@ -573,5 +683,234 @@
     .leaf-right-top {
         right: 10px;
         top: 0;
+    }
+}
+
+@media screen and (max-width: $breakpoint-medium) {
+    .ems-page-home,
+    .ems-page-home body{
+        overflow: hidden !important;
+        height: 100vh;
+        position: fixed;
+        left:0;
+        top:0;
+    }
+    .ems-page-home .site-pages-home{
+        position: relative;
+        overflow-y: scroll;
+        height: 100vh;
+        scroll-snap-type: mandatory;
+        scroll-snap-points-y: repeat(100vh);
+        scroll-snap-type: y mandatory; 
+        scroll-snap-type: mandatory; 
+        -ms-scroll-snap-type: mandatory; 
+        -webkit-scroll-snap-type: mandatory; 
+        -webkit-scroll-snap-destination: 0% 0%; 
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+    }
+    
+    .ems-page-home .grid-colmn-a.position-sticky{top:0px !important;}
+
+    .ems-page-home .site-footer {display: none;}
+    
+    .ems-page-home .site-pages-home > div[rel],
+    .ems-page-home .site-pages-home > .grid-colmn-c,
+    .ems-page-home .site-pages-home > .grid-colmn-d{
+        height: 100vh;
+        scroll-snap-align: start; 
+        scroll-snap-coordinate: 0% 0%;
+        -webkit-scroll-snap-coordinate: 0% 0%; 
+    }
+}
+
+/*Abonelik LP
+=================================
+*/
+.subscriber-banner-grid{
+    //padding-top: 200px;
+    position: relative;
+}
+
+.subscriber-banner-grid-inner{
+    .text{
+        padding: 20px;
+        p{   
+
+        }
+        p.first{
+            font-size: 24px;
+            font-family: $bold;
+            padding-bottom: 15px;
+        }
+        p.last{
+            font-size: 15px;
+            color: $very-dark-g;
+        }
+    }
+    .images{
+        margin-left: auto;
+        margin-right: auto;
+        //width: 105px;
+        padding: 20px;
+        img{
+            //max-width: 103px;
+        }
+    }
+    .slide{
+        padding-left: 10px;
+        padding-right: 10px;
+        overflow: hidden;
+        .swiper-container .swiper-inner{
+            overflow: visible;
+        }
+    }
+}
+
+/*Single Banner*/
+.subscriber-banner-full{
+    background: $color-17;
+    margin-top: 50px;
+    padding-top: 50px;
+}
+
+.subscriber-banner-full-inner{
+    h2, h3{
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    h3{
+        font-family: $bold;
+        margin-bottom: 50px;
+        font-size: 28px;
+    }
+}
+
+/*Single Banner 1200px
+=============
+*/
+.site-pages-subscriber{
+    .grid-banner-box-single > div:nth-child(1){
+        .grid-banner-box-text{
+            top: inherit;
+            left: 20px;
+            right: inherit;
+            bottom: 20px;
+            text-align: left;
+            img {
+                max-width: 100px;
+            }
+            .title-1 {
+                font-family: $medium;
+                font-size: 24px;
+                color: $cool-blue;
+            }
+            .title-2{
+                font-size: 15px;
+            }
+            .btnBannerDefaultAbone{
+                width: 100%;
+                max-width: 160px;
+                background: $color-5;
+                margin-top: 15px;
+                border-radius: 10px;
+                font-family: $regular;
+                font-size: 13px;
+                text-transform: uppercase;
+                &:after {
+                    content: '\e916';
+                    font-family: 'icomoon';
+                    font-size: 12px;
+                    color: $white;
+                    margin-left: 10px;
+                    position: relative;
+                    top: 1px;
+                }
+            }
+        }
+    }
+    .widget{
+        .swiper-title{
+            margin-top: 30px;
+            text-align: center;
+            span{
+                font-family: $bold;
+                font-size: 28px;
+            }
+        }
+        .swiper-slide{
+            width: 50%;
+        }
+        .swiper-inner{
+            overflow: visible;
+        }
+    }
+    .urunListe_adet, .urunListe_sepet {display:none;}
+    .urunListe_urunAboneOl .btnDefault {margin-left: 0;}
+}
+
+.abonelik-grid-grup{
+    padding: 20px;
+    img, .lft{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    img{
+        width: auto;
+        max-width: 67px;
+        margin-right: 15px;
+    }
+    .lft{
+        width: calc(100% - 90px);
+    }
+    .first{
+        margin-bottom: 30px;
+    }
+    ul li{
+        font-size: 15px;
+        position: relative;
+        padding-left: 15px;
+        &:before{
+            content:'';
+            width: 5px;
+            height: 5px;
+            border-radius: 100%;
+            background: #000;
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+    }
+}
+
+/*Abonelik LP Slider */
+.swiper-container-abonelik{
+    .swiper-title{
+        font-size: 24px;
+        font-family: $bold;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .swiper-slide{
+        width: 235px;
+        padding: 10px;
+    }
+    .spc-text{
+        max-width: 180px;
+        img{
+            width: 48px;
+            margin-bottom: 15px;
+        }
+        strong{
+            font-weight: normal;
+            font-family: $medium;
+            font-size: 20px;
+        }
+        span{
+            font-size: 14px;
+            margin-top: 10px;
+        }
     }
 }

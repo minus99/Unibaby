@@ -1,6 +1,7 @@
 .scroll-top-btn{
     background:$very-dark-gray;
     @include space(padding, all, 16px $xs);
+    display: none;
     i{
         &:before{
             font-size: $small-18;
@@ -12,9 +13,10 @@
 .site-footer{
     //background: url(/images/frontend/footer-background.svg) center center no-repeat;
     background-size: cover;
-    display: none;
+    //display: none;
     &-logo{
         @include space(padding, left, $large);
+        display: none;
     }
     &-copyright{
         text-align: center;
@@ -22,11 +24,13 @@
         font-size: $small-13;
         @include space(padding, top, $xxlarge);
         @include space(padding, bottom, $xxlarge);
+        display: none;
     }
     &-support{
         font-family: $bold;
         font-size: $small-18;
         text-align: center;
+        display: none;
         i, span{
             display: inline-block;
             vertical-align: middle;
@@ -44,6 +48,10 @@
             margin-top: 60px;
             width: 100%;
             max-width: 160px;
+        }
+        &-mobile {
+            display: block;
+            .navbar-main-mobile-footer {position: static;}
         }
     }
     &-menu {

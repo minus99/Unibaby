@@ -168,6 +168,7 @@
 
 .cart-section-left {
     @include space(padding, top, $small);
+    margin-bottom: 40px;
 }
 
 .ems-grid-default-cart {
@@ -179,6 +180,9 @@
 }
 
 .ems-page-cart {
+    .ems-cart-btn {
+        margin-top: 0px;
+    }
     .btnAlisverisDevam {
         background: none;
         color: $color-5;
@@ -186,25 +190,30 @@
         font-family: $bold;
         //margin-top: $small-10;
         padding: $small-16;
+        display: block;
+        clear: both;
+        border-top: 1px solid $color-4;
+        border-bottom: 1px solid $color-4;
         &:before {
             content:'\e90e';
             font-family: 'icomoon';
             float: left;
             color: $bright-blue;
-            margin-right: 5px;
-            margin-top: 1px;
+            margin-right: 10px;
+            margin-top: 2px;
         }
         &:hover {
             background: none;
         }
     }
-    .btnSepetBosalt {
+    .btnSepetBosalt, .btnSepetGuncelle {
         background: none;
         color: $color-5;
         font-size: $small-14;
         font-family: $bold;
         //margin-top: $small-10;
         float: right;
-        padding: $small-16;
+        padding: $small-16 0;
+        width: 50%;
     }
 }

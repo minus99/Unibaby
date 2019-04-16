@@ -68,6 +68,7 @@
 .grid-colmn {
     &-mobile-filter{
         @include Position(relative, null);
+        min-height: 50px;
         .btn-filter{
             @include Position(absolute, top 50% right $xMedium);
             @include setTransform(translateY(-50%));

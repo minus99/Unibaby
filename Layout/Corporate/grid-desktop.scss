@@ -17,7 +17,7 @@
     grid-area: RGH;
 }
 
-.ems-content-wrapper{
+.ems-content-wrapper{ 
     //max-width: 810px;
     @include space(margin, left, 0);
     @include space(margin, right, auto);
@@ -36,8 +36,8 @@
         @include space(margin, bottom, $xlarge);
     }
     .content-text{
-        font-size: $small-18;
-        line-height: 20px;
+        font-size: $small-16 !important;
+        line-height: 22px !important;
         color: $very-dark-g;
         @include space(padding, right, 50px);
     }

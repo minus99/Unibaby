@@ -15,7 +15,8 @@
         "PYT PYT"
         "BRD BRD"
         "GRD PYM"
-        "BRR BRR";
+        "BRR BRR"
+        "BTN BTN";
         .order-cancel{
             grid-area: CNC;
         }
@@ -81,6 +82,10 @@
         }
         .bottom-step{
             grid-area: BTN;
+            text-align: left;
+            .btnSipIptal, .btnSipIade {
+               max-width: 190px;
+            }
         }
         .border-line-2{
             display: block;
@@ -131,14 +136,14 @@
             margin-top: $small-10;
         }
         .border-line-2{
-            border-top-width:2px;
+            border-top: 1px solid $color-17;
             margin-top: $small-30;
             margin-bottom: $reset;
         }
     }
 
     .order-detail-info {
-        display: grid;
+        @include grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: minmax(0, auto);
         grid-gap: $small-10;
@@ -148,13 +153,13 @@
         margin-bottom: $small-10;
 
         >div {
-            display: grid;
+            @include grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: minmax(0, auto);
             grid-gap: 10px;
 
             >div {
-                display: grid;
+                @include grid;
                 width: inherit;
                 align-items: center;
                 vertical-align: inherit;

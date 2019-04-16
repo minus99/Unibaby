@@ -10,6 +10,10 @@
     }
 }
 
+#mesajGonder {
+    .ems-message {max-width: none !important;} 
+}
+
 /*Desktop Form Layout*/
 .ems-form-member{
     .ems-form-inner{
@@ -53,3 +57,5 @@
         }
     } 
 }
+
+.ems-logoff .loginForm {display: none;}

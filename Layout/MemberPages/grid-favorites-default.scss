@@ -4,6 +4,7 @@
 .ems-page-default-favorites {
     .select-cfg {
         text-align: center;
+        padding: 0 10px;
         > div{
             a.btnDefault{
                 display: inline-block;
@@ -162,3 +163,5 @@
         }
     }
 }
+
+.fav-group-popup {display:none;}

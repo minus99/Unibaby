@@ -8,6 +8,15 @@
     padding-bottom:$small-20;
 }
 
+#mesajGonder {
+    .big-text-message {
+        margin-top: 20px;
+        font-size: 16px;
+        font-family: $medium;
+        display: block;
+    }
+}
+
 /*Desktop Form Layout*/
 .ems-form-member{
     .ems-field{

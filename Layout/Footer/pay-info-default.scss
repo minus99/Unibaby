@@ -1,47 +1,77 @@
 .grid-info-box {
+    @include space(padding, all, 30px 0px 0 0);
+    @include space(margin, all, 30px 0px 0 0);
+    border-top: 1px solid $color-17;
     .grid-info-box-boxes {
-        width: 100%;
         li {
             text-align: center;
-            @include space(padding, all, $reset 5px $reset 30px);
+            @include space(padding, all, 10px 10px);
+            width: 50%;
             display: inline-block;
             vertical-align: top;
-            max-width: 250px;
-            width: 100%;
-            border-right: 1px solid $color-4;
-
+            min-height: 180px;
+            max-height: 180px;
+            img {max-height: 55px; width: auto; margin: 20px auto;}
             >* {
                 display: block;
-                text-align: left;
             }
 
             i {
-                width: 80px;
-                height: 80px;
-                line-height: 80px;
+                width: 60px;
+                height: 60px;
+                line-height: 60px;
                 text-align: center;
                 display: inline-block;
-                float: left;
+                @include space(margin, top, $xs);
+                position: relative;
             }
 
             i,
             i:before {
-                font-size: 80px;
+                font-size: 40px;
             }
 
             i:before {
+                color: $vivid-orange;
             }
-
+            .icon-return{
+                small{
+                    position: absolute;
+                    bottom: 13px;
+                    left: 8px;
+                    font-size: 12px;
+                    height: auto;
+                    line-height: 1;
+                    font-family: bold;
+                    color: $color-8;
+                }
+            }
             .fm-r,
             .fm-m {
-
+                @extend .m-t-10;
             }
 
-            .fm-b {
-                margin-top: 25px;
+            .fm-r {
+                color: #5a5a5a;
+                min-height: 50px;
             }
-            &:last-child {
-                border: 0;
+            &:nth-child(1), &:nth-child(2) {
+                i:before {
+                    font-size: 60px;
+                }
+            }
+            &:nth-child(3) {
+                i {
+                    width: 80px;
+                    &:before {
+                        font-size: 80px;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                i:before {
+                    font-size: 50px;
+                }
             }
         }
     }

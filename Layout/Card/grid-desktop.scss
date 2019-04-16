@@ -61,6 +61,13 @@
         grid-area: SLD;
         width: 100%;
         max-width: 1200px;
+        .swiper-button-disabled {
+            display: none;
+        }
+        .swiper-slide {
+            width:25% !important;
+        }
+
     }
     .page-card-title {
         padding: 10px 0 20px 0px !important;
@@ -115,14 +122,19 @@
 .ems-page-cart {
     .ems-cart-btn {
         border-bottom: 0;
+        margin-top: 10px;
     }
-    .btnAlisverisDevam, .btnSepetBosalt {
-        margin-top: $large;
+
+    .btnAlisverisDevam, .btnSepetBosalt, .btnSepetGuncelle {
+        //margin-top: $large;
         margin-left: $reset;
-        @include space(padding, all, $reset);
+        //@include space(padding, all, $reset);
         &:hover {
             background: none;
-            color: $color-8;
+            color: $cool-blue;
         }
     }
+    .btnSepetBosalt, .btnSepetGuncelle {width: auto; padding: $small-16;}
+    .btnAlisverisDevam {display: inline-block; border: 0;}
+    .btnSepetGuncelle {margin-right: $small;}
 }

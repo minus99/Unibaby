@@ -194,11 +194,11 @@
 
     .ems-grid-add-remove{
         position: absolute;
-        top:10px;
+        top:8px;
         right: 10px;
         >a {
             width: 10px;
-            height: 10px;
+            height: 16px;
             text-align: center;
             display: block;
             margin-top: 2px;
@@ -207,7 +207,7 @@
                 line-height: 12px;
     
                 &:before {
-                    font-size: 11px;
+                    font-size: 24px;
                     color: $dark-slate-blue;
                 }
             }

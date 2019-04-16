@@ -69,6 +69,10 @@
                 color: $cool-blue;
             }
         }
+        span[id$="lblKuponKodBilgi"] {
+            display: none;
+        }
+
         .ems-mini-cart-close{
             width: 30px;
             height: 30px;

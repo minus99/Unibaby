@@ -20,6 +20,9 @@
                 a {
                     color: $dark-slate-blue;
                     margin: 0 5px;
+                    &:hover {
+                        color: $cool-blue;
+                    }
                 }
             }
         }

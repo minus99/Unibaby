@@ -145,7 +145,7 @@
     &.activeted{
         > span{
             &:after{
-                content: '\e918';
+                content: '\e918' !important;
             }
         }
     }
@@ -188,6 +188,7 @@
                 margin-left: 7px;
 
             }
+            .count > span:first-child {display: none;}
         }
     }
 }
@@ -310,7 +311,7 @@
     &.activeted{
         > span{
             &:after{
-                content: '\e918'; 
+                content: '\e918' !important; 
             }
         }
     }
@@ -349,7 +350,7 @@
 .product-list-error-img{
     width: auto;
     height: 294px;
-    background: url(/images/frontend/no-product.png) center center no-repeat;
+    background: url(/images/frontend/card-empty.jpg) center center no-repeat;
     @include space(margin, left, auto);
     @include space(margin, right, auto);
 }
@@ -389,6 +390,10 @@
         > span {
             max-height: none; 
         }
+    }
+    .moreText {display: none;}
+    &.minHeight {
+        .moreText {display: inline-block;}
     }
 }
 

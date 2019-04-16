@@ -103,6 +103,17 @@
         right: inherit;
         grid-area: CLS;
     }
+    .ems-grid-piece-wrapper {
+        input {
+            display: block;
+        }
+        .sStylerWrp_select {
+            display: none;
+        }
+        .ems-grid-add-remove {
+            display: block;
+        }
+    }
 }
 
 .ems-page-guest-Checkout {

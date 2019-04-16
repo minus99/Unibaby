@@ -46,6 +46,11 @@
                 border-color: transparent transparent transparent $vivid-yellow;
             }
         }
+        &.item-1 {
+            .swiper-button-prev, .swiper-button-next {
+                display: none;
+            }
+        }
     }
     
     .swiper-pagination{
@@ -84,6 +89,13 @@
             &.selected {
                 border-color: $bright-blue;
             }
+        }
+    }
+    .swiper-button-next, .swiper-button-prev {
+        background: none;
+        margin-top: -30px;
+        i:before {
+            color: $cool-blue;
         }
     }
 }

@@ -1,6 +1,40 @@
 .blog-detail a.hBack {display:inline-block;}
 .blog-page.blog-detail .navigasyon {padding-left: 20px;}
 
+.blog-page .navigasyon, .blog-btn-filter {display: none;}
+.blog-detail .navigasyon {display: block;}
+
+.blog-page .blog-fixed-menu {
+    position: static;
+    transition: none;
+    transform: none;
+    display: block;
+}
+
+.blog-menu-filter { 
+    @include flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    overflow-y: visible; 
+}
+
+.blog-mobile-filter-btn {display: none;}
+
+.blog-page .blog-list {padding: 0 20px;}
+
+.blog-cat {width:auto; display: block;}
+
+.blog-page .blog-header-navbar-wrapper .blog-header-navbar .blog-menu {display: block;}
+
+.blog-page .blog-tag {@include flex; width: auto; align-items: center; padding: 0;}
+.blog-page .blog-tag ul {width: auto;}
+.blog-page .blog-tag ul li {}
+.blog-page .etiketListe {padding: 0px;}
+.blog-page .etiketListe .blogTag ul {@include flex;}
+.blog-page .etiketListe .blogTag ul li {width: 100%; text-align: center; padding: 0 20px; margin-right: 10px; border-right: 1px solid $color-4;} 
+.blog-page .etiketListe .blogTag ul li a {font-size: $small-14; font-family: $regular; line-height: 25px;}
 
 .blog-detail .blog-detail-container h1 {font-size: 42px;}
 .blog-detail .blog-detail-container h2 {font-size: 28px;}
@@ -12,6 +46,7 @@
 
 .blog-detail .sec-text .text-wrap p {font-size:  16px;}
 
+.blog-detail .sec-text .text-wrap ol li, .blog-detail .sec-text .text-wrap ul li {font-size: 16px;}
 
 .blog-detail .sec-main-image .image-wrap {margin-bottom: 30px;}
 
@@ -23,12 +58,48 @@
 
 .blog-detail .sec-product .miss-opp-widget .swiper-pagination {display: none;}
 
+.blog-page .blog-header-navbar-wrapper {padding: 0px 20px;}
+.blog-page .blog-header-navbar-wrapper .blog-header-navbar .blog-menu nav > ul > li {display:  inline-block;text-align: center; padding-right: 10px;}
+.blog-page .blog-header-navbar-wrapper .blog-header-navbar .blog-menu nav > ul > li > a {min-width: 130px; color: $very-dark-g;font-size: 15px; font-family: $regular; line-height: 18px; padding: 13px 15px; border: 1px solid $color-4; border-radius: 5px;}
+
+
+/* Blog Sort */
+
+.ems-prd-list-sort-blog {
+    //border-left: 1px solid $color-4 !important; 
+    border-bottom:0 !important;
+    padding: 0;
+    > span {
+        margin: 0;
+        padding: 20px 60px 6px 30px;
+        color: $dark-slate-blue !important;
+        font-family: $regular !important;
+        text-align: center;
+        border: 0 !important;
+        padding: 5px 15px;
+        border-top: 1px solid $color-4; 
+        border-bottom:0 !important;
+        &:after {
+            display: none;
+        }
+        i {
+            font-size: 30px;
+            color: $color-4;
+            line-height: 20px;
+            float: left;
+            display: inline-block;
+        }
+    }
+    ul {
+        display: none;
+    }
+}
  
  /*Benzer İçerikler*/
 
  .related-posts-holder .related-posts {padding: 0 100px;}
  .related-posts-holder .swiper-button-prev,.related-posts-holder .swiper-button-next {display:inline-block;}
- .related-posts-holder .item-text-wrap > div a.item-summary {display: -webkit-box; -webkit-line-clamp: inherit; -webkit-box-orient: vertical; overflow: visible;}
+ .related-posts-holder .item-text-wrap > div a.item-summary {display: -webkit-box; -webkit-line-clamp: inherit; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;}
 
  section {padding: 0px;} 
 
@@ -37,6 +108,9 @@
 
  .maternity-bag-checklist {
      padding: 0;
+     .col2 {
+         margin: 0;
+     }
  }
  .maternity-bag-checklist, .maternity-date {
     display: flex;

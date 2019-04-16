@@ -232,6 +232,17 @@
     }
 }
 
+@media only screen and (max-width: $siteContainerWidthFull) {
+    .ems-prd-list-view ul {
+        display: none !important; 
+    }
+    .grid-colmn-filter {
+        grid-template-areas: 
+        "RSL RSL RSL SRL SRL" 
+        ". . . . .";
+    }
+}
+
 .number-records{
     display: block;
 }

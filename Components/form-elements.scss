@@ -167,6 +167,43 @@ input[type="checkbox"], input[type="radio"]{
     visibility: hidden;
 }
 
+.sStylerWrp_radio{
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+    .rStyler{
+        border: 1px solid $gray;
+        border-radius: 100%;
+        width: 17px;
+        height: 17px;
+        position: relative;
+        transition: all .2s ease;
+        background: $white;
+        &:before{
+            font-family:'icomoon';
+            content: "";
+            width: 15px;
+            height: 16px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .2s ease;
+            font-size: 15px;
+            line-height: 17px;
+            color: $vivid-orange;
+        }
+        &.checked{
+            border-color: $color-4;
+            &:before{
+                content:'\e906';
+            }
+        }
+    }
+}
+
+
 //-------------------------------------------//
 //----- CHECKBOX STYLE
 //-------------------------------------------//
@@ -302,7 +339,7 @@ input[type="radio"]:checked{
 
         [id$="txtUYE_KONTROLKODU"]{
             order: 4;
-            max-width: 240px;
+            //max-width: 240px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -350,33 +387,36 @@ $alert-info-border:                 $color-9;
         font-size: 10px;
     }
     &.ems-message-error{
+        border: 0;
+        padding: 0;
         //color: $alert-error-color;
-        background-color: $alert-error-background;
-        border-color: $alert-error-border;
-        &:before{
+        //background-color: $alert-error-background;
+        //border-color: $alert-error-border;
+        /*&:before{
             content:'\e90d';
             color: $color-34;
-        }
+        }*/
     }
     &.ems-message-success{
         color: $alert-success-color;
         background-color: $alert-success-background;
         border-color: $alert-success-border;
         &:before{
-            content:'\e90b';
+            content:'\e906'; 
             color: $color-31;
+            font-size: $small-30;
+            top: 4px;
         }
     }
     &.ems-message-info{
         color: $alert-info-color;
-        background-color: $alert-info-background;
         border-color: $alert-info-border;
-        &:before{
-            content:'\e90d';
-            color: $alert-info-color;
-        }
     }
     &:empty{
         display: none;
     }
+}
+
+.pageUyeBasarili {
+    padding: 20px; 
 }

@@ -5,7 +5,7 @@
 // Breakpoints
 // ========================================================================
 $breakpoint-small:                              640px !default;  // Phone landscape
-$breakpoint-medium:                             960px !default;  // Tablet Landscape
+$breakpoint-medium:                             1025px !default;  // Tablet Landscape
 $breakpoint-large:                              1200px !default; // Desktop
 $breakpoint-xlarge:                             1600px !default; // Large Screens
 
@@ -26,10 +26,10 @@ $roboto:                                          'roboto' ;
 
 // Layout
 // ========================================================================
-$defaultMaxWidth:                               960px;
+$defaultMaxWidth:                               1150px;
 $siteContainerSmallWidth:                       1175px;
 $containerWidth:                                1200px;
-$siteContainerWidthFull:                        1366px;
+$siteContainerWidthFull:                        1150px;
 
 
 
@@ -88,6 +88,7 @@ $small-37:                                        37px;
 $small-38:                                        38px;
 $small-39:                                        39px;
 $small-40:                                        40px;
+$small-44:                                        44px;
 $small-50:                                        50px;
 $small-54:                                        54px;
 
@@ -143,6 +144,10 @@ $width100:                                        100%;
     font-size: $small-20;
 }
 
+.fs-21 {
+    font-size: $small-21;
+}
+
 .fs-22 {
     font-size: $small-22;
 }
@@ -150,6 +155,11 @@ $width100:                                        100%;
 .fs-24 {
     font-size: $small-24;
 }
+
+.fs-25 {
+    font-size: $small-24;
+}
+
 .fs-26 {
     font-size: $small-26;
 }
@@ -184,6 +194,10 @@ $width100:                                        100%;
 
 .fs-40 {
     font-size: $small-40;
+}
+
+.fs-44 { 
+    font-size: $small-44;
 }
 
 .fs-54 { 
@@ -221,6 +235,10 @@ $width100:                                        100%;
 
 .m-r-15{
     margin-right: $small-15;
+}
+
+.m-b-15{
+    margin-bottom: $small-15;
 }
 
 .algn-rght{

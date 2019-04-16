@@ -58,6 +58,9 @@
                         content: "-";
                     }
                 }
+                &.ems-grid-add-to-cart {
+                    white-space: normal;
+                }
             }
             .ems-grid-status{
                 color: $frenchRose;

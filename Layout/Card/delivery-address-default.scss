@@ -110,9 +110,9 @@ a.btnAdresEkle {
 .ems-grid-address {
     margin-top: $small-10;
     margin-bottom: $small-10;
-    min-height: 34px;
+    /*min-height: 34px;
     max-height: 34px;
-    overflow: hidden;
+    overflow: hidden;*/
     font-size: $small-14;
 }
 
@@ -216,7 +216,7 @@ a.btnAdresEkle {
 .ems-message-error-address{
     width: auto;
     //max-width: 680px;
-    margin: $small-20;
+    //margin: $small-20;
 
 }
 
@@ -226,6 +226,7 @@ a.btnAdresEkle {
 */
 .ems-page-new-address {
     .adresTip {
+        display: none;
         .ems-form-obj {
             @include flex;
             justify-content: space-between;

@@ -1,21 +1,25 @@
 .pageFavoriGrupListemWrp{
     .ems-new-favorite-group{
         text-align: right;
+        padding-right: 20px;
+        border-bottom: 1px solid $e9-Gray;
+        margin-bottom: 30px;
         a{
             display: inline-block;
-            font-size: $small-15;
+            font-size: $small-13;
             padding-top:$small-12;
             padding-bottom:$small-12;
+            color: $cool-blue;
             &:before{
                 font-family: 'icomoon';
                 content: '\e90c';
                 font-weight: normal;
-                width: 32px;
-                height: 32px;
+                width: 25px;
+                height: 35px;
                 text-align: center;
-                line-height: 32px;
-                font-size: $small-10;
-                color: $color-10;
+                line-height: 32px; 
+                font-size: $small-30;
+                color: $color-18;
                 display: inline-block;
                 vertical-align: middle;
                 margin-right: $small-5;

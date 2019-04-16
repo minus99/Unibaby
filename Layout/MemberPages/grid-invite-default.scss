@@ -1,0 +1,43 @@
+.kutuHeaderUyeDavet, .kutuUyeDavet_lnkCokluDavet {
+        display: none;
+}
+
+.kutuUyeDavet_mesaj {
+        margin-top: 20px;
+        display: inline-block;
+        width: 100%;
+}
+
+.btnTavsiyeGonder {
+        padding: 12px 5px;
+}
+
+.kutuBodyUyeDavet {
+        display: inline-block;
+        width: 100%;
+        padding: 25px 20px;
+        .kutuUyeDavet_lbfAciklama {
+                margin-bottom:35px; 
+                color: $color-36;
+        }
+        .kutuUyeDavet_email {
+                width:65%;
+                max-width: 425px;
+                float: left;
+                &:before {
+                    content: 'E-Posta';  
+                    margin-bottom: 5px;
+                    display: block;  
+                    font-family: $medium;        
+                }
+        }
+        .kutuUyeDavet_btnTavsiyeGonder {
+                width:35%;
+                max-width: 170px;
+                float: left;
+                padding: 22px 0 0 20px;
+                table, tbody, tr, th, a {
+                        display: block;
+                }
+        }
+}

@@ -115,6 +115,7 @@
     }
     .ems-search-title{
         @include space(padding, bottom, $xs);
+        text-transform: uppercase;
         //@include space(margin, left, $small);
     }
     .last-search ul{
@@ -170,10 +171,11 @@
     h3{
         font-weight: normal;
         font-family: $medium;
-        font-size: $small-16;
+        font-size: $small-14;
         color: $black;
         @include space(padding, all, $small-20 $small-30);
         background: $very-light-gray;
+        text-transform: uppercase;
     }
     .brand{
         display: none;
@@ -322,11 +324,12 @@
         display: inline-block;
         h3{
             font-family: $regular;
-            font-size: $small-15;
+            font-size: $small-14;
             margin-bottom: $reset;
             padding: $reset;
             background: none;
             font-size: black;
+            text-transform: uppercase;
         }
         h3, .sHolder{
             display: inline-block;

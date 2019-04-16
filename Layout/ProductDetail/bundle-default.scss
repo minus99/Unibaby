@@ -29,7 +29,7 @@
 
     .urunBilgi {
         font-size: $small-13;
-
+        padding-top: 15px;
         a {
             max-height: 45px;
             overflow: hidden;
@@ -109,7 +109,7 @@
 
             &.checked {
                 &:before {
-                    color: $white;
+                    //color: $white; 
                 }
 
                 border-radius: 3px;
@@ -123,9 +123,20 @@
     @include space(padding, all, $reset);
 
     >tbody>tr {
-        @include space(padding, all, $reset $reset $reset 80px);
+        @include space(padding, all, $reset $small $reset 90px);
         border-top: none;
-        min-height: 80px;
+        min-height: 70px;
+    }
+
+    .grp0 {
+        .fiyat {
+            &::after {
+                content:'Birlikte';
+                font-family: $regular;
+                margin-left: $xs;
+                color: $vivid-orange;
+            }
+        }
     }
 
     .secim,
@@ -278,6 +289,10 @@
     }
 }
 
+.custom-popup-wrapper {
+    display: none;
+}
+
 .custom-popup-header {
     display: block;
     width: 100%;
@@ -360,7 +375,7 @@
 .emosInfinitePopup {
 
     .ems-prd-inner {
-        padding-left: 80px;
+        padding-left: 100px;
         padding-top: 10px;
         padding-bottom: 10px;
         background: $white;
@@ -393,8 +408,10 @@
         >div {
             min-width: auto;
         }
+        &-first {
+            display: block;
+        }
     }
-
     .urunListe_sepet {
         width: 50%;
         min-width: auto;

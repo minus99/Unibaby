@@ -1,16 +1,36 @@
 .site-pages-member {
-    .ems-page-default-member-order {
+    .ems-page-default-coupon {
         padding: $reset;
+        .btn-holder-1{
+            .btnDefault {
+                padding-top: 11px;
+                padding-bottom: 11px;
+                width: auto;
+                max-width: 130px;
+                &.btnKuponAcikKuponlar{
+                    margin-right: $small-10;
+                }
+                &.btnKuponKapanan{
+                    margin-left: $small-10;
+                }
+                &:hover{
+                    color: $color-8;
+                    border-color: $color-8;
+                }
+            }
+        }   
     }
-    .ems-grid-default-order{
+
+    .ems-grid-default-coupons{
         .ems-grid-header{
-            //background: none;
+            background: none;
             width: 100%;
             margin-bottom: $reset;
             border-top: none;
             border-left: none;
             border-right: none;
             border-radius:0;
+            background: $color-17;
             > div{
                padding: $reset;
                border-top: none;
@@ -18,7 +38,7 @@
         }
         .ems-grid-header:first-child {
             @include grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1.5fr 0.5fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr .5fr;
             grid-template-rows: minmax(0, auto);
             >div {
                 &.ems-grid-img,
@@ -30,8 +50,8 @@
             }
         }
         .ems-grid-row{
-            @include grid; 
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr 1.5fr 0.5fr;
+            @include grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr .5fr;
             min-height: 55px;
             width: 100%;
             margin-bottom: $reset;
@@ -48,16 +68,6 @@
             }
             .ems-grid-order-no{
                 font-weight: normal;
-            }
-            .ems-grid-add-to-cart{
-                a{
-                    color: $cool-blue;
-                    font-size: $small-12;
-                    @include transition(all .2s ease);
-                    &:hover{
-                        color: $bright-blue;
-                    }
-                }
             }
         }
     }

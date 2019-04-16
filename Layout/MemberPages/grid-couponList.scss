@@ -1,35 +1,45 @@
 /*
  * Default
  ========================================================================== */
-.site-pages-member {
+ .ems-member-page {
     .ems-page-default-coupon {
         padding:20px 0;
         > .page-top-title > span{border-bottom: none;}
         .btn-holder-1 {
-            //border-bottom: 2px solid $alto;
+            border-bottom: 2px solid $alto;
             padding-left: 5px;
             padding-right: 5px;
-            margin-bottom: 20px;
             .btnDefault {
-                //width: 50%;
-                min-width: 200px;
+                width: 50%;
                 display: inline-block;
                 vertical-align: top;
                 padding: 17px 2px;
                 text-align: center;
                 background: #fff;
                 position: relative;
-                border:2px solid transparent;
                 span {
                     font-size: 14px;
-                    color: $dark-slate-blue;  
+                    color: $emperor;
                 }
 
                 &.selected {
-                    border-color: $dark-slate-blue;
+                    border-radius: 5px 5px 0 0;
+                    border-width: 2px 2px 0 2px;
+                    border-style: solid;
+                    border-color: $alto;
                     span {
-                        color: $dark-slate-blue;
+                        color: $frenchRose;
                         font-weight: 600;
+                    }
+                    &:after{
+                        content:'';
+                        width: 100%;
+                        height: 2px;
+                        background: #fff;
+                        z-index: 2;
+                        position: absolute;
+                        left: 0;
+                        bottom: -2px;
                     }
                 }
             }

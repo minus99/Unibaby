@@ -68,3 +68,35 @@ a.btnSiparisSonucSepeteDon{
     border-color: $color-6;
     color: $color-1;
 }
+
+/* Guest Pass */
+
+.kutuUyelikOneri {
+    width: 100%;
+    max-width: 395px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: none;
+    span[id$="lbfKUTU_UYELIKONERI"] {
+        display: block;
+        font-family: $medium;
+        font-size: 16px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    span[id$="lbfUYELIKONAY_DEC"] {
+        margin-top: 10px;
+        display: block;
+    }
+    span[id$="lbfUYE_SIFRE"] {
+        display: none;
+    }
+    span.checkbox {float: left; margin-top: 10px; padding-bottom: 20px;}
+    a.btnUyelikOneri {width: 100%; margin-top: 10px; margin-bottom: 50px;}
+}
+
+.ems-logoff {
+    .kutuUyelikOneri {
+        display: block;
+    }
+}

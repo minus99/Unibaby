@@ -12,18 +12,21 @@
             border: 1px solid $color-6;
             margin-bottom: $small-10;
             padding: 7px 10px 7px 20px;
+            list-style: none !important;
             > a.title{
                 display: block;
                 padding-top: 9px;
                 padding-bottom: 9px;
                 padding-right: 40px;
+                margin-bottom: 0;
                 position: relative;
                 font-family: $medium;
                 color: black;
                 font-size: 16px;
+                border: 0;
                 &:after{
                     font-family:'icomoon';  
-                    content:'\e90c';
+                    content:'\e915';
                     position: absolute;
                     top: 50%;
                     right: 10px;
@@ -31,7 +34,7 @@
                     height: 30px;
                     text-align: center;
                     margin-top: -15px;
-                    font-size: 10px;
+                    font-size: 24px;
                     color: black;
                     line-height: 30px;
                     font-weight: normal;
@@ -45,10 +48,10 @@
                 color: $color-24;
                 line-height: 22px;
             }
-            &.selected{
+            &.selected{ 
                 > a.title{
                     &:after{
-                        content:'\e91c';
+                        content:'\e911';
                     }
                 }
                 .text-container{

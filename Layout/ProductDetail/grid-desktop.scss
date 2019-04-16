@@ -6,7 +6,7 @@
 }
 .ems-prd-detail-inner{
     @include grid;
-    grid-template-columns:1fr minmax(0,560px) 90px minmax(0,540px) 1fr;
+    grid-template-columns:1fr minmax(0,560px) 70px minmax(0,540px) 1fr;
     grid-template-areas:
     ". RW1 . RW2 ."
     ". RW1 . RW2 ."

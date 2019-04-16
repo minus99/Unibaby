@@ -112,6 +112,9 @@
   .jconfirm {
     -webkit-perspective: 400px;
             perspective: 400px;
+        .jconfirm-content {
+            min-height: 350px !important;
+        }
   }
   .jconfirm .jconfirm-box {
     opacity: 1;
@@ -325,6 +328,111 @@ body[class*=jconfirm-no-scroll-] {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+/* Promotion Popup */
+
+.promotion-popup.minPp { 
+    background: none;
+    .pre-img {
+        opacity: 0;
+    }
+    .popup-content {
+        @include vAlign;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        .ie-warning {
+            width: 60%;
+            float: right;
+            strong {
+                display: block;
+                font-size: 22px;
+                font-family: $bold;
+                margin-bottom: 20px;
+            }
+            a {
+                font-family: $medium;
+                &:hover {
+                    color: $cool-blue;    
+                }
+            }
+        }
+    }
+}
+
+/* IE POPUP */
+
+.ie-popup-wrp {
+    @include vAlign;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    left: 0;
+    display: none;
+    .pre-img {
+        opacity: 0;
+    }
+    .ie-popup {
+        max-width: 750px;
+        position: relative;
+        display: block;
+        margin: 0 auto;
+    }
+    .ppClose {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 20px;
+        right: 20px;
+        line-height: 24px;
+        z-index: 9;
+        cursor: pointer;
+        &:before {
+            font-family: 'icomoon';
+            content: '\e907';
+            font-size: 25px;
+            color: #3c89ce;
+        }
+    }
+    .popup-content {
+        @include vAlign;
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        padding: 40px;
+        .ie-warning {
+            width: 60%;
+            float: right;
+            strong {
+                display: block;
+                font-size: 22px;
+                font-family: $bold;
+                margin-bottom: 20px;
+            }
+            a {
+                font-family: $medium;
+                &:hover {
+                    color: $cool-blue;    
+                }
+            }
+        }
+    }
+}
+#ppVail {
+    background: #000;
+    opacity: .5;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    display: none;
+}
+
+.ems-old-ie {
+    #ppVail, .ie-popup-wrp {display: block;}
 }
 
 /*Abonelik Popup*/

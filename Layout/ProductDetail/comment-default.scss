@@ -8,7 +8,7 @@
     padding: 18px; 
     width: 100%;
     @include space(margin, all, 75px auto 0 auto);
-    display: none; 
+    //display: none; 
     .dvKullaniciAdi,
     .dvYorum,
     .btnYorumGonder,
@@ -130,13 +130,14 @@
 }
 
 .yorumYap {
+    display: none;
     .btnYorumYap {
         background: $white;
         color: $color-5;
         font-size: $small-18;
         border-radius: 10px;
         @include space(padding, all, 6px $xMedium)
-        @include space(margin, all, $large $reset 33px $reset )
+        @include space(margin, all, $large $reset 13px $reset )
         i {
             color: $cool-blue;
             float: right;
@@ -175,6 +176,9 @@ span[id$="lbfYORUM_YOK"] {
     color: $color-5 !important;
 }
 
+.yorumListeTumu {
+    margin-top: 20px;
+}
 .yorumListeTumu, .yorumListeTumu form {
     @include flex;
     flex-direction: column;
@@ -297,6 +301,11 @@ span[id$="lbfYORUM_YOK"] {
         }
     }
 }
+.lnkYorumYaz {
+    margin-top: 10px;
+    display: block;
+    text-decoration: underline; 
+}
 div.btnYorumGonder,
 div.dvYorumPuan{
     text-align: center;
@@ -338,6 +347,9 @@ a[name="yorumEkle"]{display: none;}
 }
 .ems-login{
     .yorumEkle span[id$="lbfYORUM_EKLE"] {display: none;}
+    .yorumYap {
+        display: block;
+    }
 }
 
 .star-rating {
@@ -361,6 +373,13 @@ a[name="yorumEkle"]{display: none;}
         transition: none;
         background-position: 0px -18px;
     }
+}
+
+.yorumOku {
+    color: $color-36;
+    margin-left: 12px;
+    text-decoration: underline !important;
+    font-size: $small-15;
 }
 
 /* Product Detail */

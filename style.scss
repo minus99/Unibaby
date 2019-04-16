@@ -85,6 +85,10 @@
 @import 'Layout/MemberPages/grid-stock-list-default';
 @import 'Layout/MemberPages/grid-message-list-default';
 @import 'Layout/MemberPages/grid-subscriptions-default';
+@import 'Layout/MemberPages/grid-subscriptions-detail-default.scss';
+@import 'Layout/MemberPages/grid-invite-default.scss';
+@import 'Layout/MemberPages/grid-coupon-list-default.scss';
+@import 'Layout/MemberPages/grid-order-cancel-default.scss';
 
 // Corporate Brands
 @import 'Layout/Brands/swiper-default';
@@ -192,6 +196,10 @@
         @import 'Layout/MemberPages/grid-stock-list-desktop';
         @import 'Layout/MemberPages/grid-message-list-desktop';
         @import 'Layout/MemberPages/grid-subscriptions-desktop';
+        @import 'Layout/MemberPages/grid-subscriptions-detail-desktop.scss'; 
+        @import 'Layout/MemberPages/grid-invite-desktop.scss';
+        @import 'Layout/MemberPages/grid-coupon-list-desktop.scss';
+        @import 'Layout/MemberPages/grid-order-cancel-desktop.scss';
 
         // Corporate Brands
         @import 'Layout/Brands/swiper-desktop';

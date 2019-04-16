@@ -1,4 +1,38 @@
-.site-pages-landing{
+.ems-lookbook {
+    &-title {
+        text-align: left;
+        span {
+            &:after{
+                height: 6px;
+            }
+        }
+    }
+    &-parallax {
+        padding: 0px;
+    }
+    &-slider {
+        max-height: 350px;
+        &-content {  
+            margin: 0px auto;
+            @include vAlign;
+            position: absolute;
+            left:0;
+            right:0;
+            text-align: left;
+            span {
+                color: $color-5;
+                font-size: 44px;
+            }
+            p {
+                max-width: 550px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+
+/*.site-pages-landing{
     grid-template-areas:
     ". A ."
     ". B ."
@@ -6,12 +40,12 @@
     ". D ."
     ". E .";
     padding-top: $reset;
-}
+}*/
 
 /**
 ====================== Markalar ======================
 **/
-.site-pages-brans-landing{
+/*.site-pages-brans-landing{
     grid-template-areas:
     "A A A"
     ". B ."
@@ -44,4 +78,4 @@
     .ems-tab-cat .navigation-js .swiper-slide{
         width: 33.333%;
     }
-}
+}*/

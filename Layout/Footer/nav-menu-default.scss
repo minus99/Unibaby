@@ -1,6 +1,7 @@
 .site-footer-menu{
     @include space(margin, top, $xxlarge);
     @include space(margin, bottom, $reset);
+    display: none;
     > ul{
         width: 50%;
         margin-left: 50%;

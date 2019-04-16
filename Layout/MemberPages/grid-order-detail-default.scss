@@ -103,7 +103,14 @@
             padding: $small-30 $small-20;
         }
         .bottom-step {
-           display: none;
+           //display: none;
+           grid-area: BTN;
+           text-align: center;
+           .btnSipIptal, .btnSipIade {
+                width: 100%;
+                max-width: 240px;
+                margin-top: 30px;
+           }
         }
     }
 

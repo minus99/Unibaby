@@ -17,7 +17,7 @@
         width: inherit;
         grid-area: LGO;
         display: inline-block;
-        @include space(padding, left, 20px);
+        //@include space(padding, left, 20px);
     }
 
     .navbar-item-mini-member {

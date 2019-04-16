@@ -6,8 +6,8 @@
 
     .pnlSepetGrup,
     .urunDetay_btnStokHaberci {
-        @include space(padding, left, $small);
-        @include space(padding, right, $small);
+        @include space(padding, left, $reset);
+        @include space(padding, right, $reset);
         @include space(padding, top, $small);
     }
 
@@ -46,29 +46,30 @@
 
 .ems-detail-price {
     @include table-cell;
-    width: 100%;
+    width: auto;
 
     .ems-detail-price-right {
         text-align: left;
-        @include flex;
-        justify-content: space-between;
+        /*@include flex;
+        justify-content: space-between;*/
+        display: block;
         .urunDetay_satisFiyatIkFiyat {
             margin-top: 4px;
         }
     }
 }
 
-.urunDetay_KazancOran {
+.urunDetay_KazancOran { 
     border-radius: 3px;
     min-width: 35px;
-    background: $vivid-pink;
+    background: $light-green;
     font-family: $bold;
-    font-size: $small-18;
-    color: $white;
+    font-size: $small-15;
+    color: $dark-slate-blue;
     display: inline-block;
     @include space(padding, all, $xs $xSmall);
     @include space(margin, right, $small);
-    display: none;
+    //display: none;
 }
 
 .urunDetay_satisFiyatIkFiyat {
@@ -122,7 +123,7 @@
 .urunDetay_btnSepeteAt {
     display: inline-block;
     vertical-align: middle;
-    width: 78%;
+    width: 80%;
 
     span.btnsepeteAt {
         padding: 0;
@@ -137,12 +138,12 @@
     }
 }
 
-.urunDetay_urunAdet {
+.urunDetay_urunAdet { 
     display: inline-block;
     vertical-align: middle;
     position: relative;
     width: 20%;
-    max-width: 90px;
+    max-width: none;
 
     input:not([type="checkbox"]):not([type="radio"]) {
         font-family: $bold;
@@ -184,11 +185,11 @@
         display: inline-block;
         li {
             list-style-type: disc;
-            list-style-position: inside;
+            //list-style-position: inside;
             font-size: $small-16;
             line-height: 1.67;
             color: #5c6267;
-            width: 50%;
+            width: 100%;
             float: left;
         }
     }
@@ -233,8 +234,6 @@
 }
 
 .ems-prd-desc-title { 
-    
-    border-bottom: 2px solid $color-4;
     position: -webkit-sticky;
     position: sticky;
     top: 60px;
@@ -242,6 +241,7 @@
     background: $white;
     margin-top: 20px;
     ul {
+        border-bottom: 2px solid $color-4;
         @include flex;
         justify-content: space-between;
         li {
@@ -270,6 +270,9 @@
                     }
                 }
             }
+        }
+        &:empty {
+            display: none;
         }
     }
 }
@@ -353,6 +356,16 @@
         &.activeted {
             display: block;
         }
+        ul {
+            margin: 20px 0;
+            li {
+                list-style: disc;
+                list-style-position: inside;
+                text-indent: -1.3em;
+                padding-left: 1.3em;
+                line-height: 30px;
+            }
+        }
     }
 }
 
@@ -399,12 +412,12 @@
         &:before {
             font-family: 'icomoon';
             content: "\e90c";
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             line-height: 40px;
             display: inline-block;
             vertical-align: middle;
-            font-size: $small-40;
+            font-size: 60px;
             color: $color-30;
             float: left;
         }
@@ -758,7 +771,6 @@
 .ems-detail-subscriber-lbl {
     font-size: $small-16;
     color: $white;
-    display: block;
 }
 
 .ems-detail-subscriber-price-normal {
@@ -838,6 +850,7 @@
     border-radius: 5px;
     cursor: pointer;
     background: $white; 
+    text-align: center;
     display: inline-block !important; 
     .sStylerWrp_radio {
         display: block;
@@ -849,6 +862,12 @@
         left: 0;
         width: 100%;
         height: 100%;
+        border: 0;
+        border-radius: 0;
+        background: transparent !important;
+        &:before {
+            display: none !important;
+        }
     }
 
     span {

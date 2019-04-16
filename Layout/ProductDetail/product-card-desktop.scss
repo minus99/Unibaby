@@ -6,8 +6,6 @@
     .pnlSepetGrup,
     .urunDetay_btnStokHaberci{
         @include space(padding, top, $reset);
-        @include space(padding, left, $reset);
-        @include space(padding, right, $reset);
     }
 }
 
@@ -26,10 +24,10 @@
 }
 
 .urunDetay_KazancOran {
-    min-width: 50px;
-    @include space(padding, left, $xMedium);
-    @include space(padding, right, $xMedium);
-    @include space(margin, right, $large);
+    min-width: 35px;
+    @include space(padding, left, $small);
+    @include space(padding, right, $small);
+    @include space(margin, right, $xMedium);
 }
 
 .urunDetay_satisFiyatIkFiyat {
@@ -43,7 +41,7 @@
 .urunDetay_urunAdet {
     width: 20%;
     margin-right: 2%;
-
+    max-width: 90px;
     input:not([type="checkbox"]):not([type="radio"]) {
         height: 54px;
         //background: $color-9;
@@ -77,6 +75,7 @@
     }
 }
 .urunDetay_btnSepeteAt{
+    width: 78%;
     a.btnsepeteAt{
         border-radius: 3px;
     }
@@ -148,12 +147,15 @@
 }
 
 .ems-detail-favorites {
-    margin-top: 40px;
+    margin-top: 30px;
     @include Position(static, null);
     .btnFavoriEkle{
         @include space(margin, bottom, $reset);
         &:before{
             @include transition(all .2s ease);
+            width: 40px;
+            height: 40px;
+            font-size: 40px;
         }
         &:hover{
             background: none;
@@ -222,7 +224,7 @@
 }
 
 
-.btnAbonelikSepeteAt{
+a.btnAbonelikSepeteAt{
     @include space(padding, top, $small-16);
     @include space(padding, bottom, $small-16);
     font-size: $small-15;

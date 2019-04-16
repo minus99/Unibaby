@@ -5,6 +5,9 @@
 .site-pages-home {
     padding-top: 0;
 }
+
+.ems-page-home .site-footer {display: block;}
+
 .scroll-layer {
     padding-top: 0px;
     height: auto; 
@@ -68,7 +71,7 @@
                     bottom: 30px;
                     left: 30px;
                     height: calc(100% - 60px);
-                    display: grid;
+                    @include grid;
                     align-content: space-between;
                 }
             }
@@ -152,7 +155,12 @@
 /* Sticky Main Manü */
 
 .main-tab-sticky {
+    .pointer {
+        height: 6px;
+    }
     ul {
+        height: auto;
+        justify-content: space-between;
         li {
             @include space(padding, all, $xMedium $small);
             width: 100%;
@@ -167,7 +175,7 @@
             i {
                 display: block;
                 float: left;
-                background: $dark-slate-blue;
+                //background: $dark-slate-blue;
             }
             &.selected {
                 &:after {
@@ -193,7 +201,7 @@
         width: 60%;
     }
     .subTitle {
-        width: 60%;
+        width: 45%;
         font-size: $small-20;
     }
     .box-colmn-banner-bottom {
@@ -228,8 +236,11 @@
             overflow: hidden;
         }
         .swiper-slide {
-            padding: 0 10px;
+            padding: 0 3px;
             width: 25%;
+        }
+        .item-text-wrap {
+            padding: 15px 15px 20px 15px;
         }
     }
     .main-tab-cat-swiper {
@@ -240,6 +251,7 @@
     }
     .main-list-wrp {
         justify-content: center;
+        padding: 0;
         .main-list-title {display: block;}
         .main-list-title, .main-list-content, .main-list-cat, .swiper-container {
             @include space(padding, all, $reset 100px);
@@ -257,5 +269,186 @@
     }
     .blog-post-wrp {
         padding: 0 10px;
+    }
+}
+
+/*Abonelik LP
+=================================
+*/
+
+.subscriber-banner-grid{
+    background-position: top right;
+    padding-top: 0;
+    background-size: inherit;
+}
+
+.subscriber-banner-grid-inner{
+    @include grid;
+    grid-template-columns:1fr minmax(auto,600px) minmax(auto,600px) 1fr;
+    grid-template-areas:
+    ". TXT IMG ."
+    ". TXT IMG ."
+    ". SLD SLD .";
+    grid-template-rows: minmax(0,auto);
+    padding-top: 60px;
+    .images{
+        grid-area:IMG;
+        position: inherit;
+        top: inherit;
+        left: inherit;
+        right: inherit;
+        margin-left: auto;
+        margin-right: 0;
+        width: auto;
+        text-align: right;
+        align-self: center;
+        img{
+            max-width: 438px;
+            //margin-top: 40px;
+        }
+    }
+    .text{
+        grid-area:TXT;
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 40px;
+        align-self: flex-start;
+        max-width: 510px;
+        p.first{
+            font-size: 36px;
+        }
+        p.last{
+            font-size: 20px;
+        }
+    }
+    .slide{
+        grid-area:SLD;
+        //margin-top: -20px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+/*Single Banner*/
+.subscriber-banner-full{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.subscriber-banner-full-inner{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 60px;
+    h2,h3{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    h2{
+        font-size: 22px;
+    }
+    h3{
+        font-size: 32px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+}
+
+.abonelik-grid-grup{
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 45px 0;
+    > div{
+        display: table-cell;
+        vertical-align: middle;
+        min-width: 50%;  
+        padding: 45px 10px;      
+    }
+    img{
+        max-width: 150px;
+    }
+    .lft{
+        width: calc(100% - 150px);
+    }
+    .first{
+        margin-bottom: 0;
+    }
+    ul li{
+        font-size: 20px;
+    }
+}
+
+/*Single Banner 1200px
+=============
+*/
+.site-pages-subscriber{
+    padding-bottom: 20px;
+    border-bottom: 1px solid $color-4;
+    .grid-banner-box-single > div:nth-child(1){
+        .grid-banner-box-text{
+            max-width: 430px;
+            bottom: auto;
+            top: 50%;
+            text-align: right;
+            left: inherit;
+            right: 80px;
+            color: $dark-slate-blue;
+            img {
+                max-width: 200px;
+            }
+            .title-1 {
+                font-size: 40px;
+                line-height: 40px;
+            }
+            .title-2{
+                font-size: 22px;
+                padding-left: 100px;
+                margin-top: 30px;
+            }
+            .btnBannerDefaultAbone{
+                width: 100%;
+                //max-width: 335px;
+                font-size: 13px;
+                padding-top: 17px;
+                padding-bottom: 17px;
+                margin-top: 40px;
+            }
+        }
+    }
+    .widget{
+        max-width: 1200px;
+        
+        .swiper-title{
+            margin-top: 50px;
+            margin-bottom: 50px;
+            span{ 
+                font-size: 34px;
+            }
+        }
+        .swiper-slide{
+            width: 100%;
+        }
+        
+        &.items-1,
+        &.items-2{
+            .swiper-slide{
+            margin-left: auto;
+            margin-right: auto;
+            }
+        }
+    }
+}
+
+/*Abonelik LP Slider */
+.swiper-container-abonelik{
+    .swiper-title{
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 36px;
+    }
+    .swiper-slide{
+        width: 20%;
     }
 }

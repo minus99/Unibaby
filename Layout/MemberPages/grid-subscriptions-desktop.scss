@@ -17,6 +17,7 @@ Description: Grid Subscriptions Desktop
             border-left: none;
             border-right: none;
             border-radius:0;
+            background: $color-17;
             > div{
                padding: $reset;
                border-top: none;
@@ -24,7 +25,7 @@ Description: Grid Subscriptions Desktop
         }
         .ems-grid-header:first-child {
             @include grid;
-            grid-template-columns:2fr 1fr 1fr .5fr 2fr .5fr;
+            grid-template-columns:1.5fr 1fr .5fr .5fr 1fr .5fr;
             grid-template-rows: minmax(0, auto);
             .ems-grid-use{
                 span{display: none;}
@@ -32,7 +33,7 @@ Description: Grid Subscriptions Desktop
         }
         .ems-grid-row{
             @include grid;
-            grid-template-columns:2fr 1fr 1fr .5fr 2fr 0.5fr;
+            grid-template-columns:1.5fr 1fr .5fr .5fr 1fr 0.5fr;
             min-height: 55px;
             width: 100%;
             margin-bottom: $reset;

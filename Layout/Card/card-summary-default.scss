@@ -52,6 +52,9 @@
                 font-size: $small-13;
                 color: $color-26;
             }
+            span.ib-el{
+                margin-right:5px;
+            }
         }
     }
 }
@@ -73,7 +76,7 @@
 
 .ems-cart-summary-coupon-body {
     position: relative;
-    display: block;
+    display: block !important;
     input {
         width: 100% !important;
     }
@@ -100,14 +103,34 @@
         }
     }
     span[id$="lblHCK_HATA"]{
-        color:$alert-error-color;
+       /*color:$alert-error-color;
         background-color: $alert-error-background;
         border:1px solid $alert-error-color;
         display: block;
         padding: 12px;
         margin-top: 15px;
         border-radius: 3px;
-        &:empty{display: none;}
+        &:empty{display: none;}*/
+        .ems-message-success {
+            padding: 12px 0;
+            &:before {
+                top: 7px;
+            }
+        }
+        .ems-message-error {
+            background-color: $alert-error-background;
+            border:1px solid $alert-error-color;
+            color:$alert-error-color;
+            display: block;
+            border-radius: 3px;
+            padding: 12px;
+            &:before {
+                content:'\e907';
+                font-family: 'icomoon';
+                font-size: 30px;
+                top: 7px;
+            }
+        }
     }
 }
 
@@ -125,6 +148,10 @@
         .ems-cart-summary-coupon-body {
             display: none;
         }
+    }
+    .ems-cart-cancel-coupon {
+        margin-top: 10px;
+        a {width:100%;}
     }
 }
 

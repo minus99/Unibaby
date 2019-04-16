@@ -1,18 +1,24 @@
 .ems-prd-list-footer{
-    .loadmore-btn{
-        display: block;
-        @extend .btn-primary-light;
-        width: 100%;
-        max-width: 230px;
-        @include space(margin, top, $large);
-        @include space(margin, left, auto);
-        @include space(margin, right, auto);
-        font-size: $small-14;
-        border: 0 !important;
-        text-decoration: underline;
-        color: $dark-slate-blue;
-        font-family: $medium;
-    }
+    
+}
+
+.loadmore-btn{
+    display: block;
+    @extend .btn-primary-light;
+    width: 100%;
+    max-width: 230px;
+    @include space(margin, top, $large);
+    @include space(margin, left, auto);
+    @include space(margin, right, auto);
+    font-size: $small-14;
+    border: 0 !important;
+    text-decoration: underline;
+    color: $dark-slate-blue;
+    font-family: $medium;
+}
+
+.progress-wrapper {
+    margin-bottom: 50px;
 }
 .progress-header{
     text-align: center;
@@ -35,6 +41,7 @@
             z-index: 1;
             height: 3px;
             border-radius: 4px;
+            max-width: 250px;
             background: $vivid-orange;
         }
     }

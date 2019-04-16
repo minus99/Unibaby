@@ -1,15 +1,19 @@
 .grid-info-box {
-    @include space(margin, left, $xxlarge);
-    @include space(margin, right, $xxlarge);
+    //@include space(margin, left, $xxlarge);
+    //@include space(margin, right, $xxlarge);
+    //@include space(margin, top, 0);
+    border-top: 0;
     .grid-info-box-boxes {
-        display: inline-block;
-        /*@include grid;
+        @include grid;
         grid-template-columns:1fr 1fr 1fr 1fr;
-        grid-column-gap: 20px;*/
+        grid-column-gap: 20px;
         
         li{
+            border:1px solid $color-30;
+            border-radius: $alternate-border-radius;
+            width: auto;
             i{
-                //@include space(margin, top, $large);
+                @include space(margin, top, $small);
             }
         }
     }

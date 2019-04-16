@@ -147,6 +147,115 @@
     }
 }
 
+/* Login Special */
+
+.ems-form-special {
+    display:none;
+    @include space(margin, top, 40px);
+    @include space(padding, all, $reset);
+    @include Position(relative, null);
+    .ems-form-inner {
+        border-radius: 5px;
+        background: $very-light-gray;
+        @include space(padding, all,45px $xxlarge $xxlarge $xxlarge);
+    }
+    .leaf {
+        width: 50px;
+        height: 50px;
+        border-radius: 0px 30px;
+        &.leaf-right-bottom {
+            right: -10px;
+            bottom: -20px;
+        }
+    }
+    .ems-field-special {
+        text-align: center;
+        margin-bottom: 20px;
+        p {
+            @include space(margin, top, $small);
+            color: $very-dark-g;
+            font-size: 14px;
+        }
+    }
+    
+    .ems-field-date {
+        .ems-form-label {
+            font-size: $small-12;
+            color: $very-dark-g;
+            b {
+                font-weight: normal;
+            }
+        }
+        input {
+            height: 42px;
+            &:disabled {
+                background: $color-4;
+            }
+        }
+    }
+    
+    /* Size Özel XML Form */
+
+    .signup-special-form {
+        text-align: left;
+        .xmlFormHeader {display:none;}
+        .radioButton { 
+            float: left;
+            table {
+                td {
+                    display: block;
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+            .sStylerWrp_radio {
+            }
+            label {
+                color: $very-dark-g;
+                font-size: $small-14;
+                line-height: 22px;
+            }
+        }
+        .xmlFormError {
+            padding: 10px;
+            text-align: center;
+            display: block;
+            font-family: $bold;
+            color: $vivid-orange;
+            margin-bottom: 10px;
+            &:empty {
+                display: none;
+            }
+        }
+    }
+    .xmlForm_btnGonder {
+        text-align: center;
+        a {
+            background: $white;
+            color: $color-5;
+            @include space(padding, all, $xs $large);
+            display: inline-block;
+            border-radius: 10px;
+            font-size: $small-13; 
+            margin-top: 20px;
+            &:before{
+                content: "\e916";
+                font-family: 'icomoon';
+                @include Position(relative, top 2px)
+                color:$cool-blue;
+                @include space(margin, left, $small); 
+                float: right;
+            }
+        }
+    }
+}
+
+.member-signup-body {
+    .ems-form-special {display:block;}
+
+}
+
+
 .member-login-header {
     > span{
         @extend .fm-b;
@@ -234,3 +343,4 @@ body.ems-signup-body{
         }
     }
 }
+

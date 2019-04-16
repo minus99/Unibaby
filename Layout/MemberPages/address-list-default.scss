@@ -2,7 +2,7 @@
  ===================================== */
  .site-pages-member{
     .same-address {
-        /*display: none;*/
+        display: none;
     }
 }
 
@@ -10,6 +10,7 @@
  ===================================== */
  .site-pages-member{
     .ems-page-default-address {
+        padding: 0 20px;
         .ems-address-form{
             div[id$="plhAdresYokLabel1"]{                
                 border:none;

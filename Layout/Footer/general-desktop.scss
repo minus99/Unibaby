@@ -5,17 +5,21 @@
     }
     &-logo{
         @include space(padding, left, $reset);
+        max-width: 160px;
+        margin-top: 100px;
+        margin-left: 20px;
+        display: inline-block;
     }
     &-inner{
         @include grid;
-        grid-template-columns: 1fr minmax(0, 980px) minmax(0, 240px) 1fr;
-        grid-template-rows: minmax(0, auto);
+        grid-template-columns: 1fr minmax(0, 260px) minmax(0, 700px) minmax(0, 240px) 1fr;
+        grid-template-rows: minmax(0, auto); 
         grid-template-areas:
-        ". A A ."
-        ". B E ."
-        ". D D ."
-        ". F F ."
-        ". N N .";
+        ". A A A ."
+        ". C B E ."
+        ". D D D ."
+        ". F F F ."
+        ". N N N .";
         position: relative;
     }
     .grid-row-c,
@@ -58,6 +62,8 @@
         font-size: $small-18;
         @include space(margin, top, 100px); 
         text-align: center;
+        display: block;
+        &-mobile {display:none;}
     }
     &-copyright{
         text-align: right;
@@ -67,6 +73,7 @@
         justify-content: space-between;
         font-size: $small-14;
         font-family: $regular;
+        display: flex;
         &-menu {
             ul {
                 @include flex; 
