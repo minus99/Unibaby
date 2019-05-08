@@ -48,6 +48,9 @@ Description: Grid Subscriptions Desktop
                 width: auto;max-height: inherit;
                 overflow: visible;
                 text-overflow: inherit;
+                &.afterDate {
+                    min-height: auto;
+                }
             }
             .ems-grid-use{
                 a{

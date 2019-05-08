@@ -30,7 +30,9 @@
         input {
             border: 0;
             border-radius: 0;
+            opacity: 0;
         }
+        .clear-search {opacity: 0;}
     }
 
     .ems-field.submit {
@@ -296,7 +298,7 @@
 /* Body search keyup animation
 =================================== */
 body {
-    &.search-focused {
+    &.search-ready {
         .mod-mini-search {
             width: 100%; 
             @include Position(fixed, top 0px left 0px);
@@ -322,6 +324,10 @@ body {
                     border: 2px solid #ddd;
                     border-radius: 5px;
                     height: 48px;
+                    opacity: 1;
+                }
+                .clear-search {
+                    opacity: 1;
                 }
                 &.submit {
                     top: 4px; 

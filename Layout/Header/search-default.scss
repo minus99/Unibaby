@@ -168,11 +168,11 @@
     overflow-x: hidden;
     overflow-y: scroll;
     position: relative;
+    -webkit-overflow-scrolling: touch;
     h3{
         font-weight: normal;
-        font-family: $medium;
+        font-family: $bold;
         font-size: $small-14;
-        color: $black;
         @include space(padding, all, $small-20 $small-30);
         background: $very-light-gray;
         text-transform: uppercase;
@@ -210,19 +210,18 @@
         table{
             width: 100%;
             tr{
+                @include grid;
+                grid-template-columns: 90px minmax(0,auto) 1fr 1fr;
+                grid-template-areas:
+                "THI TD2 TD2 TD2"
+                "THI TD4 TD5 TD8"
+                "THI TD4 TD6 TD8";
                 border-bottom: 1px solid $pinkish-grey;
-                @include space(padding, top, $xMedium);
-                @include space(padding, right, $large);
-                @include space(padding, left, 90px);
-                @include space(padding, bottom, $xMedium);
+                @include space(padding, all, $small-10);
                 position: relative;
-                display: block;
-                min-height: 100px;
+                min-height: auto;
                 th{
-                    position: absolute;
-                    top: 50%;
-                    margin-top: -35px;
-                    left: 10px;
+                    grid-area: THI;
                 }
                 td{
                     .suggest_urnprice{
@@ -291,28 +290,37 @@
                     }
                     &:empty{display: none;}
                 }
-                td:nth-child(2){
-                    display: block;
+                td.suggest_urnsname_con{
+                    grid-area: TD2;
                     span{
-                        font-size: $small-12; 
-                        font-family: $medium;
+                        font-size: $small-14;
                         display: block;
-                        @include space(margin, bottom, $small);
+                        @include space(margin, bottom, $small right 80px);
                         min-height: 37px;
                         max-height: 37px;
                         overflow: hidden;
                     }
                     span b{font-weight: normal;}
                 }
-                td:nth-child(3),
-                td:nth-child(5),
-                td:nth-child(9){/*display: none;*/}
-
-                td:nth-child(4),
-                td:nth-child(6){
-                    display: block;
-                    width: 60%;
+                td.suggest_urndiscountrate_con{
+                    grid-area: TD4;
                 }
+                td.suggest_urnnormalprice_con{
+                    grid-area: TD5;
+                    align-self: flex-end;
+                    display: inline-block;
+                }
+                td.suggest_urnprice_con{
+                    grid-area: TD6;
+                    align-self: flex-start;
+                }
+                td.suggest_urnsubscriptionprice_con{
+                    grid-area: TD8;
+                }
+
+                td.suggest_urnsmallimg_con,
+                td.suggest_urnurunkod_con,
+                td.suggest_urnsubscriptiondiscountrate_con{display: none;}
             }
         }
     }
@@ -323,12 +331,11 @@
         z-index: 1;
         display: inline-block;
         h3{
-            font-family: $regular;
+            font-family: $bold;
             font-size: $small-14;
             margin-bottom: $reset;
             padding: $reset;
             background: none;
-            font-size: black;
             text-transform: uppercase;
         }
         h3, .sHolder{
@@ -376,6 +383,6 @@ body{
     &.search-ready{
         @include mobi-body-render;
         .mod-mini-search-body,
-        .ems-search-body{display: block;}
+        .ems-search-body{display: block;} 
     }
 }

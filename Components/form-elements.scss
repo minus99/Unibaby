@@ -415,6 +415,12 @@ $alert-info-border:                 $color-9;
     &:empty{
         display: none;
     }
+    &-solution {
+        img {width: auto; height: auto;}
+        img[title$="Youtube"], img[title$="Facebook"], img[title$="Instagram"] {
+            width: 50px;
+        }
+    }
 }
 
 .pageUyeBasarili {

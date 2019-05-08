@@ -82,7 +82,7 @@
             font-family: 'icomoon';
             content: '\e903';
             position: absolute;
-            top: 50%;
+            top: 23px;
             right: $small-10;
             width: $small-20;;
             height: $small-20;
@@ -132,6 +132,10 @@
         }
     }
 }
+
+.urunResmi {
+    width: 45px;
+} 
 
 .pageSiparisOnay_chkSatisSozlesme,
 .pageSiparisOnay_chkOnBilgilendirmeForm{

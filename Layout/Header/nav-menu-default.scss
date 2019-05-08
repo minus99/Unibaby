@@ -183,13 +183,13 @@
             display: none;
         }
 
-        .sub-menu.selected {
+       /* .sub-menu.selected { 
             >a {
                 &:after {
                     content: '\e911';
                 }
             }
-        }
+        }*/
     }
 
     ul {

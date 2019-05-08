@@ -217,6 +217,26 @@
     }
     .swiper-pagination-bullets {
         bottom: 30px;
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
+.box-colmn-banner-content {
+    .subLink {
+        i {
+            opacity: 0;
+            @include Position(absolute, right -20px);
+            @include transition (all .5s ease);
+        }
+        &:hover {
+            padding-right: 30px;
+            i {
+                @include Position(absolute, right 10px); 
+                opacity: 1;
+            }
+        }
     }
 }
 
@@ -255,6 +275,7 @@
         .main-list-title {display: block;}
         .main-list-title, .main-list-content, .main-list-cat, .swiper-container {
             @include space(padding, all, $reset 100px);
+            min-height: 28px;
         }
     }
     .swiper-button-next, .swiper-button-prev {
@@ -290,7 +311,7 @@
     ". TXT IMG ."
     ". SLD SLD .";
     grid-template-rows: minmax(0,auto);
-    padding-top: 60px;
+    padding: 60px 20px 0 20px;
     .images{
         grid-area:IMG;
         position: inherit;

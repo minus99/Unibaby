@@ -15,9 +15,24 @@
         @include space(padding, all, $reset 20px);
         >li>ul>li>a {
             font-size: $small-16;
-
+            span {
+                position: relative;
+                &:before {
+                    content:'';
+                    width: 0;
+                    height: 1px;
+                    background: $dark-slate-blue;
+                    opacity: .3;
+                    @include transition(all .4s ease);
+                    @include Position(absolute, bottom -3px);
+                }
+            }
             &:hover {
-                text-decoration: underline;
+                span {
+                    &:before {
+                        width: 100%;
+                    }
+                }
             }
         }
     }

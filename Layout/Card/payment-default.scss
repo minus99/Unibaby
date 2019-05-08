@@ -11,6 +11,7 @@
     .cart-section-left {
         padding-top: $reset;
         padding-bottom: $reset;
+        margin-bottom: 0;
     }
     .ems-cart-summary{
         margin-top: $reset;
@@ -22,7 +23,7 @@
             line-height: 1.5;
             border-width: 1px;
             border-style: solid;
-            margin-bottom: $small-15;
+            margin: $small-15 0;
             padding: $small-10;
             border-radius: 3px;
             color: $alert-error-color;
@@ -45,9 +46,10 @@
 .ems-page-payment-left{
     padding: $small-25 $small-20 $small-10 $small-20;
     .page-top-desc {
-        display: block;
+        display: none;
         border-bottom: 1px solid $color-4;
         padding-bottom: $large;
+        margin-bottom: $large;
     }
     .tableTitleDefault {
         display: block;

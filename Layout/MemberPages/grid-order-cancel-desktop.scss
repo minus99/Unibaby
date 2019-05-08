@@ -3,7 +3,7 @@
 Grid Desktop Product Row
 */
 .site-pages-member{
-    .ems-page-default-order-cancel{
+    .ems-page-default-order-cancel{ 
         padding: $reset;
         .ems-grid-default-order-products {
             .ems-grid-row{
@@ -72,4 +72,76 @@ Grid Desktop Product Row
             }
         }
     }
+
+    /* İade Sayfası */
+    .ems-page-member-refund {
+        padding: $reset;
+    }
+
+    .ems-grid-refund{
+        .ems-grid-header{
+            //background: none;
+            width: 100%;
+            margin-bottom: $reset;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius:0;
+            > div{
+               padding: $reset;
+               border-top: none;
+               &.ems-grid-detail {
+                   text-align: center;
+               }
+           }
+        }
+        .ems-grid-header:first-child {
+            @include grid;
+            grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr 1fr;
+            grid-template-rows: minmax(0, auto);
+            >div {
+                &.ems-grid-img,
+                &.ems-grid-remove {
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .ems-grid-row{
+            @include grid; 
+            grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr 1fr;
+            min-height: 55px;
+            width: 100%;
+            margin-bottom: $reset;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-radius:0; 
+            > div{
+                border-top: none;
+                padding: $reset;
+            }
+            .ems-grid-date{
+                color: #000000;
+            }
+            .ems-grid-order-no{
+                font-weight: normal;
+            }
+            .ems-grid-add-to-cart{
+                a{
+                    color: $cool-blue;
+                    font-size: $small-12;
+                    @include transition(all .2s ease);
+                    &:hover{
+                        color: $bright-blue;
+                    }
+                }
+            }
+        }
+    }
 }
+
+/* İade Popup */
+
+.popup_iadedetay {max-width: 800px !important;}

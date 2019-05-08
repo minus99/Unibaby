@@ -45,6 +45,20 @@
         &-mbsearch {
             float: left;
         }
+        &-mbBack {
+            float: left;
+            font-size: 40px;
+            position: absolute;
+            top: 12px;
+            left: 10px;
+            z-index: 1;
+            background: #fff;
+            display: none; 
+            a {display: inline-block;}
+            i {
+                color: $bright-blue;
+            }
+        }
         &-member {
             float: right;
             display: none;

@@ -6,6 +6,30 @@
     position: static;
     height: auto;
     @include space(margin, all, 15px 0 45px 0);
+    &.item-1 { 
+        .product-tab-head {
+            li{
+                &.tab-1 {
+                    background: $gray;
+                    color: $white;
+                }
+            }
+        }
+    }
+    &.item-2 { 
+        .product-tab-head {
+            li{
+                &.tab-1 {
+                    background: $gray;
+                    color: $white;
+                }
+                &.tab-2 {
+                    background: $gray;
+                    color: $white;
+                }
+            }
+        }
+    }
 }
 
 .product-tab-head {
@@ -24,6 +48,21 @@
             }
             &:before {
                 height: 5px !important;
+            }
+            .ems-detail-subscriber-lbl { 
+                display: none;
+            }
+            .urunDetay_KazancOran {
+                display: block;
+            }
+            .ems-detail-price-right {
+                display: block;
+            }
+            .ems-detail-price {
+                width: auto;
+            }
+            .tab-btn {
+                padding-top: 12px;
             }
         }
         &.tab-2 {
@@ -45,6 +84,10 @@
     }
 }
 
+.ems-subscriber {
+    &-info{top:20px;}
+}
+
 .ems-prd-fixed-area {
     overflow: visible;
     &-closed {
@@ -53,11 +96,15 @@
 }
 body.ems-product-tab-ready {
     overflow-y: scroll;
+    position: static;
     .ems-prd-fixed-area {
         @include Position(static, null);
         padding-top:0; 
         &-top {
             padding-top:0;
+        }
+        .yorumOku {
+            display: inline-block;
         }
     }
     .product-tab-head li.tab-1.selected:after {

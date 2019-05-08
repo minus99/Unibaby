@@ -76,11 +76,11 @@
     &-alternate{
         .swiper-inner{overflow: visible !important;}
     }
-    &.results-found {
+    /*&.results-found {
         .swiper-button-prev,  .swiper-button-next {
             display: none;
-        }
-    }
+        } 
+    }*/
 }
 
 .widget-active{

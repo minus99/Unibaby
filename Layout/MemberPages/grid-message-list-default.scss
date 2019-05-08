@@ -68,17 +68,7 @@ Grid Row Layout Default
             }
         }
 
-        .ems-grid-header:first-child {
-            //@include grid;
-            //grid-template-columns: 1fr 1fr 1fr 1fr .5fr;
-            //grid-template-rows: minmax(0, auto);
-            //grid-gap: 10px;
-        }
-
         .ems-grid-row {
-           // display: grid;
-           // grid-template-columns: 1fr 1fr 1fr 1fr .5fr;
-            //grid-gap: 10px; 
             display: inline-block !important;
             width: 100%;
             min-height: 55px;
@@ -120,70 +110,6 @@ Grid Row Layout Default
             }
         }
     }
-    /*.ems-grid-default-message{
-        .ems-grid-header {
-            width: 50%;
-            display: inline-block;
-            vertical-align: top;
-            background: $color-17;
-            margin-bottom: $small-20;
-            border-width: 1px 1px 1px 1px;
-            border-style: solid;
-            border-color: $color-6;
-            border-radius: 5px 0 0 5px;
-            > div{
-                padding: 14px 10px;
-                border-top: 2px solid $color-6;
-                color: $color-22;
-                &:first-child{
-                    border-top: none;
-                }
-                &:empty{
-                    &:before{
-                        content: "-";
-                    }
-                }
-            }
-        }
-
-        .ems-grid-row{
-            width: 50%;
-            display: inline-block;
-            vertical-align: top;
-            position: relative;
-            margin-bottom: $small-20;
-            border-width: 1px 1px 1px 0;
-            border-style: solid;
-            border-color: $color-6;
-            border-radius: 0 5px 5px 0;
-            > div{
-                padding: 14px 10px;
-                border-top: 2px solid $color-6;
-                max-height: 47px;
-                overflow: hidden;
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                &:first-child{
-                    border-top: none;
-                }
-                &:empty{
-                    &:before{
-                        content: "-";
-                    }
-                }
-                .lnkMesajOku{    
-                    &:empty{
-                        &:before{
-                            content: "-";
-                        }
-                    }
-                }
-                .lnkPopupMesajOku {
-                    display: none;
-                }
-            }
-        }
-    }*/
 }
 
 

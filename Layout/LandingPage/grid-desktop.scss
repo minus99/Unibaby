@@ -31,51 +31,19 @@
     }
 }
 
+/* Kombin Swiper */
 
-/*.site-pages-landing{
-    grid-template-areas:
-    ". A ."
-    ". B ."
-    "C C C"
-    ". D ."
-    ". E .";
-    padding-top: $reset;
-}*/
-
-/**
-====================== Markalar ======================
-**/
-/*.site-pages-brans-landing{
-    grid-template-areas:
-    "A A A"
-    ". B ."
-    ". C ."
-    ". D .";
-}
-
-.site-pages-landing{
-    .mt-70{
-        @include mt-70;
-    }
-    .mt-50{
-        @include mt-50;
-    }
-    .grid-banner-box-column3{
-        .mt-10{
-            @include marginTop0;
+.swiper-container-lookbook {
+    padding: 0;
+    .swiper-inner {overflow: visible;}
+    ul {
+        transform: none !important;
+        flex-wrap: wrap;
+        li {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            width: 25% !important;
         }
-    }
+    } 
 }
-
-.site-pages-brans-landing{
-    .ems-tab-cat .swiper-container-header{
-        max-width: 700px;
-    }
-    .ems-tab-cat .navigation-js .swiper-slide > a{
-        padding-top: $small-21;
-        padding-bottom: $small-21;
-    }
-    .ems-tab-cat .navigation-js .swiper-slide{
-        width: 33.333%;
-    }
-}*/

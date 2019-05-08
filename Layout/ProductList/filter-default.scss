@@ -146,10 +146,10 @@
     }
     .urunKiyaslamaOzellik_tumunuTemizle{
         display: inline-block !important;
-        vertical-align: bottom;
+        vertical-align: middle;
         a{
             display: inline-block;
-            @include space(padding, top, 8px);
+            //@include space(padding, top, 8px);
             @include space(padding, bottom, 9px);
             @include space(margin, top, $small);
             @include space(margin, left, $small);

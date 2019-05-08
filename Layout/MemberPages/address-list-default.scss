@@ -50,15 +50,9 @@
     }
     /*Grid Row*/
     .ems-grid-default-address{
-        //@include space(margin, top, $reset);
         border: none;
         border-radius: 0;
         max-width: inherit;
-        //max-height: 240px;
-        .ems-grid-adress-row{
-            //margin-left: $small-20;
-            //margin-right: $small-20;
-        }
     }
     .ems-address-buttons{
         a.btnDefault{
@@ -84,7 +78,6 @@
         .back-to-card{
             display: inline-block;
             @include space(margin, bottom, $reset);
-            //@include Position(fixed, top 0 left 0);
             z-index: 35;
             display: block;
             width: 100%;

@@ -1,6 +1,5 @@
 .site-pages-login{
     @include space(padding, all, $reset $large 70px $large);
-    //background-image: linear-gradient(rgba(254,240,235,0) 1% ,rgba(254,240,235,1) 50%);
     .login-title{
         @include space(padding, left, $small);
         @include space(padding, right, $small);
@@ -16,13 +15,7 @@
             font-size:$small-12;
         }
     }
-    .member-login-body{
-        /*@include space(margin, left, auto);
-        @include space(margin, right, auto);
-        @include space(padding, left, $large);
-        @include space(padding, right, $large);
-        max-width: 350px;*/
-    }
+
     .ems-form-inner{
         .sign-or{
             display: none;
@@ -71,6 +64,7 @@
     }
     .kutuUyeGirisFacebookConnect {
         @include space(margin, top, 10px);
+        display: none;
         table {
             tbody{
                 display: block;
@@ -315,6 +309,23 @@
 .ems-signup-header{
     .btn-login-page{
         //@extend .btn-inactive;
+    }
+}
+
+.pageUyeBasarili_mesaj .ems-message-error {
+    i {
+        font-size: 46px;
+        color: $vivid-orange ;
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        border: 2px solid $vivid-orange ;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
+    span {
+        display: block;
+        margin-bottom: 10px;
     }
 }
 

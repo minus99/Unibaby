@@ -15,7 +15,16 @@
 
 .UrunListeGrup_listeUrunDetayGrup {
     .swiper-wrapper {flex-wrap:wrap;} 
-    .swiper-slide {width: 20% !important; max-width: none;}
+    .swiper-slide {width: auto !important; max-width: none;}
+    /*ul {
+        li {
+            padding-right: 0px;
+            .URN_AD {
+                width: auto;
+                margin-right: 10px;
+            }
+        }
+    }*/
 
 }
 
@@ -146,15 +155,21 @@
     }
 }
 
+.ems-prd-desc-content {
+    .ems-detail-desc-2 {
+        padding: 0;
+    }
+}
+
 .ems-detail-favorites {
-    margin-top: 30px;
+    margin-top: 0px;
     @include Position(static, null);
     .btnFavoriEkle{
         @include space(margin, bottom, $reset);
         &:before{
             @include transition(all .2s ease);
             width: 40px;
-            height: 40px;
+            height: 20px;
             font-size: 40px;
         }
         &:hover{

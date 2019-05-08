@@ -57,6 +57,9 @@ Description: Grid Subscriptions Default
                         content: "-";
                     }
                 }
+                &.afterDate {
+                    min-height: 64px;
+                }
             }
             .ems-grid-use{
                 a{

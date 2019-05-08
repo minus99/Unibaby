@@ -1,6 +1,6 @@
 .site-pages-listpage {
     .urnList {
-        @include space(padding, all, $xxlarge $reset $reset $reset);
+        @include space(padding, all, $reset);
     }
 
     grid-template-columns: 1fr 220px 60px minmax(auto, 920px) 1fr;
@@ -26,19 +26,11 @@
     >span {
         cursor: pointer;
         border-bottom: none;
-        @include space(padding, left, $xMedium);
-        @include space(padding, right, 35px);
+        @include space(padding, all, 10px 35px 10px $xxlarge);
         color: $color-5;
-        font-size: $small-13;
+        font-size: $small-15;
         font-family: $bold;
         text-align: right;
-        /*&:before {
-            content: '';
-            @include Position(absolute, top 9px right 0);
-            width: 1px;
-            height: 32px;
-            background: #d5d6dc;
-        }*/
         small {
             font-size: $small-13;
             color: $color-5;
@@ -54,11 +46,12 @@
             content: '\e903';
             right: $xs;
             font-size: 14px;
+            top: 10px;
         }
     }
     ul{
         min-width: 200px;
-        @include Position(absolute, top 50px right 0);
+        @include Position(absolute, top 40px right 0);
         @include space(padding, left, $xMedium);
         @include space(padding, right, $xMedium);
         background: $white;
@@ -252,13 +245,6 @@
 .filter-popup-ready{
     @include mobi-body-reset;
 }
-
-/*.filter-menu-opened{
-    .vailFilter{
-        opacity: 1;
-        visibility: visible;
-    }
-}*/
 
 .grid-colmn-filter {
     .kutuBodyOzellikFiltre {

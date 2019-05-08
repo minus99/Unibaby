@@ -18,15 +18,7 @@
         .product-tab-head {
             li{
                 &.tab-1 {
-                    border-top-color: $color-18;
-                    background: $light-green;
-                    
-                    .ems-detail-subscriber-lbl {
-                        color: $vivid-orange;
-                    }
-                    .ems-detail-price-right {
-                        color: $dark-slate-blue;
-                    }
+                    background: $vivid-orange; 
                     &:before {
                         content: '';
                         width: 100%;
@@ -39,6 +31,9 @@
                     .urunDetay_KazancOran {
                         background: $vivid-pink; 
                         color: $white; 
+                    }
+                    &.selected {
+                        background: $light-green;
                     }
                 }
             }
@@ -56,59 +51,129 @@
             }
         }
     }
+    &.item-2 { 
+        .product-tab-head {
+            li{
+                &.tab-1 {
+                    background: $vivid-orange; 
+                    &.selected {
+                        background: $light-green;
+                    }
+                }
+                &.tab-2 {
+                    background: $color-18; 
+                    &.selected {
+                        background: $light-pink;
+                    }
+                }
+            }
+        }
+    }
     &.item-1, &.item-2 {
         opacity: 1;
     }
 }
 
+.ems-subscriber {
+    &-info{
+        position: absolute;
+        right: 10px;
+        top: 12px;
+        z-index: 1;
+        border: 2px solid $dark-slate-blue;
+        border-radius: 100%;
+        font-size: 30px;
+        color:$dark-slate-blue;
+        width: 21px;
+        height: 21px;
+        .icon-question {
+            &:before{
+                position: relative;
+                top: -6px;
+                left: -6px;
+            } 
+        }
+        &:hover {
+           background: $dark-slate-blue;
+           color: $white;     
+        }
+        &-pp {
+            padding: 30px;
+            .swiper-title {
+                font-size: 24px !important;
+            }
+            .swiper-wrapper {
+                display: block;
+                transform: none;
+                .swiper-slide {
+                    width: 100% !important;
+                }
+                .spc-text {
+                    width: 100%;
+                    max-width: none;
+                    strong {
+                        font-size: 15px;
+                    }
+                    img {float: left; margin-right: 20px;}
+                }
+            }
+        }
+    }
+    &-pp {
+        .ems-subscriber-pp {
+            max-width: 480px !important;
+        }        
+    }
+    &-col {
+        .ems-grid-piece {
+            display: none;
+        }
+    }
+}
 
 
-.product-tab-head {
+
+.product-tab-head { 
     @include table-cell;
     table-layout: fixed;
 
     li{
         min-width: 50%;
-        background: $white;
+        background: $dark-gray ;
         position: relative;
         cursor: pointer;
         a{
             &:empty{display: none;}
         }
-        &.selected{
-            //border-top: 5px solid $color-8;
-            /*border-left: 1px solid $color-4;
-            border-right: 1px solid $color-4;*/
-            //background: $color-17;
-            /*&:after{
-                content:'\e909';
-                color: $color-19;
-            }*/
-            /*&:before{
-                content:'';
-                width: 100%;
-                height: 1px;
-                background: none;
-                @include Position(absolute, bottom -1px left 0);
-                z-index: 2;
-                background: #F5F5F5;
-                border-left: 1px solid $color-4;
-            }*/
+        -webkit-box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0px -10px 10px -10px rgba(0, 0, 0, 0.3);
+        &.selected {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
         }
     }
     li {
         &.tab-1 {
-            background: $color-8;
+            background: $gray;
             color: $white;
-            .ems-detail-subscriber-lbl {
-                display: none;
-            }
             .tab-btn {
-                padding-top: 12px;
+                padding-top: 15px;
+            }
+            .urunDetay_KazancOran {
+                display:none;
+            }
+            .ems-detail-price-right {
+                @include flex;
+                justify-content: space-between;
+            }
+            .ems-detail-price {
+                width: 100%;
             }
         }
         &.tab-2 {
-            background: $color-18;
+            background: $gray;
             color: $white;
             .tab-btn {
                 @include flex;
@@ -121,6 +186,7 @@
                 .ems-detail-monthlysub {
                     flex: 50%;
                     opacity: 0.7;
+                    line-height: 13px;
                     &:empty {
                         display: none;
                     }
@@ -183,20 +249,15 @@
     .product-tab-head li:after{/*display: none;*/}
 }
 .product-tab-wrap{
-    //border-radius:3px;
-    //border: 1px solid $color-4;
-    //@include space(padding, all, $small $small $large $small); 
     > li {
         &.selected {
             @include space(padding, all, $large); 
         }
         &.tab-1{
             background: $light-green;
-            //@include space(padding, all, $large);
         }
         &.tab-2{
             background: $light-pink;
-            //@include space(padding, all, $large);
         }
     }
     
@@ -245,6 +306,7 @@
 
 body.ems-product-tab-ready {
     overflow: hidden;
+    position: fixed;
     .ems-prd-fixed-area {
         @include Position(fixed, left 0px top 0px);
         background: $white;
@@ -258,10 +320,36 @@ body.ems-product-tab-ready {
             padding-top: 50px;
             background: #fff;
         }
+        .yorumOku {
+            display: none;
+        }
     }
     .ems-tab-detail-product {
         @include Position(static, null);
         height: auto;
+        .ems-tab-inner {
+            @include Position(relative, null);
+        }
+        &.item-2 { 
+            .product-tab-head {
+                li{
+                    &.tab-1 {
+                        background: $gray;
+                        color: $white;
+                        &.selected {
+                            background: $light-green;
+                        }
+                    }
+                    &.tab-2 {
+                        background: $gray;
+                        color: $white;
+                        &.selected {
+                            background: $light-pink;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .product-tab-head li.tab-1 {

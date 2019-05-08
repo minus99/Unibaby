@@ -30,14 +30,14 @@
 .kutuBodyOzellikFiltre {
     >table {
         >tbody {
-            display: table;
+            display: inline-block;
             width: 100%;
             table-layout: fixed;
 
             >tr {
-                display: table-cell;
+                display: inline-block;
                 vertical-align: middle;
-                min-width: 50%;
+                width: 100%;
                 border-bottom: none;
                 >td {
                     display: block;
@@ -46,6 +46,10 @@
             }
         }
     }
+}
+
+.grid-colmn-feature-filter {
+    padding: 0 10px;
 }
 
 .urunKiyaslamaOzellik_ozellik {
@@ -59,13 +63,14 @@
             }
         }
 
-        @include Position(absolute, top 50px left 0);
+        @include Position(static, top 50px left 0);
         z-index: 2;
         width: $width100;
         background: $white;
 
         a.urunKiyaslamaOzellik {
             color: $very-dark-gray;
+            font-size: $small-14;
             @include space(padding, top, 7px);
             @include space(padding, bottom, 7px);
         }

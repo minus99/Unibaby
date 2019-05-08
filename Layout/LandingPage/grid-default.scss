@@ -43,7 +43,7 @@
             position: static;
             text-align: center;
             margin: 30px auto;
-            padding: 0;
+            padding: 0 20px;
             span {
                 color: $color-5;
                 font-size: 30px;
@@ -297,8 +297,8 @@ transition:  all 0.2s ease-in-out;
 .popup.kombin{position:fixed;top:0;left:0;width:100%;height:100%;background:#FFF;z-index:10;overflow:auto;overflow-x:hidden; display:none; opacity:0; transform:scale(1.2); transition:all 0.2s ease-in-out; z-index: 99; -webkit-overflow-scrolling: touch;}
 .popup.kombin > .inside{width:100%;height:100%;}
 .popup.kombin > .inside .leftPanel{float:left; width:100%; padding-right:540px;}
-.popup.kombin > .inside .leftPanel .swiper-inner {height: 100vh; position: relative; overflow: hidden; width: 100%; padding: 30px;}
-.popup.kombin > .inside .leftPanel .swiper-inner .swiper-slide {background-size: contain; background-repeat: no-repeat; background-position: center !important;}
+.popup.kombin > .inside .leftPanel .swiper-inner {height: 100vh; position: relative; overflow: hidden; width: 100%;}
+.popup.kombin > .inside .leftPanel .swiper-inner .swiper-slide {background-size: 70%; background-repeat: no-repeat; background-position: center !important;}
 .popup.kombin > .inside .leftPanel .swiper-inner .swiper-slide img {display: none;}
 .popup.kombin > .inside .leftPanel .swiper-buttons .swiper-button-prev {left:10px; width: auto; height: auto; padding: 20px; background: none;}
 .popup.kombin > .inside .leftPanel .swiper-buttons .swiper-button-next {right:10px; width: auto; height: auto; padding: 20px; background: none;}
@@ -306,21 +306,44 @@ transition:  all 0.2s ease-in-out;
 .popup.kombin > .inside .leftPanel .swiper-pagination-custom {font-size: 18px; font-family: $medium; color:#fff;}
 .popup.kombin > .inside .leftPanel .swiper-pagination-bullets {display:none;}
 .popup.kombin > .inside .rightPanel{width: 540px;position: absolute;right: 0;top: 0; z-index: 2;}
-.popup.kombin > .inside .rightPanel .inside{}
-.popup.kombin > .inside .rightPanel .inside > ul{}
 
-.popup.kombin > .inside .rightPanel .inside > ul {
+.popup.kombin > .inside .rightPanel .inside > ul { 
 
-    height: calc(100vh - 240px);
+    height: calc(100vh - 260px);
     overflow-x: hidden
+}
+
+
+.popup.kombin {
+    .btnStokYok {
+        display:none; background: $color-36;
+        &:hover {
+            background: $light-grey;
+        }
+    }
+    &.ems-no-stock {
+        .btnTumunuSepeteEkle {
+            display: none;
+        }
+        .btnStokYok {
+            display: inline-block;
+        }
+    }
 }
 
 body.ems-donemsel-ready {
     .ems-avantaj-slide {display: none;}
+    .donemsel-title {
+        display: inline-block;
+        color: $dark-slate-blue;
+    }
 }
 
 body.ems-avantaj-ready {
     .ems-donemsel-slide {display: none;}
+    .avantaj-title {
+        display: inline-block;
+    }
 }
 
 .popup.kombin > .inside .rightPanel .inside > ul li {
@@ -343,6 +366,9 @@ body.ems-avantaj-ready {
         a {
            font-size: 18px; 
            pointer-events: none;
+           min-height: auto;
+           max-height: none;
+           margin-bottom: 5px;
         }
     }
     .ems-prd-view {
@@ -521,18 +547,27 @@ body.ems-avantaj-ready {
     margin-bottom: 10px;
 }
 .loboInfo .kbTotal {
-    text-align: right;
-    .lbTotalPrice:before {
-        content: '₺';
-        margin-right: 3px;
+    text-align: left;
+    .lbTotalPrice, .lbTotalPriceTemp {
+        float: right;
+        clear: both;
+        &:before {
+            content: '₺';
+            margin-right: 3px;
+        }
+    }
+    .lbTotalPrice {
+        font-size: 16px;
+        font-family: $regular;
+        color:$light-grey;
     }
     b {
-        float:left;
+
     }
 }
-.loboInfo .btnTumunuSepeteEkle {margin-top: 20px; max-width: none;}
+.loboInfo .btnDefaultBig {margin-top: 20px; max-width: none;}
 a.btnFavoriEkle {
-    padding: 5px !important;
+    padding-right: 10px !important;
 }
 
 .popup.kombin .slideCurrent {position: absolute;bottom: 18px;left: 50%;color: #fff !important;z-index: 99;transform: translateX(-50%);}
@@ -572,6 +607,20 @@ transition: padding 0.1s ease;}
 .kombinPage .kombinList > li.item .btnWrap > a:hover > i{padding-right:5px;}
 
 /* Kombin End */
+
+/* Kombin Swiper */
+
+.swiper-container-lookbook {
+    ul {
+        flex-wrap: nowrap;
+        li {
+            text-align: left;
+            width: 275px !important;
+            -webkit-flex: none;
+        }
+    } 
+}
+
 
 @media screen and (min-width: $breakpoint-medium){
     .ems-lookbook-slider {background: none !important;} 
@@ -627,7 +676,8 @@ transition: padding 0.1s ease;}
         .swiper-inner {
             height: auto;
             .swiper-slide {
-                background: none;
+                background: none !important;
+                padding: 25px;
                 img {
                     display: block;
                 }
@@ -674,28 +724,10 @@ transition: padding 0.1s ease;}
         }
     }
     a.btnFavoriEkle {
-        padding: 0px !important;
+        padding-right: 15px !important;
         i.icon-ico_hearth:before {
             opacity: 1 !important;
             visibility: visible !important;
         }
     }
 }
-
-
-/*.site-pages-landing{
-    .mt-70{
-        @include mt-50;
-    }
-    .mt-50{
-        @include mt-40;
-    }
-    .grid-banner-box-column3{
-        .mt-10{
-            @include mt-20;
-        }
-    }
-    .ems-tab-cat{
-        @include mt-30;
-    }
-}*/

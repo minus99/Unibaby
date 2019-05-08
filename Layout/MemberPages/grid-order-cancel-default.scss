@@ -79,5 +79,111 @@ Grid Desktop Product Row
                 }
             }
         }
+        .iadeRefNo {
+            text-align: center;
+            margin: 20px 0 40px 0;
+           .textKyt {
+               font-size: 16px;
+               font-family: $medium;
+               display: block;
+               margin-bottom: 10px;
+               span {
+                margin-bottom: 10px;
+                display: block;
+               }
+           } 
+           .underline {
+               font-size: 20px;
+               font-family: $medium;
+           }
+           .tkpText span {display: block; margin-bottom: 10px;}
+           .tkpText a {text-decoration: underline;}
+        }
+    }
+
+    /* İade Sayfası */
+
+    .ems-page-member-refund {
+        padding: $small-20;
+
+        >.page-top-title>span {
+            border-bottom: 0;
+        }
+    }
+
+    .ems-grid-refund{
+        .ems-grid-header {
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            background: $color-17;
+            margin-bottom: $small-20;
+            border-width: 1px 1px 1px 1px;
+            border-style: solid;
+            border-color: $color-6;
+            border-radius: 5px 0 0 5px;
+            > div{
+                padding: 14px 10px;
+                border-top: 1px solid $color-6;
+                font-family: $medium;
+                &:first-child{
+                    border-top: none;
+                }
+                &:empty{
+                    &:before{
+                        content: "-";
+                    }
+                }
+            }
+        }
+
+        .ems-grid-row{
+            width: 50%;
+            display: inline-block;
+            vertical-align: top;
+            position: relative;
+            margin-bottom: $small-20;
+            border-width: 1px 1px 1px 0;
+            border-style: solid;
+            border-color: $color-6;
+            border-radius: 0 5px 5px 0;
+            > div{
+                padding: 14px 10px;
+                border-top: 1px solid $color-6;
+                max-height: 47px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                &:first-child{
+                    border-top: none;
+                }
+                &:empty{
+                    &:before{
+                        content: "-";
+                    }
+                }
+                &.ems-grid-add-to-cart {
+                    white-space: normal;
+                }
+            }
+
+            .ems-grid-detail{
+                a{
+                    display: block;
+                    color: $cool-blue; 
+                    font-size: $small-12;
+                    background: none; 
+                    cursor: pointer;
+                    @include transition(all .2s ease);
+                    padding: 0;
+                    span{
+                        text-decoration: underline;
+                    }
+                    &:hover{
+                        color: $bright-blue;
+                    }
+                }
+            }
+        }
     }
 }

@@ -13,7 +13,7 @@
         color: $dark-slate-blue;
         font-family: $medium;
         &.navigasyonSeviye1,
-        &.navigasyonSeviye2{display: inline-block;}
+        &.navigasyonSeviye2{display: inline;}
         &:before{
             content:'/';
             font-size: $small-14;
@@ -45,6 +45,7 @@
         white-space: nowrap;
         @include space(padding, all, $xSmall $small);
         @include space(margin, top, $xSmall);
+        @include space(margin, bottom, $xSmall);
         @include space(margin, right, 2%);
         @include space(margin, left, 2%);
         &:before{

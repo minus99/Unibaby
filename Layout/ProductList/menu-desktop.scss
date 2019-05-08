@@ -1,7 +1,9 @@
 .kutuKategori{
     @include Position(relative, null);
     height: 100%;
-    @include space(padding, top, $xxlarge);
+    @include space(padding, all, $xxlarge $reset $small $reset);
+    @include space(margin, bottom, $small);
+    border-bottom: 1px solid $very-light-gray;
 }
 .kutuBodyKategori{
     display: block;
@@ -43,6 +45,16 @@
                     }
                 }
             }
+            &.s1 {
+                > b {
+                    display: none;
+                }
+            }
+        }
+        &.no-ajx {
+            b, ul {
+                display: none !important;
+            }
         }
     }
     > li{
@@ -52,8 +64,6 @@
             @include space(padding, all, 11px 12px);
         }
         > ul{
-            /*@include space(padding, top, $small);
-            @include space(padding, bottom, $small);*/
             > li{
                 &.sub-items{
                     > b{
@@ -78,12 +88,15 @@
                     }
                 }
                 > a{
-                    font-family: $medium;
-                    font-size: $small-16;
-                    @include space(padding, all, 9px 9px 9px 12px);
+                    font-family: $regular;
+                    font-size: $small-14;
+                    @include space(padding, all, 7px 12px);
                     @include transition(all .2s ease);
                     &:hover, &.active{
                         color: $color-5;
+                    }
+                    &.active{
+                        font-family: $medium;
                     }
                 }
                 > ul {
@@ -97,6 +110,9 @@
                             @include transition(all .2s ease);
                             &:hover, &.active{
                                 color: $color-5; 
+                            }
+                            &.active{
+                                font-family: $medium;
                             }
                         }
                     }

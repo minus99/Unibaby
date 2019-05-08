@@ -10,11 +10,6 @@
         @include space(padding, right, $reset);
         @include space(padding, top, $small);
     }
-
-    .yorumOrtalamaPuan {
-        //@include space(margin, top, 8px);
-        /*@include space(margin, left, $large);*/
-    }
 }
 
 .ems-detail-new {
@@ -279,8 +274,9 @@
 
 .ems-prd-desc-content {
     .ems-detail-desc-2 {
-        @include space(margin, all, 35px 0);
-        font-size: $small-18; 
+        @include space(margin, all, 35px 0 50px 0);
+        @include space(padding, all, 0 20px);
+        font-size: $small-18;
         color: $color-22; 
         max-height: 600px;
         overflow: hidden;
@@ -288,10 +284,11 @@
         display: none;
         img, video, iframe {
             width: 100%;
-            @include space(margin, all, $xMedium 0);
+            @include space(margin, all, $xlarge 0); 
         }
         iframe {
             position:static !important;
+            border: 0;
         }
         p {
             @include space(margin, bottom, $xMedium); 
@@ -314,7 +311,7 @@
             }
         }
         a.moreText {
-            @include Position(absolute, bottom 0);
+            @include Position(absolute, bottom 0 left 0 right 0);
             width: 100%;
             text-align: center;
             z-index: 1;
@@ -394,8 +391,9 @@
 .ems-detail-favorites {
     text-align: center;
     margin-top: 0px;
-    @include Position(absolute, top 0px right 0px);
+    @include Position(relative, null);
     z-index: 1;
+    float: right;
     .btnFavoriEkle {
         font-family: $regular;
         font-size: $small-15;
@@ -403,21 +401,21 @@
         @include space(padding, all, $reset);
         @include space(margin, bottom, $xMedium);
         border: none; 
-        color: $dark-slate-blue;
-        line-height: 45px;
+        color: $color-36;
+        //line-height: 45px;
         span {
-            display: none;
+            //display: none;
             vertical-align: middle;
         }
         &:before {
             font-family: 'icomoon';
-            content: "\e90c";
-            width: 60px;
-            height: 60px;
-            line-height: 40px;
+            content: "\e927";
+            width: 40px;
+            height: 20px;
+            line-height: 16px;
             display: inline-block;
             vertical-align: middle;
-            font-size: 60px;
+            font-size: 40px;
             color: $color-30;
             float: left;
         }
@@ -461,9 +459,9 @@
         /*padding-left: $small-10;*/
         flex-wrap: nowrap;
         li {
-            width: 100% !important;
-            max-width: 120px;
-            padding-right: 10px;
+            //width: 100% !important;
+            //max-width: 120px;
+            //padding-right: 10px;
             padding-top: 10px;
             .urunGrup_urunTipi,
             .prdName,
@@ -480,18 +478,24 @@
                 vertical-align: middle;
                 border-radius: 5px;
                 border: 1px solid $color-4;
-                padding: 14px $xMedium;
+                padding: $small;
                 text-align: center;
                 cursor: pointer;
-                width: 100%;
+                //width: 100%;
+                margin-right: 10px;
                 @include transition(border-color .2s ease);
                 &:hover {
                     border-color: $color-5; 
                 }
+                &:empty {
+                    display: none;
+                }
             }
 
             &.selected {
-                border-color: $color-5 ;
+                .URN_AD {
+                    border-color: $color-5;
+                }
             }
         }
     }
@@ -532,7 +536,13 @@
     }
 }
 
+.ems-prd-scroll-line {
+    width: 100%;
+    display: inline-block;
+}
+
 .ems-detail-comment-stars {
+    float: left;
     @include space(padding, left, $large);
     @include space(padding, right, $large);
     @include space(margin, bottom, $small);
@@ -808,6 +818,11 @@
     color: $dark-slate-blue;
     font-size: $small-16;
     font-family: $regular;
+    //display: none;
+}
+
+.ems-detail-subscriber-price-discount {
+    //display: none;
 }
 
 .abonelikSureItem {
@@ -896,9 +911,12 @@
     .counter-btn.top-btn:after, .counter-btn.bottom-btn:after {
         color: $color-18;
     }
-    .urunDetay_urunAdet input {
-        color: $color-18 !important;
-        border-color: $color-18 !important;
+    .urunDetay_urunAdet{
+        display: none;
+        input {
+            color: $color-18 !important;
+            border-color: $color-18 !important;
+        }
     }
     .urunDetay_btnSepeteAt {
         a.btnsepeteAt {

@@ -26,8 +26,8 @@
         }
     }
     &-image {
-        @include space(padding, top, $xlarge);
-        @include space(padding, bottom, $xxlarge);
+        @include space(padding, top, $xs);
+        @include space(padding, bottom, $xs);
     }
     &-price-subscriber{
         @include space(padding, all, 5px);

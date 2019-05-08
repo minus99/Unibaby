@@ -243,16 +243,6 @@
     }
     li{
         i{
-            /*width: 32px;
-            height: 32px;
-            line-height: 32px;
-            text-align: center;
-            display: inline-block;
-            vertical-align: middle;
-            @include space(margin, right, $xs);
-            &:before{
-                font-size: 16px;
-            }*/
             &:before{
                 content:'';
                 position: absolute;
@@ -290,16 +280,8 @@
     }
     .tekli, 
     .ikili {
-        /*@include space(padding, right, $small);
-        @include space(padding, left, $small);
-        display: inline-block;
-        vertical-align: middle;*/
         width: 50%;
         a{
-            /*border-radius: 3px;
-            border: 1px solid $color-6;
-            height: 55px;
-            line-height: 35px;*/
             display: block;
             font-size: $small-15;
             color: $very-dark-g;
@@ -373,7 +355,7 @@
     }
     > span {
         line-height: 18px; 
-        max-height: 55px; 
+        //max-height: 55px; 
         overflow: hidden;
         display: block;  
     }
@@ -388,12 +370,15 @@
         .dfazla {display: none;}
         .daz {display: block;}
         > span {
-            max-height: none; 
+            max-height: none !important; 
         }
     }
     .moreText {display: none;}
     &.minHeight {
         .moreText {display: inline-block;}
+        > span { 
+            max-height: 55px;  
+        }
     }
 }
 
@@ -429,5 +414,11 @@
                 }
             }
         }
+    }
+}
+
+.ems-no-rate {
+    .ems-prd-discount, .urunListe_brutFiyat, .discountRatio, .gridSepetListe_gercekFiyat, .ems-detail-discount, .urunDetay_satisFiyatIkFiyat, .cart-prd-price .discount, .cart-prd-price .first {
+        display: none !important;
     }
 }

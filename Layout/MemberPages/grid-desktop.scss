@@ -4,9 +4,7 @@
         position: relative;
     }
     /* Pages Right Right Layout Space*/
-    .ems-member-page-right{
-        //padding-right: 120px;
-    }
+
     /*Pages Title*/
     .page-top-title {
         display: block;
@@ -58,6 +56,13 @@
     .big-text-favorite{
         font-size: $small-24;
     }
+    /*Member Back Button*/
+    .backToMember{
+        display: inline-block;
+    }
+    .backToMemberMsg{
+        display: none;
+    }
     .ems-page-default-coupon-empty {
         padding: 20px 0;
     }
@@ -80,9 +85,6 @@
                font-family: $medium;
                font-size: $small-14;
            }
-       }
-       .ems-grid-header:first-child{
-           //@include grid;
        }
        .ems-grid-row{
            @include grid;

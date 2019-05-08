@@ -1,3 +1,14 @@
 .swiper-container-detail{
-    max-width: 1200px; 
+    max-width: 1200px;
+    &.items-1,
+    &.items-2,
+    &.items-3,
+    &.items-4{
+        .widget-control {
+            display: none;
+        }
+        .swiper-slide {
+            width: auto;
+        }
+    }  
 }

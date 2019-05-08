@@ -1,5 +1,4 @@
 .site-pages-login{
-    //background-image: linear-gradient(rgba(254, 240, 235, 0) 15%,rgba(254,240,235,1) 50%);
     grid-template-columns: 1fr minmax(auto, 700px) 4% minmax(auto, 400px) 1fr;
     grid-template-areas:
     ". A A A ."
@@ -31,12 +30,6 @@
         }
     }
     .ems-signup-header{
-        > span{
-            /*@include grid();
-            grid-template-areas: ". BTN";
-            grid-template-columns: 1fr 1fr;
-            align-items: center;*/
-        }
         .ems-login-tab{
             text-align: right;
             @include space(margin, bottom, $reset);
@@ -44,9 +37,6 @@
     }
     .swiper-container{
         @include space(margin, top, -45px);
-    }
-    .ems-page-member-login{
-        //@include space(margin, top, -85px);
     }
     .member-login-body{
         @include space(padding, left, $small);
@@ -77,12 +67,6 @@
         @include space(padding, right, $small);
         font-size: $small-24;
     }
-}
-
-.member-login-box{
-    /*background: $white;
-    border: 1px solid $da-light-gray;
-    border-radius: 3px;*/
 }
 
 /* Login Signin Image */

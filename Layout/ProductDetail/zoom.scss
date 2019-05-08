@@ -46,6 +46,14 @@
                 border-color: transparent transparent transparent $vivid-yellow;
             }
         }
+        .swiper-button-prev, .swiper-button-next {
+            display: none;
+        }
+        &.activePager {
+            .swiper-button-prev, .swiper-button-next {
+                display: inline-block;
+            }
+        }
         &.item-1 {
             .swiper-button-prev, .swiper-button-next {
                 display: none;
@@ -56,6 +64,9 @@
     .swiper-pagination{
         position: initial;
         margin-top: 20px;
+        &:empty {
+            display: none;
+        }
     }
 
     .sticky-thumb{/*display: none;*/}
@@ -63,16 +74,25 @@
     .swiper-left-column {
         width: 100%;
         max-width: 400px;
-        @include space(margin, all, 40px auto $large auto);
+        @include space(margin, all, $reset auto);
         display: none;
+        &.item-2, &.item-3 {
+            .swiper-wrapper {
+                justify-content: center;
+            }
+            .swiper-slide {
+                max-width: 115px;
+                padding: 0 5px;
+            }
+        }
         .swiper-slide {
-            border-radius: 5px;
-            border: 1px solid $color-4;
-            overflow: hidden;
             height: auto;
             text-align: center;
             a {
                 height: 100%;
+                border-radius: 5px;
+                border: 1px solid $color-4;
+                overflow: hidden;
             }
             &.ems-video {
                 &:before {
@@ -90,14 +110,20 @@
                 border-color: $bright-blue;
             }
         }
+        .swiper-wrapper {
+            @include space(margin, all, 40px $reset $large $reset);
+            &:empty {
+                display: none;
+            }
+        }
     }
     .swiper-button-next, .swiper-button-prev {
         background: none;
-        margin-top: -30px;
+        margin-top: -60px;
         i:before {
             color: $cool-blue;
         }
-    }
+    } 
 }
 
 /* Zoom Big Slider */
@@ -113,4 +139,13 @@
     left: 0;
     background: #FFF;
     display: none;
+}
+
+@media only screen and (max-width: $breakpoint-medium) {
+    .ems-prd-zoom{
+        max-width: 280px;
+        .swiper-button-next, .swiper-button-prev {
+            display:none !important;
+        }
+    }
 }
